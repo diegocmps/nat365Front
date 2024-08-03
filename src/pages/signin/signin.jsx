@@ -27,6 +27,8 @@ export function Signin() {
 
         }
 
+        console.log(email, password)
+
     }
 
 
