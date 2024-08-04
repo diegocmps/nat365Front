@@ -145,6 +145,22 @@
         "cidade": "Palhoça",
         "estado": "SC"
       }
+    },
+    {
+      "id": "8e13",
+      "nome": "Diego",
+      "sexo": "masculino",
+      "cpf": "04396492936",
+      "data_nascimento": "1984-11-25",
+      "email": "admin@admin.com",
+      "senha": "admin123",
+      "endereco": {
+        "cep": "88137260",
+        "rua": "Rua das Cegonhas",
+        "bairro": "Pedra Branca",
+        "cidade": "Palhoça",
+        "estado": "SC"
+      }
     }
   ]
 }
