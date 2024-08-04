@@ -19,15 +19,16 @@ export function Signin() {
         if(isSuccess) {
             //redirecionar o usuario para a aplicação
             navigate('/dashboard')
+            console.log(isSuccess)
         } else {
             alert('Email/senha inválidas')
         }
 
         } catch (error) {
+            alert('Email/senha inválidas')
 
         }
 
-        console.log(email, password)
 
     }
 

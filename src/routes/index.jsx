@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Signin } from "../pages/signin/signin";
-import { HomePage } from "../pages/signin/dashboard";
 import { CadastroPage } from "../pages/cadastro";
+import { TemplatePrivateRoute } from "../template/private";
+
+
 
 export const routes = createBrowserRouter([
     {
@@ -14,7 +16,8 @@ export const routes = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <HomePage />
+        element: <TemplatePrivateRoute />,
+
     }
 
 ])

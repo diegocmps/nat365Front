@@ -6,14 +6,15 @@ import { api } from "../utils/api";
 export const AuthContext = createContext({
     user: null,
     signIn: async () => { },
+    signOut: async () => { },
 })
 
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState(()=> {
+    const [user, setUser] = useState(() => {
         const userLogged = localStorage.getItem('@natureza365:user')
 
-        if(userLogged) {
-           return JSON.parse(userLogged)
+        if (userLogged) {
+            return JSON.parse(userLogged)
         }
     })
 
@@ -34,8 +35,16 @@ export function AuthProvider({ children }) {
 
     }
 
+    function signOut() {
+        setUser(null)
+        localStorage.removeItem('@natureza365:user')
+
+
+
+    }
+
     return (
-        <AuthContext.Provider value={{ user, signIn }}>
+        <AuthContext.Provider value={{ user, signIn, signOut }}>
             {children}
         </AuthContext.Provider>
 

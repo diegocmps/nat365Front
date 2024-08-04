@@ -24,7 +24,7 @@ export function CadastroPage() {
 
             } else {
                 alert('Cadastrado com sucesso')
-                navigate('/login')
+                navigate('/')
             }
 
         } catch (error) {
