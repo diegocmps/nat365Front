@@ -14,23 +14,23 @@ export function Signin() {
 
     async function onSubmit(data) {
         try {
-        const isSuccess = await signIn(data)
-
-        if(isSuccess) {
-            //redirecionar o usuario para a aplicação
-            navigate('/dashboard')
-            console.log(isSuccess)
-        } else {
-            alert('Email/senha inválidas')
-        }
-
+            if (!data.email || !data.password) {
+                alert('Preencha todos os campos');
+                return;
+            }
+    
+            const isSuccess = await signIn(data);
+    
+            if (isSuccess) {
+                navigate('/dashboard');
+            } else {
+                alert('Email/senha inválidas');
+            }
         } catch (error) {
-            alert('Email/senha inválidas')
-
+            alert('Ocorreu um erro ao efetuar o login');
         }
-
-
     }
+    
 
 
     return (
@@ -49,6 +49,7 @@ export function Signin() {
                     <div className="form-floating">
                         <label htmlFor="floatingInput">Email</label>
 <br />
+<br />
                         <input
                             type="email"
                             className="form-control"
@@ -59,7 +60,8 @@ export function Signin() {
                     </div>
                     <div className="form-floating">
                         <label htmlFor="floatingPassword">Senha</label>
-<br />
+                        <br />
+                        <br />
                         <input
                             type="password"
                             className="form-control"
