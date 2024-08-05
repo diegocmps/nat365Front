@@ -1,0 +1,37 @@
+/* Estilo para centralizar e limitar a largura da tela */
+.tela-cadastro {
+    max-width: 600px; /* Defina o valor desejado para a largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px; /* Adicione algum espaçamento interno para melhor legibilidade */
+}
+
+/* Estilo para o formulário */
+.tela-cadastro form {
+    /* Adicione estilos específicos para o formulário, se necessário */
+}
+
+/* Estilo para os campos de entrada */
+.tela-cadastro input,
+.tela-cadastro select {
+    width: 100%; /* Ocupa toda a largura disponível */
+    margin-bottom: 10px; /* Espaçamento inferior entre os campos */
+    padding: 10px; /* Adicione algum espaçamento interno para melhor legibilidade */
+    border: 1px solid #ccc; /* Adicione uma borda para destacar os campos */
+    border-radius: 4px; /* Arredonde as bordas */
+}
+
+/* Estilo para o botão de cadastro */
+.tela-cadastro button {
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none; /* Remova a borda do botão */
+    padding: 10px 20px; /* Adicione algum espaçamento interno para melhor legibilidade */
+    border-radius: 4px; /* Arredonde as bordas */
+    cursor: pointer; /* Altere o cursor ao passar o mouse sobre o botão */
+}
+
+/* Estilo para o link de login */
+.tela-cadastro p a {
+    color: #007bff; /* Cor do link */
+    text-decoration: none; /* Remova a decoração de sublinhado */
+}

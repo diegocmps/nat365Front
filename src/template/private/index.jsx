@@ -2,6 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom'
 import { LogOut } from 'lucide-react'
 import { useAuth } from '../../contexts/auth'
 import SideBar from '../../components/sidebar/sidebar'
+import { List } from '../../pages/lista/list'
 
 
 useAuth
@@ -24,10 +25,19 @@ export function TemplatePrivateRoute() {
 
                 </div>
             </nav>
+            
             <SideBar/>
+            <div className='content'>
+                <List/>
+
+
+            </div>
+
             
             <main className='container mx-auto'>
                 <Outlet />
+                
+                
             </main>
         </div>
     ) : <Navigate to='/'/>
