@@ -1,13 +1,27 @@
 import { Link } from "react-router-dom"
 import './sidebar.css'
+import { useAuth } from "../../contexts/auth"
+import { LogOut } from 'lucide-react'
+
 
 function SideBar() {
+
+    const { signOut } = useAuth()
+
+
     return (
         <>
             <div className="sidebar">
                 <legend>MENU</legend>
-                <Link to='/'>Home</Link>
-                <Link to='/localidade'>Cadastro Locais</Link>
+                <Link to="/dashboard">Home</Link>
+                <Link to="/dashboard/localidade">Cadastro Locais</Link>
+                <Link to="/dashboard/list">Lista</Link>
+                <div>
+                    <button className=' btn btn-dark' onClick={signOut}>
+                        <LogOut size={16} />
+                    </button>
+
+                </div>
             </div>
         </>
     )

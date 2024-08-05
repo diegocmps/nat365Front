@@ -4,8 +4,7 @@ import { CadastroPage } from "../pages/cadastro";
 import { TemplatePrivateRoute } from "../template/private";
 import { CadastroLocais } from "../pages/localidades";
 import { List } from "../pages/lista/list";
-
-
+import { HomePage } from "../pages/dashboard";
 
 export const routes = createBrowserRouter([
     {
@@ -19,17 +18,19 @@ export const routes = createBrowserRouter([
     {
         path: '/dashboard',
         element: <TemplatePrivateRoute />,
-
-    },
-    {
-        path: '/localidade',
-        element: <CadastroLocais/>
-    },
-    {
-        path: '/list',
-        element: <List/>
-
+        children: [
+            {
+                index: true,
+                element: <HomePage />
+            },
+            {
+                path: 'localidade',
+                element: <CadastroLocais />
+            },
+            {
+                path: 'list',
+                element: <List />
+            }
+        ]
     }
-
-
-])
+]);
