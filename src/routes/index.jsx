@@ -3,6 +3,7 @@ import { Signin } from "../pages/signin/signin";
 import { CadastroPage } from "../pages/cadastro";
 import { TemplatePrivateRoute } from "../template/private";
 import { CadastroLocais } from "../pages/localidades";
+import { List } from "../pages/lista/list";
 
 
 
@@ -23,6 +24,11 @@ export const routes = createBrowserRouter([
     {
         path: '/localidade',
         element: <CadastroLocais/>
+    },
+    {
+        path: '/list',
+        element: <List/>
+
     }
 
 
