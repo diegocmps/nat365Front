@@ -1,6 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom'
-import { LogOut, User } from 'lucide-react'
+import { LogOut } from 'lucide-react'
 import { useAuth } from '../../contexts/auth'
+import SideBar from '../../components/sidebar/sidebar'
 
 
 useAuth
@@ -17,13 +18,14 @@ export function TemplatePrivateRoute() {
                 </div>
 
                 <div>
-                    <span className='text-secondary'><User size={16}/>{user.email}</span>
                     <button className=' btn btn-dark' onClick={signOut}>
                         <LogOut size={16} />
                     </button>
 
                 </div>
             </nav>
+            <SideBar/>
+            
             <main className='container mx-auto'>
                 <Outlet />
             </main>

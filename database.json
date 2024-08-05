@@ -104,24 +104,13 @@
         "siafi": "7535"
       },
       "id": "247a"
-    },
+    }
+  ],
+  "localidade": [
     {
-      "id": "87ae",
-      "nome": "Diego",
-      "sexo": "masculino",
-      "cpf": "04396492936",
-      "data_nascimento": "1984-11-25",
-      "email": "admin@admin.com",
-      "senha": "admin123"
-    },
-    {
-      "id": "9fdd",
-      "nome": "Diego Campos",
-      "sexo": "masculino",
-      "cpf": "04396492936",
-      "data_nascimento": "1984-11-25",
-      "email": "diego@email.com",
-      "senha": "123456",
+      "id": "7a21",
+      "local": "Trilha da palhoça",
+      "descricao": "feawfaeefasdfasdfa sdfasdfasdfasdfasdf",
       "endereco": {
         "cep": "88137260",
         "rua": "Rua das Cegonhas",
@@ -131,34 +120,26 @@
       }
     },
     {
-      "id": "3568",
-      "nome": "Mari",
-      "sexo": "feminino",
-      "cpf": "06344210931",
-      "data_nascimento": "1988-05-20",
-      "email": "mari@email.com",
-      "senha": "123456",
+      "id": "c2a4",
+      "local": "Trilha do saquinho",
+      "descricao": "muito bonita",
       "endereco": {
-        "cep": "88137260",
-        "rua": "Rua das Cegonhas",
-        "bairro": "Pedra Branca",
-        "cidade": "Palhoça",
+        "cep": "88056511",
+        "rua": "Servidão Manoel de Souza Oliveira",
+        "bairro": "Cachoeira do Bom Jesus",
+        "cidade": "Florianópolis",
         "estado": "SC"
       }
     },
     {
-      "id": "8e13",
-      "nome": "Diego",
-      "sexo": "masculino",
-      "cpf": "04396492936",
-      "data_nascimento": "1984-11-25",
-      "email": "admin@admin.com",
-      "senha": "admin123",
+      "id": "df1d",
+      "local": "fewfewfew",
+      "descricao": "fwefewfe",
       "endereco": {
-        "cep": "88137260",
-        "rua": "Rua das Cegonhas",
-        "bairro": "Pedra Branca",
-        "cidade": "Palhoça",
+        "cep": "88056511",
+        "rua": "Servidão Manoel de Souza Oliveira",
+        "bairro": "Cachoeira do Bom Jesus",
+        "cidade": "Florianópolis",
         "estado": "SC"
       }
     }
