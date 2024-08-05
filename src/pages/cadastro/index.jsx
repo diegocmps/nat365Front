@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
-import styles from './styles.module.css'
+import './styles.css'
 import { useForm } from "react-hook-form"
 import { api } from "../../utils/api"
 
@@ -46,10 +46,12 @@ export function CadastroPage() {
     }
 
     return (
-        <main className={styles.container}>
-            <div className={styles.formSignin}>
+        <main>
+            <div className="tela-cadastro">
 
-                <form className="formulario" onSubmit={handleSubmit(addUser)}>
+                <form onSubmit={handleSubmit(addUser)}>
+
+                    <h1>Cadastro usuário</h1>
 
                     <label htmlFor="nome">Nome</label>
                     <input
@@ -57,6 +59,8 @@ export function CadastroPage() {
                         placeholder="Digite o nome do usuário"
                         {...register('nome', { required: 'O nome é obrigatório' })}
                     />
+
+                    <label htmlFor="sexo">Sexo</label>
 
                     <select id="sexo" {...register('sexo', { required: 'O sexo é obrigatório' })}>
                         <option value=""></option>
@@ -130,7 +134,7 @@ export function CadastroPage() {
                         {...register('endereco.estado')}
                     />
 
-                    <button className="btn btn-primary w-100 py-2" type="submit">Cadastrar</button>
+                    <button type="submit">Cadastrar</button>
                     <p>Já possui cadastro ? <Link to={-1}>Efetuar login</Link></p>
                 </form>
             </div>

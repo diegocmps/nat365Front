@@ -1,0 +1,29 @@
+/* styles.css (ou qualquer outro nome que preferir) */
+
+/* Estilo para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para as células da tabela */
+  td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilo para o botão */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para o botão quando o cursor passa por cima */
+  button:hover {
+    background-color: #0056b3;
+  }
+  

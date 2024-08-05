@@ -2,6 +2,7 @@ import { Navigate, useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { api } from "../../utils/api"
 import { useAuth } from "../../contexts/auth"
+import './localidades.css'
 
 
 

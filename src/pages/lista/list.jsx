@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useAuth } from "../../contexts/auth"
 import { Navigate } from "react-router-dom"
+import './list.css'
 
 
 export function List() {

@@ -34,53 +34,38 @@ export function Signin() {
 
 
     return (
-        <div className='login-page'>
-
+<div className='login-page'>
+    <div className='image-container'>
+        <img src="./src/assets/imagens/imagem.jpg" alt="Imagem de fundo" />
+    </div>
+    <div className='login-area'>
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <h1>Efetuar login</h1>
             <div>
-                <img src="./src/assets/imagens/imagem.jpg" alt="" />
-
+                <label htmlFor="floatingInput">Email</label>
+                <input
+                    type="email"
+                    id="floatingInput"
+                    placeholder="nome@exemplo.com"
+                    {...register('email')}
+                />
             </div>
-
-            <div className='login-area'>
-                <form onSubmit={handleSubmit(onSubmit)}>
-
-                    <h1 className="h3 mb-3 fw-normal">Efetuar login</h1>
-
-                    <div className="form-floating">
-                        <label htmlFor="floatingInput">Email</label>
-<br />
-<br />
-                        <input
-                            type="email"
-                            className="form-control"
-                            id="floatingInput"
-                            placeholder="nome@exemplo.com"
-                            {...register('email')}
-                        />
-                    </div>
-                    <div className="form-floating">
-                        <label htmlFor="floatingPassword">Senha</label>
-                        <br />
-                        <br />
-                        <input
-                            type="password"
-                            className="form-control"
-                            id="floatingPassword"
-                            placeholder="Senha"
-                            {...register('password')}
-                        />
-                    </div>
-
-                    <div className="form-check text-start my-3">
-                    </div>
-                    <button className="btn btn-primary w-100 py-2" type="submit">Entrar</button>
-                    <p>
-                        Não possui cadastro? <Link to="/cadastro">Cadastra-se</Link>
-                    </p>
-                </form>
+            <div>
+                <label htmlFor="floatingPassword">Senha</label>
+                <input
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Senha"
+                    {...register('password')}
+                />
             </div>
-
-
-        </div>
+            <button type="submit">Entrar</button>
+            <p>
+                Não possui cadastro? <Link to="/cadastro">Cadastra-se</Link>
+            </p>
+        </form>
+    </div>
+</div>
     )
 }
