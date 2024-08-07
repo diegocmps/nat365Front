@@ -1,56 +1,57 @@
-import { Link, useNavigate } from "react-router-dom"
-import './styles.css'
-import { useForm } from "react-hook-form"
-import { api } from "../../utils/api"
-
+import { Link, useNavigate } from "react-router-dom";
+import './styles.css';
+import { useForm } from "react-hook-form";
+import { api } from "../../utils/api";
+import { getCepData } from "../../services/CepService/CepService";
 
 
 export function CadastroPage() {
-
-    const { register, handleSubmit, setValue } = useForm()
-    const navigate = useNavigate()
+    const { register, handleSubmit, setValue } = useForm();
+    const navigate = useNavigate();
 
     async function addUser(values) {
-
         try {
             const resposta = await api('/users', {
                 method: 'post',
                 body: JSON.stringify(values)
-            })
+            });
 
-            if (resposta.ok === false) {
-
-                alert('Houve um erro ao cadastrar o usuário')
-
+            if (!resposta.ok) {
+                alert('Houve um erro ao cadastrar o usuário');
             } else {
-                alert('Cadastrado com sucesso')
-                navigate('/')
+                alert('Cadastrado com sucesso');
+                navigate('/');
             }
-
         } catch (error) {
-            alert('Houve um erro ao cadastrar o usuário')
+            alert('Houve um erro ao cadastrar o usuário');
+            console.error(error.message);
         }
     }
 
-    const checkCEP = (e) => {
+    const checkCEP = async (e) => {
         const cep = e.target.value.replace(/\D/g, '');
-        console.log(cep);
-        fetch(`https://viacep.com.br/ws/${cep}/json/`).then(res => res.json()).then(data => {
-            console.log(data);
-            setValue('endereco.rua', data.logradouro)
-            setValue('endereco.bairro', data.bairro)
-            setValue('endereco.cidade', data.localidade)
-            setValue('endereco.estado', data.uf)
+        
+        if (cep.length !== 8) {
+            alert('CEP inválido. Por favor, insira um CEP válido.');
+            return;
+        }
 
-        })
-    }
+        try {
+            const cepData = await getCepData(cep);
+            setValue('endereco.rua', cepData.address_name);
+            setValue('endereco.bairro', cepData.district);
+            setValue('endereco.cidade', cepData.city);
+            setValue('endereco.estado', cepData.state);
+        } catch (error) {
+            console.error('Erro ao buscar dados do CEP:', error);
+            alert('Houve um erro ao buscar o CEP. Tente novamente mais tarde.');
+        }
+    };
 
     return (
         <main>
             <div className="tela-cadastro">
-
                 <form onSubmit={handleSubmit(addUser)}>
-
                     <h1>Cadastro usuário</h1>
 
                     <label htmlFor="nome">Nome</label>
@@ -61,11 +62,10 @@ export function CadastroPage() {
                     />
 
                     <label htmlFor="sexo">Sexo</label>
-
                     <select id="sexo" {...register('sexo', { required: 'O sexo é obrigatório' })}>
                         <option value=""></option>
-                        <option value="masculino">masculino</option>
-                        <option value="feminino">feminino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
                     </select>
 
                     <label htmlFor="cpf">CPF</label>
@@ -115,7 +115,6 @@ export function CadastroPage() {
                     <label htmlFor="bairro">Bairro</label>
                     <input
                         type="text"
-                        name=""
                         id="bairro"
                         {...register('endereco.bairro')}
                     />
@@ -135,10 +134,9 @@ export function CadastroPage() {
                     />
 
                     <button type="submit">Cadastrar</button>
-                    <p>Já possui cadastro ? <Link to={-1}>Efetuar login</Link></p>
+                    <p>Já possui cadastro? <Link to={-1}>Efetuar login</Link></p>
                 </form>
             </div>
-
         </main>
-    )
+    );
 }
