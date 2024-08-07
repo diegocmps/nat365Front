@@ -120,6 +120,22 @@
         "cidade": "Palhoça",
         "estado": "SC"
       }
+    },
+    {
+      "id": "085a",
+      "nome": "Mari",
+      "sexo": "feminino",
+      "cpf": "06344210931",
+      "data_nascimento": "1988-05-20",
+      "email": "mari@email.com",
+      "senha": "123456",
+      "endereco": {
+        "cep": "88137260",
+        "rua": "das Cegonhas",
+        "bairro": "Pedra Branca",
+        "cidade": "Palhoça",
+        "estado": "SC"
+      }
     }
   ],
   "localidade": [
@@ -196,6 +212,21 @@
         "longitude": "-48.46494"
       },
       "usuario": "João Souza"
+    },
+    {
+      "id": "4f4d",
+      "local": "Casa",
+      "descricao": "nossa casa",
+      "endereco": {
+        "cep": "88137260",
+        "rua": "das Cegonhas",
+        "bairro": "Pedra Branca",
+        "cidade": "Palhoça",
+        "estado": "SC",
+        "latitude": "-27.62634",
+        "longitude": "-48.6779"
+      },
+      "usuario": "Mari"
     }
   ]
 }

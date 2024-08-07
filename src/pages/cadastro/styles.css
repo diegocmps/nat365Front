@@ -68,11 +68,4 @@
         grid-template-columns: 1fr; /* Coloca os inputs em uma coluna única */
     }
 
-    .btn-cadastrar {
-        position: static; /* Remove a posição absoluta para o botão em telas pequenas */
-        width: auto; /* Mantém o tamanho do botão de acordo com o conteúdo */
-        padding: 10px 20px; /* Ajusta o padding para manter o formato */
-        font-size: 16px;
-        margin: 20px 0; /* Adiciona espaço acima e abaixo do botão */
-    }
 }

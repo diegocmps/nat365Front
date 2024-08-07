@@ -1,5 +1,4 @@
 // src/pages/HomePage.jsx
-
 import './dashboard.css';
 import { useState, useEffect } from 'react';
 import { fetchLocalidades } from '../../utils/api';
@@ -26,9 +25,6 @@ export function HomePage() {
     return (
         <div className="dashboard">
             <div className="dashboard-top">
-                <div className="logo-container">
-                    <img className="logo" src="./src/assets/imagens/logo.png" alt="logo" />
-                </div>
                 <div className="cards-container">
                     <CardUsuarios />
                     <CardLocais />
@@ -39,25 +35,26 @@ export function HomePage() {
                 <div className="local-list">
                     <h2>Locais Cadastrados</h2>
                     <table className="styled-table">
-                        <thead>
-                            <tr>
-                                <td>Local</td>
-                                <td>Descrição</td>
-                                <td>Usuário</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                localidadesLimitadas.map((item) => (
-                                    <tr key={item.id}>
-                                        <td>{item.local}</td>
-                                        <td>{item.descricao}</td>
-                                        <td>{item.usuario}</td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
+    <thead>
+        <tr>
+            <th>Local</th>
+            <th>Descrição</th>
+            <th>Usuário</th>
+        </tr>
+    </thead>
+    <tbody>
+        {
+            localidadesLimitadas.map((item) => (
+                <tr key={item.id}>
+                    <td data-label="Local">{item.local}</td>
+                    <td data-label="Descrição">{item.descricao}</td>
+                    <td data-label="Usuário">{item.usuario}</td>
+                </tr>
+            ))
+        }
+    </tbody>
+</table>
+
                 </div>
 
                 <div className="map-dashboard">

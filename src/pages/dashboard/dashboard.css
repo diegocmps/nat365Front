@@ -19,11 +19,6 @@
     gap: 10px; /* Espaçamento entre os cartões */
 }
 
-.logo {
-    height: 250px; /* Ajuste a altura da logo conforme necessário */
-    width: auto;  /* Mantém a proporção da imagem */
-}
-
 .local-list {
     width: 100%;
     margin-top: 20px;
@@ -78,9 +73,10 @@
     margin-top: 20px;
 }
 
+/* Estilos responsivos */
 @media (max-width: 768px) {
     .dashboard-top {
-        flex-direction: column; /* Alinha a logo e os cartões verticalmente */
+        flex-direction: column; /* Alinha os cartões verticalmente */
         align-items: center;
     }
 
@@ -89,12 +85,58 @@
         gap: 20px; /* Ajusta o espaçamento vertical dos cartões */
     }
 
-    .logo {
-        height: 200px; /* Ajuste a altura da logo para telas menores */
-        margin-bottom: 20px; /* Espaçamento abaixo da logo */
+    .local-list {
+        padding: 0; /* Remove o padding para que os cartões ocupem mais espaço */
     }
 
-    .map-dashboard {
-        height: 300px; /* Ajuste o tamanho do mapa para telas menores */
+    .local-list .styled-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+        -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
+    }
+
+    .local-list .styled-table thead {
+        display: none; /* Oculta o cabeçalho da tabela no modo responsivo */
+    }
+
+    .local-list .styled-table tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .local-list .styled-table tbody tr {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #dddddd;
+        margin-bottom: 10px; /* Espaçamento entre as linhas da tabela */
+        border-radius: 8px; /* Adiciona borda arredondada aos cartões */
+        background-color: #ffffff; /* Fundo branco para os cartões */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra leve aos cartões */
+    }
+
+    .local-list .styled-table td {
+        display: flex;
+        height: 90px;
+        text-align: left;
+        position: relative;
+        padding: 10px;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .local-list .styled-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 100%;
+        padding-left: 10px;
+        font-weight: bold;
+        background-color: #f3f3f3;
+        border-bottom: 1px solid #dddddd;
+        top: -1px; /* Ajusta a posição do label */
+    }
+
+    .local-list .styled-table td:last-child {
+        border-bottom: none; /* Remove a borda inferior no último item do cartão */
     }
 }
