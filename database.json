@@ -139,7 +139,7 @@
     },
     {
       "id": "12e8",
-      "local": "Praia Lomba do sabão",
+      "local": "Praia Lomba do sabão 2",
       "descricao": "fewoifjewoif",
       "endereco": {
         "cep": "88063198",
@@ -149,20 +149,6 @@
         "estado": "SC",
         "latitude": "-27.69688",
         "longitude": "-48.49119"
-      }
-    },
-    {
-      "id": "263e",
-      "local": "Trilha do Saquinho",
-      "descricao": "Praias Sul da Ilha",
-      "endereco": {
-        "cep": "88067500",
-        "rua": "Inério Joaquim da Silva",
-        "bairro": "Pântano do Sul",
-        "cidade": "Florianópolis",
-        "estado": "SC",
-        "latitude": "-27.79325",
-        "longitude": "-48.53378"
       }
     }
   ]
