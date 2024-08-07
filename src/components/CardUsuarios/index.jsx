@@ -1,6 +1,8 @@
+// src/components/CardUsuarios.jsx
 import { useEffect, useState } from "react";
 import { api } from "../../utils/api"; // Ajuste o caminho se necessário
 import './cardUsuarios.css';
+import { Users } from 'lucide-react';
 
 export function CardUsuarios() {
     const [userCount, setUserCount] = useState(0);
@@ -21,7 +23,9 @@ export function CardUsuarios() {
 
     return (
         <div className="card-usuarios">
-            <span>Usuários ativos: {userCount}</span>
+            <span className="card-usuarios-text">Usuários ativos:</span>
+            <p className="card-usuarios-count">{userCount}</p>
+            <Users className="card-usuarios-icon" />
         </div>
     );
 }

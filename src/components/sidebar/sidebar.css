@@ -1,3 +1,5 @@
+/* src/components/sidebar.css */
+
 .sidebar {
     width: 250px;
     background-color: #f4f4f4;
@@ -21,4 +23,19 @@
 
 .sidebar a:hover {
     background-color: #ddd;
+}
+
+.logout-container {
+    margin-top: 20px; /* Adiciona espaço acima do botão de logout */
+}
+
+.btn.btn-dark {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+}
+
+.logout-text {
+    font-size: 16px;
+    color: white;
 }

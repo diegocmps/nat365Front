@@ -1,59 +1,100 @@
-.containerCards {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    margin-top: 2rem;
-    
-}
-
-.containerTableandMap {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-
-}
-
-.headerContainer {
-    margin-bottom: 1.5rem;
-}
-
-.mapContainer {
-    height: 200px;
-    width: 200px;
-    border-radius: 5px;
-    background-color: #ccd3da;
-}
+/* src/pages/dashboard.css */
 
 .dashboard {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 20px;
 }
 
 .dashboard-top {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Alinha os itens aos extremos */
+    width: 100%;
+    align-items: flex-start; /* Alinha verticalmente no topo */
 }
 
-.map-container {
-    flex: 1;
-    height: 400px; /* Ajuste conforme necessário */
+.cards-container {
+    display: flex;
+    gap: 10px; /* Espaçamento entre os cartões */
+}
+
+.logo {
+    height: 250px; /* Ajuste a altura da logo conforme necessário */
+    width: auto;  /* Mantém a proporção da imagem */
 }
 
 .local-list {
+    width: 100%;
     margin-top: 20px;
 }
 
-.local-list table {
+.local-list h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.local-list .styled-table {
     width: 100%;
     border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.local-list th, .local-list td {
-    border: 1px solid #ddd;
-    padding: 8px;
+.local-list .styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
 }
 
-.local-list th {
-    background-color: #f4f4f4;
+.local-list .styled-table th, 
+.local-list .styled-table td {
+    padding: 12px 15px;
+}
+
+.local-list .styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.local-list .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.local-list .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.local-list .styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.map-dashboard {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-top {
+        flex-direction: column; /* Alinha a logo e os cartões verticalmente */
+        align-items: center;
+    }
+
+    .cards-container {
+        flex-direction: column; /* Alinha os cartões em coluna no modo responsivo */
+        gap: 20px; /* Ajusta o espaçamento vertical dos cartões */
+    }
+
+    .logo {
+        height: 200px; /* Ajuste a altura da logo para telas menores */
+        margin-bottom: 20px; /* Espaçamento abaixo da logo */
+    }
+
+    .map-dashboard {
+        height: 300px; /* Ajuste o tamanho do mapa para telas menores */
+    }
 }

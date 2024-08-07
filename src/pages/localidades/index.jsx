@@ -10,24 +10,16 @@ export function CadastroLocais() {
     const navigate = useNavigate();
     const { user } = useAuth();
 
-    console.log("User:", user); // Verifique se o user está sendo corretamente fornecido
-
     async function addLocal(dataLocais) {
         if (!user) {
             alert('Você precisa estar logado para cadastrar um local');
             return;
         }
 
-        // Verifique se user.nome está definido
-        console.log("Nome do usuário:", user.nome);
-
-        // Adicionar o nome do usuário ao objeto de dados
         const localData = {
             ...dataLocais,
-            usuario: user.nome // Adicionando o nome do usuário
+            usuario: user.nome
         };
-
-        console.log("Dados do local:", localData); // Verifique se o nome do usuário está sendo adicionado corretamente
 
         try {
             const resposta = await api('/localidade', {
@@ -75,73 +67,94 @@ export function CadastroLocais() {
 
     return user ? (
         <main>
-            <div>
+            <div className="form-container">
+                <button className="btn-submit" onClick={handleSubmit(addLocal)}>Cadastrar</button>
                 <form className="formulario" onSubmit={handleSubmit(addLocal)}>
-                    <label htmlFor="local">Local</label>
-                    <input
-                        id="local"
-                        placeholder="Digite o nome do local"
-                        type="text"
-                        {...register('local', { required: 'O nome do local é obrigatório' })}
-                    />
+                    <div className="form-group">
+                        <label htmlFor="local">Local</label>
+                        <input
+                            id="local"
+                            placeholder="Digite o nome do local"
+                            type="text"
+                            {...register('local', { required: 'O nome do local é obrigatório' })}
+                        />
+                    </div>
 
-                    <label htmlFor="descricao">Descrição do local</label>
-                    <textarea
-                        id="descricao"
-                        type="text"
-                        {...register('descricao')}
-                    />
+                    <div className="form-group">
+                        <label htmlFor="descricao">Descrição do local</label>
+                        <textarea
+                            id="descricao"
+                            {...register('descricao')}
+                        />
+                    </div>
 
-                    <label htmlFor="endereco">Endereço</label>
-                    <label htmlFor="cep">CEP</label>
-                    <input
-                        id="cep"
-                        type="text" // Alterado para texto para evitar problemas com números grandes
-                        {...register('endereco.cep', { required: 'O CEP é obrigatório' })}
-                        onBlur={checkCEP}
-                    />
+                    <div className="form-group">
+                        <label htmlFor="cep">CEP</label>
+                        <input
+                            id="cep"
+                            type="text"
+                            {...register('endereco.cep', { required: 'O CEP é obrigatório' })}
+                            onBlur={checkCEP}
+                        />
+                    </div>
 
-                    <label htmlFor="rua">Rua</label>
-                    <input
-                        id="rua"
-                        type="text"
-                        {...register('endereco.rua')}
-                    />
+                    <div className="form-group">
+                        <label htmlFor="rua">Rua</label>
+                        <input
+                            id="rua"
+                            type="text"
+                            {...register('endereco.rua')}
+                        />
+                    </div>
 
-                    <label htmlFor="bairro">Bairro</label>
-                    <input
-                        type="text"
-                        id="bairro"
-                        {...register('endereco.bairro')}
-                    />
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label htmlFor="bairro">Bairro</label>
+                            <input
+                                id="bairro"
+                                type="text"
+                                {...register('endereco.bairro')}
+                            />
+                        </div>
 
-                    <label htmlFor="cidade">Cidade</label>
-                    <input
-                        id="cidade"
-                        type="text"
-                        {...register('endereco.cidade')}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="cidade">Cidade</label>
+                            <input
+                                id="cidade"
+                                type="text"
+                                {...register('endereco.cidade')}
+                            />
+                        </div>
 
-                    <label htmlFor="estado">Estado</label>
-                    <input
-                        id="estado"
-                        type="text"
-                        {...register('endereco.estado')}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="estado">Estado</label>
+                            <input
+                                id="estado"
+                                type="text"
+                                {...register('endereco.estado')}
+                            />
+                        </div>
+                    </div>
 
-                    <label htmlFor="latitude">Latitude</label>
-                    <input
-                        type="text"
-                        {...register('endereco.latitude')}
-                    />
+                    <div className="form-row">
+                        <div className="form-group">
+                            <label htmlFor="latitude">Latitude</label>
+                            <input
+                                id="latitude"
+                                type="text"
+                                {...register('endereco.latitude')}
+                            />
+                        </div>
 
-                    <label htmlFor="longitude">Longitude</label>
-                    <input
-                        type="text"
-                        {...register('endereco.longitude')}
-                    />
-
-                    <button className="btn btn-primary w-100 py-2" type="submit">Cadastrar</button>
+                        <div className="form-group">
+                            <label htmlFor="longitude">Longitude</label>
+                            <input
+                                id="longitude"
+                                type="text"
+                                {...register('endereco.longitude')}
+                            />
+                        </div>
+                    </div>
                 </form>
             </div>
         </main>

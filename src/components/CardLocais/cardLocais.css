@@ -1,6 +1,5 @@
-/* src/components/cardUsuarios.css */
-
-.card-usuarios {
+/* src/components/cardLocais.css */
+.card-locais {
     background-color: hsl(0, 0%, 0%);
     color: white;
     border: 1px solid #ddd;
@@ -9,28 +8,31 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 18px;
     font-weight: bold;
-    width: 300px;
-    height: 150px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    width: 300px;
     position: relative;
 }
 
-.card-usuarios-text {
-    align-self: flex-start;
+.card-locais span {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-.card-usuarios-count {
-    margin-top: 8px;
+.card-locais p {
     font-size: 48px;
-    align-self: center;
+    margin: 0;
+    text-align: center;
 }
 
-.card-usuarios-icon {
+.card-locais svg {
+    color: yellow;
+    font-size: 48px;
     position: absolute;
     top: 50%;
     right: 16px;
     transform: translateY(-50%);
-    color: yellow;
-    font-size: 48px;
 }

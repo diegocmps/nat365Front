@@ -1,28 +1,42 @@
+/* src/pages/signin.css */
 .login-page {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-.image-container {
-    width: 70%;
     height: 100vh;
     overflow: hidden;
 }
 
-img {
+.image-container {
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.login-area {
+.login-container {
     width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-left: 1px solid #ddd; /* Adiciona uma borda entre a imagem e a área de login */
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 250px; /* Ajuste o tamanho do logo conforme necessário */
+    margin-bottom: 20px; /* Espaço entre o logo e a área de login */
+}
+
+.login-area {
+    width: 100%;
+    max-width: 400px;
 }
 
 form {
@@ -63,4 +77,28 @@ button:hover {
 p {
     font-size: 14px;
     margin-top: 10px;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .image-container {
+        display: none; /* Esconde a imagem de fundo em telas pequenas */
+    }
+
+    .login-container {
+        width: 100%;
+        padding: 20px;
+        border-left: none; /* Remove a borda para telas pequenas */
+        box-shadow: none; /* Remove a sombra para telas pequenas */
+    }
+
+    .logo {
+        width: 250px; /* Ajuste o tamanho do logo conforme necessário para telas pequenas */
+        margin-bottom: 10px; /* Ajuste o espaço entre o logo e a área de login para telas pequenas */
+    }
+
+    .login-area {
+        width: 100%;
+        max-width: 100%;
+    }
 }

@@ -1,16 +1,12 @@
-import { Link, useNavigate } from 'react-router-dom'
-import './signin.css'
-import { useAuth } from '../../contexts/auth'
-import { useForm } from 'react-hook-form'
-
-
-
+import { Link, useNavigate } from 'react-router-dom';
+import './signin.css';
+import { useAuth } from '../../contexts/auth';
+import { useForm } from 'react-hook-form';
 
 export function Signin() {
-    const { signIn } = useAuth()
-    const { register, handleSubmit } = useForm()
-    const navigate = useNavigate()
-
+    const { signIn } = useAuth();
+    const { register, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
     async function onSubmit(data) {
         try {
@@ -18,9 +14,9 @@ export function Signin() {
                 alert('Preencha todos os campos');
                 return;
             }
-    
+
             const isSuccess = await signIn(data);
-    
+
             if (isSuccess) {
                 navigate('/dashboard');
             } else {
@@ -30,42 +26,42 @@ export function Signin() {
             alert('Ocorreu um erro ao efetuar o login');
         }
     }
-    
-
 
     return (
-<div className='login-page'>
-    <div className='image-container'>
-        <img src="./src/assets/imagens/imagem.jpg" alt="Imagem de fundo" />
-    </div>
-    <div className='login-area'>
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Efetuar login</h1>
-            <div>
-                <label htmlFor="floatingInput">Email</label>
-                <input
-                    type="email"
-                    id="floatingInput"
-                    placeholder="nome@exemplo.com"
-                    {...register('email')}
-                />
+        <div className='login-page'>
+            <div className='image-container'>
+                <img src="./src/assets/imagens/imagem.jpg" alt="Imagem de fundo" />
             </div>
-            <div>
-                <label htmlFor="floatingPassword">Senha</label>
-                <input
-                    type="password"
-                    className="form-control"
-                    id="floatingPassword"
-                    placeholder="Senha"
-                    {...register('password')}
-                />
+            <div className='login-container'>
+                <img className='logo' src="./src/assets/imagens/logo.png" alt="logo" />
+                <div className='login-area'>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <h1>Efetuar login</h1>
+                        <div>
+                            <label htmlFor="floatingInput">Email</label>
+                            <input
+                                type="email"
+                                id="floatingInput"
+                                placeholder="nome@exemplo.com"
+                                {...register('email')}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="floatingPassword">Senha</label>
+                            <input
+                                type="password"
+                                id="floatingPassword"
+                                placeholder="Senha"
+                                {...register('password')}
+                            />
+                        </div>
+                        <button type="submit">Entrar</button>
+                        <p>
+                            Não possui cadastro? <Link to="/cadastro">Cadastre-se</Link>
+                        </p>
+                    </form>
+                </div>
             </div>
-            <button type="submit">Entrar</button>
-            <p>
-                Não possui cadastro? <Link to="/cadastro">Cadastra-se</Link>
-            </p>
-        </form>
-    </div>
-</div>
-    )
+        </div>
+    );
 }

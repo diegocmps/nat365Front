@@ -1,41 +1,138 @@
+/* Estilos gerais */
+.local-list {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  td {
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+.local-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .btn-delete:hover{
-    cursor: pointer;
-  }
+/* Estilos da tabela */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
 
-  .campo-opcoes {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: relative;
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th, 
+.styled-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table th {
+  font-weight: bold;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+/* Estilos para o campo de opções */
+.campo-opcoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .btn-delete {
-    cursor: pointer;
-    font-size: 1.2em;
-    position: relative; 
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #ff0000;
+  transition: color 0.3s;
+}
+
+.btn-delete:hover {
+  color: #d00000; /* Adiciona uma cor de destaque ao passar o mouse */
+}
+
+/* Estilos responsivos */
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .local-list {
+    padding: 10px;
+  }
+
+  .styled-table {
+    display: block;
+    overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+    -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
+  }
+
+  .styled-table thead {
+    display: none; /* Oculta o cabeçalho da tabela no modo responsivo */
+  }
+
+  .styled-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .styled-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .styled-table td {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    text-align: left;
+    position:relative;
+    padding: 5px; /* Aumenta o padding para maior altura */
+    border-bottom: 1px solid #ddd;
+    background-color: #ffffff;
+    overflow: hidden;
+    white-space: normal; /* Permite quebra de linha */
+    text-overflow: ellipsis;
+    min-height: 100px; /* Aumenta a altura mínima para mais espaço */
+  }
+
+  .styled-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    top: -1px; /* Ajusta a posição do label */
+  }
+
+  .styled-table td:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
 }
 
