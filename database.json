@@ -120,6 +120,22 @@
         "cidade": "Palhoça",
         "estado": "SC"
       }
+    },
+    {
+      "id": "085a",
+      "nome": "Mari",
+      "sexo": "feminino",
+      "cpf": "06344210931",
+      "data_nascimento": "1988-05-20",
+      "email": "mari@email.com",
+      "senha": "123456",
+      "endereco": {
+        "cep": "88137260",
+        "rua": "das Cegonhas",
+        "bairro": "Pedra Branca",
+        "cidade": "Palhoça",
+        "estado": "SC"
+      }
     }
   ],
   "localidade": [
@@ -194,70 +210,13 @@
         "estado": "SC",
         "latitude": "-27.42889",
         "longitude": "-48.46494"
-      }
-    },
-    {
-      "id": "0672",
-      "local": "Novo nome de local",
-      "descricao": "123456",
-      "endereco": {
-        "cep": "88056511",
-        "rua": "Manoel de Souza Oliveira",
-        "bairro": "Cachoeira do Bom Jesus",
-        "cidade": "Florianópolis",
-        "estado": "SC",
-        "latitude": "-27.42688",
-        "longitude": "-48.42016"
-      },
-      "usuario": "Marcelo"
-    },
-    {
-      "id": "e093",
-      "local": "tetsteteterqw",
-      "descricao": "qweqwe",
-      "endereco": {
-        "cep": "88137260",
-        "rua": "das Cegonhas",
-        "bairro": "Pedra Branca",
-        "cidade": "Palhoça",
-        "estado": "SC",
-        "latitude": "-27.62634",
-        "longitude": "-48.6779"
-      }
-    },
-    {
-      "id": "bdc3",
-      "local": "ertertertert",
-      "descricao": "bdfgdf",
-      "endereco": {
-        "cep": "88056511",
-        "rua": "Manoel de Souza Oliveira",
-        "bairro": "Cachoeira do Bom Jesus",
-        "cidade": "Florianópolis",
-        "estado": "SC",
-        "latitude": "-27.42688",
-        "longitude": "-48.42016"
-      }
-    },
-    {
-      "id": "4a73",
-      "local": "fasdfasdfa",
-      "descricao": "sdfasdfsd",
-      "endereco": {
-        "cep": "88056511",
-        "rua": "Manoel de Souza Oliveira",
-        "bairro": "Cachoeira do Bom Jesus",
-        "cidade": "Florianópolis",
-        "estado": "SC",
-        "latitude": "-27.42688",
-        "longitude": "-48.42016"
       },
       "usuario": "João Souza"
     },
     {
-      "id": "45ca",
-      "local": "iuyiuyiyu",
-      "descricao": "hfghfg",
+      "id": "4f4d",
+      "local": "Casa",
+      "descricao": "nossa casa",
       "endereco": {
         "cep": "88137260",
         "rua": "das Cegonhas",
@@ -266,22 +225,8 @@
         "estado": "SC",
         "latitude": "-27.62634",
         "longitude": "-48.6779"
-      }
-    },
-    {
-      "id": "5ab1",
-      "local": "werwerwer",
-      "descricao": "ewrwer",
-      "endereco": {
-        "cep": "88056511",
-        "rua": "Manoel de Souza Oliveira",
-        "bairro": "Cachoeira do Bom Jesus",
-        "cidade": "Florianópolis",
-        "estado": "SC",
-        "latitude": "-27.42688",
-        "longitude": "-48.42016"
       },
-      "usuario": "Marcelo"
+      "usuario": "Mari"
     }
   ]
 }

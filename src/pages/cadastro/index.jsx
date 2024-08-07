@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { api } from "../../utils/api";
 import { getCepData } from "../../services/CepService/CepService";
 
-
 export function CadastroPage() {
     const { register, handleSubmit, setValue } = useForm();
     const navigate = useNavigate();
@@ -51,89 +50,111 @@ export function CadastroPage() {
     return (
         <main>
             <div className="tela-cadastro">
+                <button className="btn-cadastrar">Cadastrar</button>
                 <form onSubmit={handleSubmit(addUser)}>
                     <h1>Cadastro usuário</h1>
+                    <div className="form-grid">
+                        <div className="form-group">
+                            <label htmlFor="nome">Nome</label>
+                            <input
+                                id="nome"
+                                placeholder="Digite o nome do usuário"
+                                {...register('nome', { required: 'O nome é obrigatório' })}
+                            />
+                        </div>
 
-                    <label htmlFor="nome">Nome</label>
-                    <input
-                        id="nome"
-                        placeholder="Digite o nome do usuário"
-                        {...register('nome', { required: 'O nome é obrigatório' })}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="sexo">Sexo</label>
+                            <select id="sexo" {...register('sexo', { required: 'O sexo é obrigatório' })}>
+                                <option value=""></option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                            </select>
+                        </div>
 
-                    <label htmlFor="sexo">Sexo</label>
-                    <select id="sexo" {...register('sexo', { required: 'O sexo é obrigatório' })}>
-                        <option value=""></option>
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                    </select>
+                        <div className="form-group">
+                            <label htmlFor="cpf">CPF</label>
+                            <input
+                                id="cpf"
+                                type="number"
+                                {...register('cpf', { required: 'O CPF é obrigatório' })}
+                            />
+                        </div>
 
-                    <label htmlFor="cpf">CPF</label>
-                    <input
-                        id="cpf"
-                        type="number"
-                        {...register('cpf', { required: 'O CPF é obrigatório' })}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="data_nascimento">Data de nascimento</label>
+                            <input
+                                id="data_nascimento"
+                                type="date"
+                                {...register('data_nascimento', { required: 'A data de nascimento é obrigatória' })}
+                            />
+                        </div>
 
-                    <label htmlFor="data_nascimento">Data de nascimento</label>
-                    <input
-                        id="data_nascimento"
-                        type="date"
-                        {...register('data_nascimento', { required: 'A data de nascimento é obrigatória' })}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input
+                                id="email"
+                                type="email"
+                                {...register('email', { required: 'O email é obrigatório' })}
+                            />
+                        </div>
 
-                    <label htmlFor="email">Email</label>
-                    <input
-                        id="email"
-                        type="email"
-                        {...register('email', { required: 'O email é obrigatório' })}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="senha">Senha</label>
+                            <input
+                                id="senha"
+                                type="password"
+                                {...register('senha', { required: 'A senha é obrigatória' })}
+                            />
+                        </div>
 
-                    <label htmlFor="senha">Senha</label>
-                    <input
-                        id="senha"
-                        type="password"
-                        {...register('senha', { required: 'A senha é obrigatória' })}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="cep">CEP</label>
+                            <input
+                                id="cep"
+                                type="number"
+                                {...register('endereco.cep', { required: 'O CEP é obrigatório' })}
+                                onBlur={checkCEP}
+                            />
+                        </div>
 
-                    <label htmlFor="endereco">Endereço</label>
-                    <label htmlFor="cep">CEP</label>
-                    <input
-                        id="cep"
-                        type="number"
-                        {...register('endereco.cep', { required: 'O CEP é obrigatório' })}
-                        onBlur={checkCEP}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="rua">Rua</label>
+                            <input
+                                id="rua"
+                                type="text"
+                                {...register('endereco.rua')}
+                            />
+                        </div>
 
-                    <label htmlFor="rua">Rua</label>
-                    <input
-                        id="rua"
-                        type="text"
-                        {...register('endereco.rua')}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="bairro">Bairro</label>
+                            <input
+                                type="text"
+                                id="bairro"
+                                {...register('endereco.bairro')}
+                            />
+                        </div>
 
-                    <label htmlFor="bairro">Bairro</label>
-                    <input
-                        type="text"
-                        id="bairro"
-                        {...register('endereco.bairro')}
-                    />
+                        <div className="form-group">
+                            <label htmlFor="cidade">Cidade</label>
+                            <input
+                                id="cidade"
+                                type="text"
+                                {...register('endereco.cidade')}
+                            />
+                        </div>
 
-                    <label htmlFor="cidade">Cidade</label>
-                    <input
-                        id="cidade"
-                        type="text"
-                        {...register('endereco.cidade')}
-                    />
-
-                    <label htmlFor="estado">Estado</label>
-                    <input
-                        id="estado"
-                        type="text"
-                        {...register('endereco.estado')}
-                    />
-
-                    <button type="submit">Cadastrar</button>
+                        <div className="form-group">
+                            <label htmlFor="estado">Estado</label>
+                            <input
+                                id="estado"
+                                type="text"
+                                {...register('endereco.estado')}
+                            />
+                        </div>
+                    </div>
+                    <button className="btn-submit" type="submit">Cadastrar</button>
                     <p>Já possui cadastro? <Link to={-1}>Efetuar login</Link></p>
                 </form>
             </div>

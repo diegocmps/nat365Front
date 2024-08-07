@@ -48,8 +48,8 @@ export function List() {
     }, []);
 
     return user ? (
-        <div>
-            <table>
+        <div className="local-list">
+            <table className="styled-table">
                 <thead>
                     <tr>
                         <td>Local</td>
@@ -61,9 +61,9 @@ export function List() {
                     {
                         lista.map((item) => (
                             <tr key={item.id}>
-                                <td>{item.local}</td>
-                                <td>{item.descricao}</td>
-                                <td className="campo-opcoes">
+                                <td data-label="Local">{item.local}</td>
+                                <td data-label="Descrição">{item.descricao}</td>
+                                <td data-label="Opções" className="campo-opcoes">
                                     <Link to={`/dashboard/localidade/${item.id}`}>Editar</Link>
                                     <Trash2
                                         onClick={() => excluirItem(item.id)}

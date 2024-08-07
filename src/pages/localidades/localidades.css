@@ -1,37 +1,63 @@
 /* Estilização para o formulário de cadastro de locais */
-.formulario {
-    max-width: 400px;
+.form-container {
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
+    position: relative;
 }
 
-.formulario label {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.formulario input,
-.formulario textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.formulario button {
+.btn-submit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 3px;
-    padding: 10px;
+    padding: 8px 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.formulario button:hover {
+.btn-submit:hover {
     background-color: #0056b3;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os grupos de campos */
+    margin-top: 60px; /* Espaço para o botão fixado */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px; /* Espaço entre os campos na mesma linha */
+    flex-wrap: wrap; /* Permite que os campos quebrem para a linha seguinte se necessário */
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 200px; /* Ajuste conforme necessário para manter os campos menores em linhas */
 }
