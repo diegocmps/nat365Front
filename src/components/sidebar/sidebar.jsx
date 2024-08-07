@@ -15,7 +15,7 @@ function SideBar() {
                 <legend>MENU</legend>
                 <Link to="/dashboard">Home</Link>
                 <Link to="/dashboard/localidade">Cadastro Locais</Link>
-                <Link to="/dashboard/list">Lista</Link>
+                <Link to="/dashboard/list">Lista de Locais</Link>
                 <div>
                     <button className=' btn btn-dark' onClick={signOut}>
                         <LogOut size={16} />

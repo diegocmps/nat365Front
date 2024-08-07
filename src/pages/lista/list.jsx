@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/auth";
 import { Link, Navigate } from "react-router-dom";
 import './list.css';
-import { Trash2 } from 'lucide-react'
+import { Trash2 } from 'lucide-react';
 
 export function List() {
     const { user } = useAuth();
@@ -60,8 +60,7 @@ export function List() {
                 <tbody>
                     {
                         lista.map((item) => (
-                            // eslint-disable-next-line react/jsx-key
-                            <tr>
+                            <tr key={item.id}>
                                 <td>{item.local}</td>
                                 <td>{item.descricao}</td>
                                 <td className="campo-opcoes">
@@ -72,10 +71,6 @@ export function List() {
                                     />
                                 </td>
                             </tr>
-
-
-
-
                         ))
                     }
                 </tbody>
