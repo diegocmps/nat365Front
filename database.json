@@ -104,67 +104,65 @@
         "siafi": "7535"
       },
       "id": "247a"
-    }
-  ],
-  "localidade": [
+    },
     {
-      "id": "7a21",
-      "local": "Trilha da palhoça",
-      "descricao": "feawfaeefasdfasdfa sdfasdfasdfasdfasdf",
+      "id": "f29b",
+      "nome": "Marcelo",
+      "sexo": "masculino",
+      "cpf": "045687896234",
+      "data_nascimento": "1979-02-10",
+      "email": "marcelo@email.com",
+      "senha": "123456",
       "endereco": {
         "cep": "88137260",
-        "rua": "Rua das Cegonhas",
+        "rua": "das Cegonhas",
         "bairro": "Pedra Branca",
         "cidade": "Palhoça",
         "estado": "SC"
       }
-    },
+    }
+  ],
+  "localidade": [
     {
-      "id": "c2a4",
-      "local": "Trilha do saquinho",
-      "descricao": "muito bonita",
+      "id": "f281",
+      "local": "Praia do forno",
+      "descricao": "muito quente",
       "endereco": {
-        "cep": "88056511",
-        "rua": "Servidão Manoel de Souza Oliveira",
-        "bairro": "Cachoeira do Bom Jesus",
-        "cidade": "Florianópolis",
-        "estado": "SC"
+        "cep": "28921300",
+        "rua": "Rua Praia do Forno",
+        "bairro": "Caminho de Búzios",
+        "cidade": "Cabo Frio",
+        "estado": "RJ",
+        "latitude": "-27.5855462",
+        "longitude": "-48.5864658"
       }
     },
     {
-      "id": "df1d",
-      "local": "fewfewfew",
-      "descricao": "fwefewfe",
+      "id": "12e8",
+      "local": "Praia Lomba do sabão",
+      "descricao": "fewoifjewoif",
       "endereco": {
-        "cep": "88056511",
-        "rua": "Servidão Manoel de Souza Oliveira",
-        "bairro": "Cachoeira do Bom Jesus",
+        "cep": "88063198",
+        "rua": "Lomba do Sabão",
+        "bairro": "Campeche",
         "cidade": "Florianópolis",
-        "estado": "SC"
+        "estado": "SC",
+        "latitude": "-27.69688",
+        "longitude": "-48.49119"
       }
     },
     {
-      "id": "b66e",
-      "local": "dasdfasd",
-      "descricao": "asdfasdf",
+      "id": "263e",
+      "local": "Trilha do Saquinho",
+      "descricao": "Praias Sul da Ilha",
       "endereco": {
-        "cep": "88056511",
-        "rua": "Servidão Manoel de Souza Oliveira",
-        "bairro": "Cachoeira do Bom Jesus",
+        "cep": "88067500",
+        "rua": "Inério Joaquim da Silva",
+        "bairro": "Pântano do Sul",
         "cidade": "Florianópolis",
-        "estado": "SC"
-      }
-    },
-    {
-      "id": "e7db",
-      "local": "Projeto Tamar ",
-      "descricao": "A Fundação Projeto Tamar atua no litoral brasileiro desde a década de 80 com a missão de promover a recuperação das tartarugas marinhas, através de ações de pesquisa, conservação e inclusão social.",
-      "endereco": {
-        "cep": "88061160",
-        "rua": "Rua Professor Ademir Francisco",
-        "bairro": "Barra da Lagoa",
-        "cidade": "Florianópolis",
-        "estado": "SC"
+        "estado": "SC",
+        "latitude": "-27.79325",
+        "longitude": "-48.53378"
       }
     }
   ]

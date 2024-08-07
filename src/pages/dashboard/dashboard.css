@@ -1,0 +1,25 @@
+.containerCards {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    
+}
+
+.containerTableandMap {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+
+}
+
+.headerContainer {
+    margin-bottom: 1.5rem;
+}
+
+.mapContainer {
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: #ccd3da;
+}
