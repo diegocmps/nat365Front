@@ -23,3 +23,37 @@
     border-radius: 5px;
     background-color: #ccd3da;
 }
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.map-container {
+    flex: 1;
+    height: 400px; /* Ajuste conforme necessário */
+}
+
+.local-list {
+    margin-top: 20px;
+}
+
+.local-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.local-list th, .local-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.local-list th {
+    background-color: #f4f4f4;
+}

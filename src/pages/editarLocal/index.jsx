@@ -3,19 +3,32 @@ import { getCepData } from "../../services/CepService/CepService";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../utils/api";
+import { useAuth } from "../../contexts/auth";
 
 export function PaginaEditarLocal() {
     const { register, handleSubmit, reset, setValue } = useForm();
     const { id } = useParams();
+    const { user } = useAuth(); // Obtendo o usuário logado
 
     async function onUpdate(data) {
+        if (!user) {
+            alert('Você precisa estar logado para atualizar um local');
+            return;
+        }
+
+        // Adicionar o nome do usuário ao objeto de dados
+        const localData = {
+            ...data,
+            usuario: user.nome // Adicionando o nome do usuário
+        };
+
         try {
             const response = await api(`/localidade/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(data)
+                body: JSON.stringify(localData)
             });
 
             if (!response.ok) {
@@ -23,7 +36,6 @@ export function PaginaEditarLocal() {
             }
 
             const update = await response.json();
-
             alert('Atualizado com sucesso');
             console.log(update);
         } catch (error) {
@@ -50,6 +62,7 @@ export function PaginaEditarLocal() {
         if (id) {
             buscarLocal();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
     const checkCEP = async (e) => {

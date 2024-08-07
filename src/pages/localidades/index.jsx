@@ -5,18 +5,37 @@ import { useAuth } from "../../contexts/auth";
 import './localidades.css';
 import { getCepData } from "../../services/CepService/CepService";
 
-
-
 export function CadastroLocais() {
     const { register, handleSubmit, setValue } = useForm();
     const navigate = useNavigate();
     const { user } = useAuth();
 
+    console.log("User:", user); // Verifique se o user está sendo corretamente fornecido
+
     async function addLocal(dataLocais) {
+        if (!user) {
+            alert('Você precisa estar logado para cadastrar um local');
+            return;
+        }
+
+        // Verifique se user.nome está definido
+        console.log("Nome do usuário:", user.nome);
+
+        // Adicionar o nome do usuário ao objeto de dados
+        const localData = {
+            ...dataLocais,
+            usuario: user.nome // Adicionando o nome do usuário
+        };
+
+        console.log("Dados do local:", localData); // Verifique se o nome do usuário está sendo adicionado corretamente
+
         try {
             const resposta = await api('/localidade', {
-                method: 'post',
-                body: JSON.stringify(dataLocais)
+                method: 'POST',
+                body: JSON.stringify(localData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
 
             if (!resposta.ok) {
@@ -61,7 +80,7 @@ export function CadastroLocais() {
                     <label htmlFor="local">Local</label>
                     <input
                         id="local"
-                        placeholder="Digite o nome do usuário"
+                        placeholder="Digite o nome do local"
                         type="text"
                         {...register('local', { required: 'O nome do local é obrigatório' })}
                     />
@@ -77,7 +96,7 @@ export function CadastroLocais() {
                     <label htmlFor="cep">CEP</label>
                     <input
                         id="cep"
-                        type="number"
+                        type="text" // Alterado para texto para evitar problemas com números grandes
                         {...register('endereco.cep', { required: 'O CEP é obrigatório' })}
                         onBlur={checkCEP}
                     />
