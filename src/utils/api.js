@@ -9,6 +9,7 @@ export function api(endpoint, init) {
     return fetch(url, init);
 }
 
+
 /**
  * Fetches the localidade data from the JSON file.
  * @returns {Promise<any>}
