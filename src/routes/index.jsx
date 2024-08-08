@@ -6,6 +6,7 @@ import { CadastroLocais } from "../pages/localidades";
 import { List } from "../pages/lista/list";
 import { HomePage } from "../pages/dashboard";
 import { PaginaEditarLocal } from "../pages/editarLocal";
+import { LocalDetalhes } from "../components/LocalDetalhes";
 
 
 export const routes = createBrowserRouter([
@@ -32,6 +33,10 @@ export const routes = createBrowserRouter([
             {
                 path: 'localidade/:id',
                 element: <PaginaEditarLocal />
+            },
+            {
+                path: 'localidade/detalhes/:id',
+                element: <LocalDetalhes />
             },
             {
                 path: 'list',

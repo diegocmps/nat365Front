@@ -5,6 +5,7 @@ import { fetchLocalidades } from '../../utils/api';
 import { CardUsuarios } from '../../components/CardUsuarios';
 import { Map } from '../../components/Mapa';
 import { CardLocais } from '../../components/CardLocais';
+import { Link } from 'react-router-dom';
 
 export function HomePage() {
     const [localidadesLimitadas, setLocalidadesLimitadas] = useState([]);
@@ -46,7 +47,7 @@ export function HomePage() {
         {
             localidadesLimitadas.map((item) => (
                 <tr key={item.id}>
-                    <td data-label="Local">{item.local}</td>
+                    <td data-label="Local"><Link to={`/dashboard/localidade/detalhes/${item.id}`}>{item.local}</Link></td>
                     <td data-label="Descrição">{item.descricao}</td>
                     <td data-label="Usuário">{item.usuario}</td>
                 </tr>

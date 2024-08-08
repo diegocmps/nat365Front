@@ -13,7 +13,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: #007bff;
+    background-color: #009879;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -23,7 +23,7 @@
 }
 
 .btn-submit:hover {
-    background-color: #0056b3;
+    background-color: #009879;
 }
 
 .formulario {

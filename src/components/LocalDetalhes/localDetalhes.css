@@ -1,0 +1,95 @@
+/* Container principal para centralizar o conteúdo */
+.local-detalhes-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 20px;
+}
+
+/* Estilo para o botão de voltar */
+.voltar-button {
+    align-self: flex-start; /* Alinha o botão ao início do container */
+    margin-bottom: 20px; /* Espaçamento abaixo do botão */
+    padding: 10px 20px;
+    background-color: #009879; /* Cor de fundo do botão */
+    color: #ffffff; /* Cor do texto do botão */
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.voltar-button a {
+    text-decoration: none;
+    color: #ffffff; /* Garante que o texto do link no botão seja branco */
+}
+
+.voltar-button:hover {
+    background-color: #007a63; /* Cor de fundo do botão ao passar o mouse */
+}
+
+/* Container para a descrição e o mapa */
+.local-detalhes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaçamento entre o mapa e a descrição */
+    max-width: 1200px; /* Limita a largura máxima do container */
+    width: 100%;
+}
+
+/* Estilo para a descrição */
+.local-detalhes-content {
+    flex: 1;
+    min-width: 300px; /* Ajusta o tamanho mínimo para garantir boa visualização */
+}
+
+/* Estilo para o mapa */
+.map-local-detalhes {
+    flex: 1;
+    height: 400px; /* Ajuste a altura conforme necessário */
+    min-width: 300px; /* Ajusta o tamanho mínimo para garantir boa visualização */
+}
+
+/* Estilo geral */
+.local-detalhes {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.local-detalhes h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #009879;
+}
+
+.local-detalhes p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .local-detalhes-container {
+        flex-direction: column; /* Coloca o mapa abaixo da descrição em telas pequenas */
+    }
+
+    .local-detalhes {
+        padding: 15px;
+    }
+
+    .local-detalhes h2 {
+        font-size: 20px;
+    }
+
+    .local-detalhes p {
+        font-size: 16px;
+    }
+
+    .map-local-detalhes {
+        height: 300px; /* Ajuste a altura conforme necessário */
+    }
+}

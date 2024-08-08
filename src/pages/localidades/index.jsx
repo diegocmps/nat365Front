@@ -18,7 +18,8 @@ export function CadastroLocais() {
 
         const localData = {
             ...dataLocais,
-            usuario: user.nome
+            usuario: user.nome,
+            usuarioId: user.id
         };
 
         try {
@@ -68,22 +69,24 @@ export function CadastroLocais() {
     return user ? (
         <main>
             <div className="form-container">
-                <button className="btn-submit" onClick={handleSubmit(addLocal)}>Cadastrar</button>
                 <form className="formulario" onSubmit={handleSubmit(addLocal)}>
+                    <h1>Cadastro de Local</h1>
+                    
                     <div className="form-group">
-                        <label htmlFor="local">Local</label>
+                        <label htmlFor="local">Nome do Local</label>
                         <input
                             id="local"
-                            placeholder="Digite o nome do local"
                             type="text"
+                            placeholder="Digite o nome do local"
                             {...register('local', { required: 'O nome do local é obrigatório' })}
                         />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="descricao">Descrição do local</label>
+                        <label htmlFor="descricao">Descrição do Local</label>
                         <textarea
                             id="descricao"
+                            placeholder="Digite a descrição do local"
                             {...register('descricao')}
                         />
                     </div>
@@ -93,6 +96,7 @@ export function CadastroLocais() {
                         <input
                             id="cep"
                             type="text"
+                            placeholder="Digite o CEP"
                             {...register('endereco.cep', { required: 'O CEP é obrigatório' })}
                             onBlur={checkCEP}
                         />
@@ -103,6 +107,7 @@ export function CadastroLocais() {
                         <input
                             id="rua"
                             type="text"
+                            placeholder="Digite a rua"
                             {...register('endereco.rua')}
                         />
                     </div>
@@ -113,6 +118,7 @@ export function CadastroLocais() {
                             <input
                                 id="bairro"
                                 type="text"
+                                placeholder="Digite o bairro"
                                 {...register('endereco.bairro')}
                             />
                         </div>
@@ -122,6 +128,7 @@ export function CadastroLocais() {
                             <input
                                 id="cidade"
                                 type="text"
+                                placeholder="Digite a cidade"
                                 {...register('endereco.cidade')}
                             />
                         </div>
@@ -131,6 +138,7 @@ export function CadastroLocais() {
                             <input
                                 id="estado"
                                 type="text"
+                                placeholder="Digite o estado"
                                 {...register('endereco.estado')}
                             />
                         </div>
@@ -142,6 +150,7 @@ export function CadastroLocais() {
                             <input
                                 id="latitude"
                                 type="text"
+                                placeholder="Digite a latitude"
                                 {...register('endereco.latitude')}
                             />
                         </div>
@@ -151,10 +160,13 @@ export function CadastroLocais() {
                             <input
                                 id="longitude"
                                 type="text"
+                                placeholder="Digite a longitude"
                                 {...register('endereco.longitude')}
                             />
                         </div>
                     </div>
+
+                    <button className="btn-submit" type="submit">Cadastrar</button>
                 </form>
             </div>
         </main>
