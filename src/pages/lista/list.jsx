@@ -22,7 +22,12 @@ export function List() {
     }
 
     // Função para excluir um item
-    async function excluirItem(id) {
+    async function excluirItem(id, usuarioId) {
+        if (user.id !== usuarioId) {
+            alert('Você não tem permissão para excluir este item.');
+            return;
+        }
+
         if (window.confirm('Tem certeza de que deseja excluir este item?')) {
             try {
                 const resposta = await fetch(`http://localhost:3000/localidade/${id}`, {
@@ -61,12 +66,14 @@ export function List() {
                     {
                         lista.map((item) => (
                             <tr key={item.id}>
-                                <td data-label="Local">{item.local}</td>
+                                <td data-label="Local"><Link to={`/dashboard/localidade/detalhes/${item.id}`}>
+                                    {item.local}
+                                </Link></td>
                                 <td data-label="Descrição">{item.descricao}</td>
                                 <td data-label="Opções" className="campo-opcoes">
                                     <Link to={`/dashboard/localidade/${item.id}`}>Editar</Link>
                                     <Trash2
-                                        onClick={() => excluirItem(item.id)}
+                                        onClick={() => excluirItem(item.id, item.usuarioId)}
                                         className="btn-delete"
                                     />
                                 </td>

@@ -136,6 +136,22 @@
         "cidade": "Palhoça",
         "estado": "SC"
       }
+    },
+    {
+      "id": "19c6",
+      "nome": "Mario Farias",
+      "sexo": "masculino",
+      "cpf": "45698712354",
+      "data_nascimento": "1965-01-30",
+      "email": "mariofarias@email.com",
+      "senha": "123456",
+      "endereco": {
+        "cep": "88101101",
+        "rua": "Lédio João Martins",
+        "bairro": "Kobrasol",
+        "cidade": "São José",
+        "estado": "SC"
+      }
     }
   ],
   "localidade": [
@@ -212,6 +228,21 @@
         "longitude": "-48.46494"
       },
       "usuario": "João Souza"
+    },
+    {
+      "id": "3548",
+      "local": "Trilha Caminho dos Naufragados",
+      "descricao": "A Praia de Naufragados é a praia mais ao sul de Florianópolis, ficando a 43 km do centro da cidade.",
+      "endereco": {
+        "cep": "88064002",
+        "rua": "Baldicero Filomeno",
+        "bairro": "Ribeirão da Ilha",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "latitude": "-27.74855",
+        "longitude": "-48.56014"
+      },
+      "usuario": "Mari"
     }
   ]
 }

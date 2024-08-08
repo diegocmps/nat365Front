@@ -12,6 +12,9 @@ export function CadastroPage() {
         try {
             const resposta = await api('/users', {
                 method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
                 body: JSON.stringify(values)
             });
 
@@ -50,14 +53,14 @@ export function CadastroPage() {
     return (
         <main>
             <div className="tela-cadastro">
-                <button className="btn-cadastrar">Cadastrar</button>
                 <form onSubmit={handleSubmit(addUser)}>
-                    <h1>Cadastro usuário</h1>
+                    <h1>Cadastro de Usuário</h1>
                     <div className="form-grid">
                         <div className="form-group">
                             <label htmlFor="nome">Nome</label>
                             <input
                                 id="nome"
+                                type="text"
                                 placeholder="Digite o nome do usuário"
                                 {...register('nome', { required: 'O nome é obrigatório' })}
                             />
@@ -65,8 +68,11 @@ export function CadastroPage() {
 
                         <div className="form-group">
                             <label htmlFor="sexo">Sexo</label>
-                            <select id="sexo" {...register('sexo', { required: 'O sexo é obrigatório' })}>
-                                <option value=""></option>
+                            <select
+                                id="sexo"
+                                {...register('sexo', { required: 'O sexo é obrigatório' })}
+                            >
+                                <option value="">Selecione</option>
                                 <option value="masculino">Masculino</option>
                                 <option value="feminino">Feminino</option>
                             </select>
@@ -76,13 +82,14 @@ export function CadastroPage() {
                             <label htmlFor="cpf">CPF</label>
                             <input
                                 id="cpf"
-                                type="number"
+                                type="text"
+                                placeholder="Digite o CPF"
                                 {...register('cpf', { required: 'O CPF é obrigatório' })}
                             />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="data_nascimento">Data de nascimento</label>
+                            <label htmlFor="data_nascimento">Data de Nascimento</label>
                             <input
                                 id="data_nascimento"
                                 type="date"
@@ -95,6 +102,7 @@ export function CadastroPage() {
                             <input
                                 id="email"
                                 type="email"
+                                placeholder="Digite o email"
                                 {...register('email', { required: 'O email é obrigatório' })}
                             />
                         </div>
@@ -104,6 +112,7 @@ export function CadastroPage() {
                             <input
                                 id="senha"
                                 type="password"
+                                placeholder="Digite a senha"
                                 {...register('senha', { required: 'A senha é obrigatória' })}
                             />
                         </div>
@@ -112,7 +121,8 @@ export function CadastroPage() {
                             <label htmlFor="cep">CEP</label>
                             <input
                                 id="cep"
-                                type="number"
+                                type="text"
+                                placeholder="Digite o CEP"
                                 {...register('endereco.cep', { required: 'O CEP é obrigatório' })}
                                 onBlur={checkCEP}
                             />
@@ -123,6 +133,7 @@ export function CadastroPage() {
                             <input
                                 id="rua"
                                 type="text"
+                                placeholder="Digite a rua"
                                 {...register('endereco.rua')}
                             />
                         </div>
@@ -130,8 +141,9 @@ export function CadastroPage() {
                         <div className="form-group">
                             <label htmlFor="bairro">Bairro</label>
                             <input
-                                type="text"
                                 id="bairro"
+                                type="text"
+                                placeholder="Digite o bairro"
                                 {...register('endereco.bairro')}
                             />
                         </div>
@@ -141,6 +153,7 @@ export function CadastroPage() {
                             <input
                                 id="cidade"
                                 type="text"
+                                placeholder="Digite a cidade"
                                 {...register('endereco.cidade')}
                             />
                         </div>
@@ -150,12 +163,13 @@ export function CadastroPage() {
                             <input
                                 id="estado"
                                 type="text"
+                                placeholder="Digite o estado"
                                 {...register('endereco.estado')}
                             />
                         </div>
                     </div>
                     <button className="btn-submit" type="submit">Cadastrar</button>
-                    <p>Já possui cadastro? <Link to={-1}>Efetuar login</Link></p>
+                    <p>Já possui cadastro? <Link to="/">Efetuar login</Link></p>
                 </form>
             </div>
         </main>
