@@ -144,15 +144,15 @@
       "local": "Trilha Lagoinha do Leste - Matadeiro",
       "descricao": "Inicio da trilha pelo Pântano do Sul",
       "endereco": {
-        "cep": "88135222",
-        "rua": "Pedro Lindolfo Schütz",
-        "bairro": "Aririú",
-        "cidade": "Palhoça",
+        "cep": "88061-400",
+        "rua": "Laurindo José de Souza",
+        "bairro": "Barra da Lagoa",
+        "cidade": "Florianópolis",
         "estado": "SC",
-        "latitude": "-27.66885",
-        "longitude": "-48.68554"
+        "latitude": "-27.58441",
+        "longitude": "-48.43116"
       },
-      "usuario": "Marcelo"
+      "usuario": "Mari"
     },
     {
       "id": "23a8",
@@ -212,21 +212,6 @@
         "longitude": "-48.46494"
       },
       "usuario": "João Souza"
-    },
-    {
-      "id": "4f4d",
-      "local": "Casa",
-      "descricao": "nossa casa",
-      "endereco": {
-        "cep": "88137260",
-        "rua": "das Cegonhas",
-        "bairro": "Pedra Branca",
-        "cidade": "Palhoça",
-        "estado": "SC",
-        "latitude": "-27.62634",
-        "longitude": "-48.6779"
-      },
-      "usuario": "Mari"
     }
   ]
 }
