@@ -1,6 +1,5 @@
-// src/components/CardLocais.jsx
 import { useEffect, useState } from "react";
-import { api } from "../../utils/api"; // Ajuste o caminho se necessário
+import { api } from "../../utils/api";
 import './cardLocais.css';
 import { MapPin } from 'lucide-react';
 

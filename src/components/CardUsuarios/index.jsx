@@ -1,6 +1,5 @@
-// src/components/CardUsuarios.jsx
 import { useEffect, useState } from "react";
-import { api } from "../../utils/api"; // Ajuste o caminho se necessário
+import { api } from "../../utils/api";
 import './cardUsuarios.css';
 import { Users } from 'lucide-react';
 

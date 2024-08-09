@@ -7,6 +7,8 @@ import { List } from "../pages/lista/list";
 import { HomePage } from "../pages/dashboard";
 import { PaginaEditarLocal } from "../pages/editarLocal";
 import { LocalDetalhes } from "../components/LocalDetalhes";
+import { UserProfile } from "../components/UserProfile";
+import { EditUserProfile } from "../components/EditUserProfile";
 
 
 export const routes = createBrowserRouter([
@@ -37,6 +39,14 @@ export const routes = createBrowserRouter([
             {
                 path: 'localidade/detalhes/:id',
                 element: <LocalDetalhes />
+            },
+            {
+                path: 'user/:id',
+                element: <UserProfile />
+            },
+            {
+                path: 'user/editar/:id',
+                element: <EditUserProfile />
             },
             {
                 path: 'list',

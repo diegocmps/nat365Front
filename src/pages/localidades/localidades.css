@@ -1,4 +1,3 @@
-/* Estilização para o formulário de cadastro de locais */
 .form-container {
     max-width: 100%;
     margin: 0 auto;
@@ -29,8 +28,8 @@
 .formulario {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espaço entre os grupos de campos */
-    margin-top: 60px; /* Espaço para o botão fixado */
+    gap: 20px; 
+    margin-top: 60px; 
 }
 
 .form-group {
@@ -53,11 +52,11 @@
 
 .form-row {
     display: flex;
-    gap: 15px; /* Espaço entre os campos na mesma linha */
-    flex-wrap: wrap; /* Permite que os campos quebrem para a linha seguinte se necessário */
+    gap: 15px; 
+    flex-wrap: wrap; 
 }
 
 .form-row .form-group {
     flex: 1;
-    min-width: 200px; /* Ajuste conforme necessário para manter os campos menores em linhas */
+    min-width: 200px; 
 }

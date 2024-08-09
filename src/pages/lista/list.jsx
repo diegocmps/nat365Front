@@ -8,7 +8,6 @@ export function List() {
     const { user } = useAuth();
     const [lista, setLista] = useState([]);
 
-    // Função para carregar dados
     async function carregarDados() {
         try {
             const resposta = await fetch('http://localhost:3000/localidade');
@@ -21,12 +20,8 @@ export function List() {
         }
     }
 
-    // Função para excluir um item
-    async function excluirItem(id, usuarioId) {
-        if (user.id !== usuarioId) {
-            alert('Você não tem permissão para excluir este item.');
-            return;
-        }
+    async function excluirItem(id) {
+
 
         if (window.confirm('Tem certeza de que deseja excluir este item?')) {
             try {
@@ -47,7 +42,6 @@ export function List() {
         }
     }
 
-    // Carregar dados ao montar o componente
     useEffect(() => {
         carregarDados();
     }, []);

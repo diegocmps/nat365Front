@@ -1,18 +1,17 @@
-/* Container principal para centralizar o conteúdo */
 .local-detalhes-page {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
     padding: 20px;
 }
 
-/* Estilo para o botão de voltar */
+
 .voltar-button {
-    align-self: flex-start; /* Alinha o botão ao início do container */
-    margin-bottom: 20px; /* Espaçamento abaixo do botão */
+    align-self: flex-start; 
+    margin-bottom: 20px; 
     padding: 10px 20px;
-    background-color: #009879; /* Cor de fundo do botão */
-    color: #ffffff; /* Cor do texto do botão */
+    background-color: #009879; 
+    color: #ffffff; 
     border: none;
     border-radius: 8px;
     font-size: 16px;
@@ -22,36 +21,32 @@
 
 .voltar-button a {
     text-decoration: none;
-    color: #ffffff; /* Garante que o texto do link no botão seja branco */
+    color: #ffffff; 
 }
 
 .voltar-button:hover {
-    background-color: #007a63; /* Cor de fundo do botão ao passar o mouse */
+    background-color: #007a63; 
 }
 
-/* Container para a descrição e o mapa */
 .local-detalhes-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espaçamento entre o mapa e a descrição */
-    max-width: 1200px; /* Limita a largura máxima do container */
+    gap: 20px; 
+    max-width: 1200px; 
     width: 100%;
 }
 
-/* Estilo para a descrição */
 .local-detalhes-content {
     flex: 1;
-    min-width: 300px; /* Ajusta o tamanho mínimo para garantir boa visualização */
+    min-width: 300px; 
 }
 
-/* Estilo para o mapa */
 .map-local-detalhes {
     flex: 1;
-    height: 400px; /* Ajuste a altura conforme necessário */
-    min-width: 300px; /* Ajusta o tamanho mínimo para garantir boa visualização */
+    height: 400px; 
+    min-width: 300px; 
 }
 
-/* Estilo geral */
 .local-detalhes {
     margin-bottom: 20px;
     padding: 20px;
@@ -71,10 +66,9 @@
     font-size: 18px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .local-detalhes-container {
-        flex-direction: column; /* Coloca o mapa abaixo da descrição em telas pequenas */
+        flex-direction: column;
     }
 
     .local-detalhes {
@@ -90,6 +84,6 @@
     }
 
     .map-local-detalhes {
-        height: 300px; /* Ajuste a altura conforme necessário */
+        height: 300px; 
     }
 }

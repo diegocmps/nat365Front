@@ -13,7 +13,7 @@ export function LocalDetalhes() {
             try {
                 const resposta = await api(`/localidade/${id}`);
                 const data = await resposta.json();
-                console.log("Dados do local:", data); // Verifique se os dados estão corretos
+                console.log("Dados do local:", data);
                 setLocal(data);
             } catch (error) {
                 console.error("Erro ao buscar o local:", error);
