@@ -1,14 +1,15 @@
 .local-detalhes-page {
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 20px;
+    position: relative;
 }
 
-
 .voltar-button {
-    align-self: flex-start; 
-    margin-bottom: 20px; 
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin-bottom: 20px;
     padding: 10px 20px;
     background-color: #009879; 
     color: #ffffff; 
@@ -31,9 +32,10 @@
 .local-detalhes-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; 
+    gap: 20px;
     max-width: 1200px; 
     width: 100%;
+    margin-top: 60px;
 }
 
 .local-detalhes-content {
@@ -67,8 +69,16 @@
 }
 
 @media (max-width: 768px) {
+    .voltar-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        margin-bottom: 20px;
+    }
+
     .local-detalhes-container {
         flex-direction: column;
+        margin-top: 80px;
     }
 
     .local-detalhes {

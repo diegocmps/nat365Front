@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../utils/api";
 import { useAuth } from "../../contexts/auth";
+import './editarLocal.css'
 
 export function PaginaEditarLocal() {
     const { register, handleSubmit, reset, setValue } = useForm();
