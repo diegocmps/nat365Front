@@ -6,9 +6,9 @@ import { CadastroLocais } from "../pages/localidades";
 import { List } from "../pages/lista/list";
 import { HomePage } from "../pages/dashboard";
 import { PaginaEditarLocal } from "../pages/editarLocal";
-import { LocalDetalhes } from "../components/LocalDetalhes";
-import { UserProfile } from "../components/UserProfile";
-import { EditUserProfile } from "../components/EditUserProfile";
+import { LocalDetalhes } from "../pages/LocalDetalhes";
+import { UserProfile } from "../pages/UserProfile";
+import { EditUserProfile } from "../pages/EditUserProfile";
 
 
 export const routes = createBrowserRouter([

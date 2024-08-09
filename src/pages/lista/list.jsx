@@ -10,7 +10,7 @@ export function List() {
 
     async function carregarDados() {
         try {
-            const resposta = await fetch('http://localhost:3000/localidade');
+            const resposta = await fetch('http://localhost:3000/localidade?_expand=user');
             if (!resposta.ok) {
                 throw new Error('Falha ao carregar dados');
             }
@@ -21,8 +21,6 @@ export function List() {
     }
 
     async function excluirItem(id) {
-
-
         if (window.confirm('Tem certeza de que deseja excluir este item?')) {
             try {
                 const resposta = await fetch(`http://localhost:3000/localidade/${id}`, {
@@ -53,6 +51,7 @@ export function List() {
                     <tr>
                         <td>Local</td>
                         <td>Descrição</td>
+                        <td>Usuário</td>
                         <td>Opções</td>
                     </tr>
                 </thead>
@@ -64,6 +63,7 @@ export function List() {
                                     {item.local}
                                 </Link></td>
                                 <td data-label="Descrição">{item.descricao}</td>
+                                <td data-label="Usuário" >{item.usuario || 'Desconhecido'}</td>
                                 <td data-label="Opções" className="campo-opcoes">
                                     <Link to={`/dashboard/localidade/${item.id}`}>Editar</Link>
                                     <Trash2

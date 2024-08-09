@@ -8,18 +8,18 @@
       "email": "ana.silva@example.com",
       "senha": "senha123",
       "endereco": {
-        "cep": "88056511",
+        "cep": "88160142",
         "logradouro": "Praça da Sé",
         "complemento": "",
-        "bairro": "Cachoeira do Bom Jesus",
+        "bairro": "Centro",
         "localidade": "São Paulo",
         "uf": "SP",
         "ibge": "3550308",
         "gia": "1004",
         "ddd": "11",
         "siafi": "7107",
-        "rua": "Servidão Manoel de Souza Oliveira",
-        "cidade": "Florianópolis",
+        "rua": "Rua Salima Salum",
+        "cidade": "Biguaçu",
         "estado": "SC"
       },
       "id": "3cc1"
@@ -32,7 +32,7 @@
       "email": "carlos.pereira@example.com",
       "senha": "12345carlos",
       "endereco": {
-        "cep": "20010-000",
+        "cep": "24030077",
         "logradouro": "Avenida Presidente Vargas",
         "complemento": "Bloco B",
         "bairro": "Centro",
@@ -41,7 +41,10 @@
         "ibge": "3304557",
         "gia": "",
         "ddd": "21",
-        "siafi": "6001"
+        "siafi": "6001",
+        "rua": "Rua Visconde do Uruguai",
+        "cidade": "Niterói",
+        "estado": "RJ"
       },
       "id": "2b41"
     },
@@ -53,16 +56,19 @@
       "email": "maria.oliveira@example.com",
       "senha": "maria456",
       "endereco": {
-        "cep": "30110-000",
+        "cep": "79080460",
         "logradouro": "Rua da Bahia",
         "complemento": "Apt 23",
-        "bairro": "Centro",
+        "bairro": "Jardim Jockey Club",
         "localidade": "Belo Horizonte",
         "uf": "MG",
         "ibge": "3106200",
         "gia": "",
         "ddd": "31",
-        "siafi": "4031"
+        "siafi": "4031",
+        "rua": "Rua Cubatão",
+        "cidade": "Campo Grande",
+        "estado": "MS"
       },
       "id": "5682"
     },
@@ -74,7 +80,7 @@
       "email": "joao.souza@example.com",
       "senha": "joao789",
       "endereco": {
-        "cep": "40010-000",
+        "cep": "85801110",
         "logradouro": "Avenida Sete de Setembro",
         "complemento": "",
         "bairro": "Centro",
@@ -83,7 +89,10 @@
         "ibge": "2927408",
         "gia": "",
         "ddd": "71",
-        "siafi": "3849"
+        "siafi": "3849",
+        "rua": "Rua General Osório",
+        "cidade": "Cascavel",
+        "estado": "PR"
       },
       "id": "51d3"
     },
@@ -95,7 +104,7 @@
       "email": "fernanda.costa@example.com",
       "senha": "costa123",
       "endereco": {
-        "cep": "80010-000",
+        "cep": "92010011",
         "logradouro": "Rua XV de Novembro",
         "complemento": "",
         "bairro": "Centro",
@@ -104,7 +113,10 @@
         "ibge": "4106902",
         "gia": "",
         "ddd": "41",
-        "siafi": "7535"
+        "siafi": "7535",
+        "rua": "Avenida Getúlio Vargas",
+        "cidade": "Canoas",
+        "estado": "RS"
       },
       "id": "247a"
     }
