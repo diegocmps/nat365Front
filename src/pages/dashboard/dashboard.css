@@ -1,5 +1,3 @@
-/* src/pages/dashboard.css */
-
 .dashboard {
     display: flex;
     flex-direction: column;
@@ -9,14 +7,14 @@
 
 .dashboard-top {
     display: flex;
-    justify-content: space-between; /* Alinha os itens aos extremos */
+    justify-content: space-between; 
     width: 100%;
-    align-items: flex-start; /* Alinha verticalmente no topo */
+    align-items: flex-start; 
 }
 
 .cards-container {
     display: flex;
-    gap: 10px; /* Espaçamento entre os cartões */
+    gap: 10px;
 }
 
 .local-list {
@@ -73,31 +71,30 @@
     margin-top: 20px;
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
     .dashboard-top {
-        flex-direction: column; /* Alinha os cartões verticalmente */
+        flex-direction: column; 
         align-items: center;
     }
 
     .cards-container {
-        flex-direction: column; /* Alinha os cartões em coluna no modo responsivo */
-        gap: 20px; /* Ajusta o espaçamento vertical dos cartões */
+        flex-direction: column; 
+        gap: 20px; 
     }
 
     .local-list {
-        padding: 0; /* Remove o padding para que os cartões ocupem mais espaço */
+        padding: 0; 
     }
 
     .local-list .styled-table {
         display: block;
         width: 100%;
-        overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
-        -webkit-overflow-scrolling: touch; /* Suporte a rolagem suave em iOS */
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
     }
 
     .local-list .styled-table thead {
-        display: none; /* Oculta o cabeçalho da tabela no modo responsivo */
+        display: none; 
     }
 
     .local-list .styled-table tbody {
@@ -109,10 +106,10 @@
         display: flex;
         flex-direction: column;
         border: 1px solid #dddddd;
-        margin-bottom: 10px; /* Espaçamento entre as linhas da tabela */
-        border-radius: 8px; /* Adiciona borda arredondada aos cartões */
-        background-color: #ffffff; /* Fundo branco para os cartões */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adiciona sombra leve aos cartões */
+        margin-bottom: 10px; 
+        border-radius: 8px; 
+        background-color: #ffffff; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     }
 
     .local-list .styled-table td {
@@ -133,10 +130,10 @@
         font-weight: bold;
         background-color: #f3f3f3;
         border-bottom: 1px solid #dddddd;
-        top: -1px; /* Ajusta a posição do label */
+        top: -1px; 
     }
 
     .local-list .styled-table td:last-child {
-        border-bottom: none; /* Remove a borda inferior no último item do cartão */
+        border-bottom: none; 
     }
 }

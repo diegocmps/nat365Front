@@ -1,27 +1,7 @@
 import PropTypes from 'prop-types';
-// import { useEffect } from 'react';
 import { Marker, Popup} from 'react-leaflet';
 
 export function Marcadores({ localidade }) {
-
-    // const map = useMap()
-
-    // useEffect(() => {
-    //     if (localidade.length > 0) {
-    //         const primeiroLocaldaLista = localidade[0]
-
-    //         map.flyTo({
-    //             lat: primeiroLocaldaLista.endereco.latitude,
-    //             lng: primeiroLocaldaLista.endereco.longitude,
-    //         },
-    //             12,
-    //             {
-    //                 animate: true
-
-    //             })
-    //     }
-    // }, [localidade, map])
-
 
 
     return (

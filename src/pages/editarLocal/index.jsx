@@ -8,7 +8,7 @@ import { useAuth } from "../../contexts/auth";
 export function PaginaEditarLocal() {
     const { register, handleSubmit, reset, setValue } = useForm();
     const { id } = useParams();
-    const { user } = useAuth(); // Obtendo o usuário logado
+    const { user } = useAuth(); 
 
     async function onUpdate(data) {
         if (!user) {
@@ -16,10 +16,9 @@ export function PaginaEditarLocal() {
             return;
         }
 
-        // Adicionar o nome do usuário ao objeto de dados
         const localData = {
             ...data,
-            usuario: user.nome // Adicionando o nome do usuário
+            usuario: user.nome 
         };
 
         try {

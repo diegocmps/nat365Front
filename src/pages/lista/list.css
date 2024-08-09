@@ -1,11 +1,9 @@
-/* Estilos para o campo de opções */
 .campo-opcoes {
   display: flex;
   align-items: center;
-  gap: 10px; /* Ajuste o espaçamento se necessário */
+  gap: 10px; 
 }
 
-/* Estilos dos botões de excluir */
 .btn-delete {
   cursor: pointer;
   font-size: 1.2em;
@@ -14,22 +12,20 @@
 }
 
 .btn-delete:hover {
-  color: #d00000; /* Adiciona uma cor de destaque ao passar o mouse */
+  color: #d00000; 
 }
 
-/* Estilos para links na tabela */
 .styled-table a {
-  text-decoration: none; /* Remove o sublinhado */
-  color: inherit; /* Remove a cor azul padrão dos links */
-  cursor: pointer; /* Adiciona o cursor pointer */
+  text-decoration: none; 
+  color: inherit; 
+  cursor: pointer; 
 }
 
 .styled-table a:hover {
-  text-decoration: underline; /* Adiciona o sublinhado ao passar o mouse */
-  color: #009879; /* Adiciona uma cor de destaque ao passar o mouse */
+  text-decoration: underline; 
+  color: #009879; 
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
   .local-list {
     padding: 10px;
@@ -38,11 +34,11 @@
   .styled-table {
     display: block;
     width: 100%;
-    overflow: hidden; /* Remove a rolagem horizontal para melhorar o layout dos cartões */
+    overflow: hidden; 
   }
 
   .styled-table thead {
-    display: none; /* Oculta o cabeçalho da tabela no modo responsivo */
+    display: none; 
   }
 
   .styled-table tbody {
@@ -73,7 +69,7 @@
   }
 
   .styled-table td:last-child {
-    border-bottom: none; /* Remove a borda inferior no último item do cartão */
+    border-bottom: none; 
   }
 
   .styled-table td::before {

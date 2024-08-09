@@ -1,17 +1,16 @@
-/* src/pages/styles.css */
 .tela-cadastro {
-    max-width: 800px; /* Aumenta a largura máxima do formulário */
-    margin: 0 auto; /* Centraliza o formulário horizontalmente */
+    max-width: 800px; 
+    margin: 0 auto; 
     padding: 20px; 
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    position: relative; /* Adicionado para posicionar o botão de cadastrar */
+    position: relative; 
 }
 
 .form-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adapta o número de colunas com base no tamanho do container */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
     gap: 20px; 
 }
 
@@ -55,17 +54,16 @@
     font-size: 16px;
 }
 
-/* Responsividade para telas pequenas */
 @media (max-width: 768px) {
     .tela-cadastro {
-        max-width: 100%; /* Ajusta a largura máxima para telas pequenas */
+        max-width: 100%; 
         padding: 10px; 
-        border: none; /* Remove a borda para telas pequenas */
-        border-radius: 0; /* Remove o arredondamento dos cantos para telas pequenas */
+        border: none; 
+        border-radius: 0; 
     }
 
     .form-grid {
-        grid-template-columns: 1fr; /* Coloca os inputs em uma coluna única */
+        grid-template-columns: 1fr; 
     }
 
 }

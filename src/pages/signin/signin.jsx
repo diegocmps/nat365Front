@@ -20,10 +20,11 @@ export function Signin() {
             if (isSuccess) {
                 navigate('/dashboard');
             } else {
-                alert('Email/senha inválidas');
+                alert('Email/senha inválidos');
             }
         } catch (error) {
             alert('Ocorreu um erro ao efetuar o login');
+            console.error('Error during sign in process:', error);
         }
     }
 
@@ -43,7 +44,7 @@ export function Signin() {
                                 type="email"
                                 id="floatingInput"
                                 placeholder="nome@exemplo.com"
-                                {...register('email')}
+                                {...register('email', { required: true })}
                             />
                         </div>
                         <div>
@@ -52,7 +53,7 @@ export function Signin() {
                                 type="password"
                                 id="floatingPassword"
                                 placeholder="Senha"
-                                {...register('password')}
+                                {...register('password', { required: true })}
                             />
                         </div>
                         <button type="submit">Entrar</button>

@@ -14,6 +14,7 @@ function SideBar() {
             </div>
             <legend>MENU</legend>
             <Link to="/dashboard">Home</Link>
+            <Link to="/dashboard/user/:id">Dados Cadastrais</Link>
             <Link to="/dashboard/localidade">Cadastro Locais</Link>
             <Link to="/dashboard/list">Lista de Locais</Link>
             <div className="logout-container">

@@ -8,16 +8,19 @@
       "email": "ana.silva@example.com",
       "senha": "senha123",
       "endereco": {
-        "cep": "01001-000",
+        "cep": "88056511",
         "logradouro": "Praça da Sé",
         "complemento": "",
-        "bairro": "Sé",
+        "bairro": "Cachoeira do Bom Jesus",
         "localidade": "São Paulo",
         "uf": "SP",
         "ibge": "3550308",
         "gia": "1004",
         "ddd": "11",
-        "siafi": "7107"
+        "siafi": "7107",
+        "rua": "Servidão Manoel de Souza Oliveira",
+        "cidade": "Florianópolis",
+        "estado": "SC"
       },
       "id": "3cc1"
     },
@@ -104,76 +107,13 @@
         "siafi": "7535"
       },
       "id": "247a"
-    },
-    {
-      "id": "f29b",
-      "nome": "Marcelo",
-      "sexo": "masculino",
-      "cpf": "045687896234",
-      "data_nascimento": "1979-02-10",
-      "email": "marcelo@email.com",
-      "senha": "123456",
-      "endereco": {
-        "cep": "88137260",
-        "rua": "das Cegonhas",
-        "bairro": "Pedra Branca",
-        "cidade": "Palhoça",
-        "estado": "SC"
-      }
-    },
-    {
-      "id": "085a",
-      "nome": "Mari",
-      "sexo": "feminino",
-      "cpf": "06344210931",
-      "data_nascimento": "1988-05-20",
-      "email": "mari@email.com",
-      "senha": "123456",
-      "endereco": {
-        "cep": "88137260",
-        "rua": "das Cegonhas",
-        "bairro": "Pedra Branca",
-        "cidade": "Palhoça",
-        "estado": "SC"
-      }
-    },
-    {
-      "id": "19c6",
-      "nome": "Mario Farias",
-      "sexo": "masculino",
-      "cpf": "45698712354",
-      "data_nascimento": "1965-01-30",
-      "email": "mariofarias@email.com",
-      "senha": "123456",
-      "endereco": {
-        "cep": "88101101",
-        "rua": "Lédio João Martins",
-        "bairro": "Kobrasol",
-        "cidade": "São José",
-        "estado": "SC"
-      }
     }
   ],
   "localidade": [
     {
-      "id": "bd42",
-      "local": "Trilha Lagoinha do Leste - Matadeiro",
-      "descricao": "Inicio da trilha pelo Pântano do Sul",
-      "endereco": {
-        "cep": "88061-400",
-        "rua": "Laurindo José de Souza",
-        "bairro": "Barra da Lagoa",
-        "cidade": "Florianópolis",
-        "estado": "SC",
-        "latitude": "-27.58441",
-        "longitude": "-48.43116"
-      },
-      "usuario": "Mari"
-    },
-    {
       "id": "23a8",
       "local": "Projeto Tamar",
-      "descricao": "Projeto para preservar as tartarugas marinhas",
+      "descricao": "É um centro de conservação marinha que trabalha na proteção de tartarugas marinhas, oferecendo tanques de observação, exposições educativas e atividades interativas para visitantes.",
       "endereco": {
         "cep": "88061160",
         "rua": "Professor Ademir Francisco",
@@ -183,26 +123,12 @@
         "latitude": "-27.57278",
         "longitude": "-48.4277"
       },
-      "usuario": "Maria Oliveira"
-    },
-    {
-      "id": "3c33",
-      "local": "Recanto Cachoeira Brilho do Luar",
-      "descricao": "Passeio no alto vale",
-      "endereco": {
-        "cep": "89130000",
-        "rua": "R. Augusto Maass",
-        "bairro": " Arapongas",
-        "cidade": "Indaial",
-        "estado": "Santa Catarina",
-        "latitude": "-26.87516725668722",
-        "longitude": "-49.299170147564276"
-      }
+      "usuario": "Ana Silva 2"
     },
     {
       "id": "e742",
       "local": "Parque Natural do Morro do Macaco",
-      "descricao": "Conheça Bombinhas",
+      "descricao": "Oferece trilhas desafiadoras e vistas panorâmicas de 360°. Ideal para amantes da natureza e aventura, com um ponto alto de 191 metros.",
       "endereco": {
         "cep": "88215000",
         "rua": "Rua Jequitibá",
@@ -212,12 +138,12 @@
         "latitude": "-27.198457068709416",
         "longitude": "-48.49836147647936"
       },
-      "usuario": "João Souza"
+      "usuario": "Ana Silva 2"
     },
     {
       "id": "798f",
       "local": "Caminho de Santiago de Compostela",
-      "descricao": "Inicia na Igreja Nossa Senhora de Guadalupe em Canasvieiras",
+      "descricao": "O Caminho de Santiago de Compostela em Florianópolis foi oficializado em 2022. Com 21 km de extensão, o percurso começa na Igreja Nossa Senhora da Guadalupe, em Canasvieiras, e termina no Santuário Sagrado Coração de Jesus, nos Ingleses. A rota passa por belas praias e áreas naturais, proporcionando uma experiência de peregrinação única e espiritual. Este trecho brasileiro se integra ao histórico Caminho de Santiago na Espanha, reconhecido pelo governo espanhol.",
       "endereco": {
         "cep": "88054001",
         "rua": "Madre Maria Vilac",
@@ -227,7 +153,7 @@
         "latitude": "-27.42889",
         "longitude": "-48.46494"
       },
-      "usuario": "João Souza"
+      "usuario": "Ana Silva 2"
     },
     {
       "id": "3548",
@@ -243,6 +169,22 @@
         "longitude": "-48.56014"
       },
       "usuario": "Mari"
+    },
+    {
+      "id": "05f5",
+      "local": "Trilha Lagoinha do Leste - Pântano do Sul",
+      "descricao": "A trilha da Lagoinha do Leste, em Florianópolis, é uma das mais famosas e deslumbrantes da cidade. Localizada no sul da Ilha de Santa Catarina, a praia da Lagoinha do Leste é conhecida por sua beleza natural e preservação. O acesso é feito apenas por trilha ou barco, o que ajuda a manter o local menos movimentado e mais tranquilo",
+      "endereco": {
+        "cep": "88067079",
+        "rua": "Manoel Pedro Oliveira",
+        "bairro": "Pântano do Sul",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "latitude": "-27.77897",
+        "longitude": "-48.50649"
+      },
+      "usuario": "Ana Silva 2",
+      "usuarioId": "3cc1"
     }
   ]
 }

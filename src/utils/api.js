@@ -21,3 +21,16 @@ export async function fetchLocalidades() {
     }
     return response.json();
 }
+
+/**
+ * Fetches locations associated with a specific user.
+ * @param {string} userId - The ID of the user.
+ * @returns {Promise<any[]>}
+ */
+export async function fetchLocationsByUser(userId) {
+    const response = await fetch(`http://localhost:3000/localidade?usuario=${encodeURIComponent(userId)}`);
+    if (!response.ok) {
+        throw new Error('Failed to fetch locations for user');
+    }
+    return response.json();
+}

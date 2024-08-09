@@ -3,14 +3,14 @@
 }
 
 .sidebar {
-    width: 250px; /* Largura da sidebar */
-    background-color: #f4f4f4; /* Cor de fundo da sidebar */
-    height: 100vh; /* Altura completa da viewport */
-    padding: 20px; /* Espaçamento interno da sidebar */
+    width: 250px; 
+    background-color: #f4f4f4;
+    height: 100vh;
+    padding: 20px;
 }
 
 .content {
     flex: 1;
     padding: 20px;
-    background-color: #fff; /* Cor de fundo do conteúdo */
+    background-color: #fff;
 }
