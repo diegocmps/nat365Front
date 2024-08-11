@@ -4,6 +4,8 @@ import './sidebar.css';
 import { useAuth } from "../../contexts/auth";
 import { LogOut, Menu } from 'lucide-react';
 import { useState } from 'react';
+import logoImage from '../../assets/imagens/logo.png'
+
 
 function SideBar() {
     const { signOut } = useAuth();
@@ -24,7 +26,7 @@ function SideBar() {
             </button>
             <div className={`sidebar ${isOpen ? 'open' : ''}`}>
                 <div className="logo-container">
-                    <img className="logo" src="/src/assets/imagens/logo.png" alt="logo" />
+                    <img className="logo" src={logoImage} alt="logo" />
                 </div>
                 <Link to="/dashboard" onClick={handleLinkClick}>Home</Link>
                 <Link to="/dashboard/user/:id" onClick={handleLinkClick}>Dados Cadastrais</Link>
