@@ -1,0 +1,218 @@
+{
+  "users": [
+    {
+      "nome": "Ana Silva",
+      "sexo": "Feminino",
+      "cpf": "123.456.789-10",
+      "data_nascimento": "1990-03-15",
+      "email": "ana.silva@example.com",
+      "senha": "senha123",
+      "endereco": {
+        "cep": "88160142",
+        "logradouro": "Praça da Sé",
+        "complemento": "",
+        "bairro": "Centro",
+        "localidade": "São Paulo",
+        "uf": "SP",
+        "ibge": "3550308",
+        "gia": "1004",
+        "ddd": "11",
+        "siafi": "7107",
+        "rua": "Rua Salima Salum",
+        "cidade": "Biguaçu",
+        "estado": "SC"
+      },
+      "id": "3cc1"
+    },
+    {
+      "nome": "Carlos Pereira",
+      "sexo": "Masculino",
+      "cpf": "234.567.890-11",
+      "data_nascimento": "1985-06-20",
+      "email": "carlos.pereira@example.com",
+      "senha": "12345carlos",
+      "endereco": {
+        "cep": "24030077",
+        "logradouro": "Avenida Presidente Vargas",
+        "complemento": "Bloco B",
+        "bairro": "Centro",
+        "localidade": "Rio de Janeiro",
+        "uf": "RJ",
+        "ibge": "3304557",
+        "gia": "",
+        "ddd": "21",
+        "siafi": "6001",
+        "rua": "Rua Visconde do Uruguai",
+        "cidade": "Niterói",
+        "estado": "RJ"
+      },
+      "id": "2b41"
+    },
+    {
+      "nome": "Maria Oliveira",
+      "sexo": "Feminino",
+      "cpf": "345.678.901-12",
+      "data_nascimento": "1995-09-10",
+      "email": "maria.oliveira@example.com",
+      "senha": "maria456",
+      "endereco": {
+        "cep": "79080460",
+        "logradouro": "Rua da Bahia",
+        "complemento": "Apt 23",
+        "bairro": "Jardim Jockey Club",
+        "localidade": "Belo Horizonte",
+        "uf": "MG",
+        "ibge": "3106200",
+        "gia": "",
+        "ddd": "31",
+        "siafi": "4031",
+        "rua": "Rua Cubatão",
+        "cidade": "Campo Grande",
+        "estado": "MS"
+      },
+      "id": "5682"
+    },
+    {
+      "nome": "João Souza",
+      "sexo": "Masculino",
+      "cpf": "456.789.012-13",
+      "data_nascimento": "1970-12-30",
+      "email": "joao.souza@example.com",
+      "senha": "joao789",
+      "endereco": {
+        "cep": "85801110",
+        "logradouro": "Avenida Sete de Setembro",
+        "complemento": "",
+        "bairro": "Centro",
+        "localidade": "Salvador",
+        "uf": "BA",
+        "ibge": "2927408",
+        "gia": "",
+        "ddd": "71",
+        "siafi": "3849",
+        "rua": "Rua General Osório",
+        "cidade": "Cascavel",
+        "estado": "PR"
+      },
+      "id": "51d3"
+    },
+    {
+      "nome": "Fernanda Costa",
+      "sexo": "Feminino",
+      "cpf": "567.890.123-14",
+      "data_nascimento": "2000-01-01",
+      "email": "fernanda.costa@example.com",
+      "senha": "costa123",
+      "endereco": {
+        "cep": "92010011",
+        "logradouro": "Rua XV de Novembro",
+        "complemento": "",
+        "bairro": "Centro",
+        "localidade": "Curitiba",
+        "uf": "PR",
+        "ibge": "4106902",
+        "gia": "",
+        "ddd": "41",
+        "siafi": "7535",
+        "rua": "Avenida Getúlio Vargas",
+        "cidade": "Canoas",
+        "estado": "RS"
+      },
+      "id": "247a"
+    },
+    {
+      "id": "9c0f",
+      "nome": "Diego Campos",
+      "sexo": "masculino",
+      "cpf": "04396492936",
+      "data_nascimento": "1984-11-25",
+      "email": "diego@email.com",
+      "senha": "123456",
+      "endereco": {
+        "cep": "88137260",
+        "rua": "das Cegonhas",
+        "bairro": "Pedra Branca",
+        "cidade": "Palhoça",
+        "estado": "SC"
+      }
+    }
+  ],
+  "localidade": [
+    {
+      "id": "23a8",
+      "local": "Projeto Tamar",
+      "descricao": "É um centro de conservação marinha que trabalha na proteção de tartarugas marinhas, oferecendo tanques de observação, exposições educativas e atividades interativas para visitantes.",
+      "endereco": {
+        "cep": "88061160",
+        "rua": "Professor Ademir Francisco",
+        "bairro": "Barra da Lagoa",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "latitude": "-27.57278",
+        "longitude": "-48.4277"
+      },
+      "usuario": "Ana Silva"
+    },
+    {
+      "id": "e742",
+      "local": "Parque Natural do Morro do Macaco",
+      "descricao": "Oferece trilhas desafiadoras e vistas panorâmicas de 360°. Ideal para amantes da natureza e aventura, com um ponto alto de 191 metros.",
+      "endereco": {
+        "cep": "88215000",
+        "rua": "Rua Jequitibá",
+        "bairro": "Canto Grande",
+        "cidade": "Bombinhas",
+        "estado": "Santa Catarina",
+        "latitude": "-27.198457068709416",
+        "longitude": "-48.49836147647936"
+      },
+      "usuario": "Carlos Pereira"
+    },
+    {
+      "id": "798f",
+      "local": "Caminho de Santiago de Compostela",
+      "descricao": "O Caminho de Santiago de Compostela em Florianópolis foi oficializado em 2022. Com 21 km de extensão, o percurso começa na Igreja Nossa Senhora da Guadalupe, em Canasvieiras, e termina no Santuário Sagrado Coração de Jesus, nos Ingleses. A rota passa por belas praias e áreas naturais, proporcionando uma experiência de peregrinação única e espiritual. Este trecho brasileiro se integra ao histórico Caminho de Santiago na Espanha, reconhecido pelo governo espanhol.",
+      "endereco": {
+        "cep": "88054001",
+        "rua": "Madre Maria Vilac",
+        "bairro": "Canasvieiras",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "latitude": "-27.42889",
+        "longitude": "-48.46494"
+      },
+      "usuario": "Maria Oliveira"
+    },
+    {
+      "id": "3548",
+      "local": "Trilha Caminho dos Naufragados",
+      "descricao": "A Praia de Naufragados é a praia mais ao sul de Florianópolis, ficando a 43 km do centro da cidade.",
+      "endereco": {
+        "cep": "88064002",
+        "rua": "Baldicero Filomeno",
+        "bairro": "Ribeirão da Ilha",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "latitude": "-27.74855",
+        "longitude": "-48.56014"
+      },
+      "usuario": "Diego Campos"
+    },
+    {
+      "id": "05f5",
+      "local": "Trilha Lagoinha do Leste - Pântano do Sul",
+      "descricao": "A trilha da Lagoinha do Leste, em Florianópolis, é uma das mais famosas e deslumbrantes da cidade. Localizada no sul da Ilha de Santa Catarina, a praia da Lagoinha do Leste é conhecida por sua beleza natural e preservação. O acesso é feito apenas por trilha ou barco, o que ajuda a manter o local menos movimentado e mais tranquilo",
+      "endereco": {
+        "cep": "88067079",
+        "rua": "Manoel Pedro Oliveira",
+        "bairro": "Pântano do Sul",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "latitude": "-27.77897",
+        "longitude": "-48.50649"
+      },
+      "usuario": "João Souza",
+      "usuarioId": "3cc1"
+    }
+  ]
+}

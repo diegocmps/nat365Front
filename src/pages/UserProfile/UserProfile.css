@@ -1,0 +1,99 @@
+.user-profile {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.user-profile h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.user-profile p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.user-profile strong {
+    display: inline-block;
+    width: 180px;
+    font-weight: 600;
+}
+
+.user-profile-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.edit-button, .delete-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+}
+
+.edit-button {
+    background-color: #009879;
+}
+
+.delete-button {
+    background-color: #dc3545;
+}
+
+@media (max-width: 768px) {
+    .user-profile {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .user-profile h1 {
+        font-size: 20px;
+    }
+
+    .user-profile p {
+        font-size: 14px;
+    }
+
+    .user-profile strong {
+        width: 140px;
+    }
+
+    .user-profile-actions {
+        flex-direction: column;
+    }
+
+    .edit-button, .delete-button {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-profile {
+        padding: 10px;
+    }
+
+    .user-profile h1 {
+        font-size: 18px;
+    }
+
+    .user-profile p {
+        font-size: 12px;
+    }
+
+    .user-profile strong {
+        width: 120px;
+    }
+
+    .edit-button, .delete-button {
+        font-size: 14px;
+    }
+}
