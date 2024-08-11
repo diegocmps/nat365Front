@@ -78,15 +78,6 @@ export function CadastroPage() {
                             </select>
                         </div>
 
-                        <div className="form-field half-width">
-                            <label htmlFor="telefone">Telefone</label>
-                            <input
-                                id="telefone"
-                                type="text"
-                                placeholder="Digite o telefone"
-                                {...register('telefone')}
-                            />
-                        </div>
 
                         <div className="form-field half-width">
                             <label htmlFor="cpf">CPF</label>

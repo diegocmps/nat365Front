@@ -119,22 +119,6 @@
         "estado": "RS"
       },
       "id": "247a"
-    },
-    {
-      "id": "9c0f",
-      "nome": "Diego Campos",
-      "sexo": "masculino",
-      "cpf": "04396492936",
-      "data_nascimento": "1984-11-25",
-      "email": "diego@email.com",
-      "senha": "123456",
-      "endereco": {
-        "cep": "88137260",
-        "rua": "das Cegonhas",
-        "bairro": "Pedra Branca",
-        "cidade": "Palhoça",
-        "estado": "SC"
-      }
     }
   ],
   "localidade": [
