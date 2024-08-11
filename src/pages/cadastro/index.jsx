@@ -52,11 +52,11 @@ export function CadastroPage() {
 
     return (
         <main>
-            <div className="tela-cadastro">
+            <div className="cadastro-container">
+                <h1>Cadastro de Usuário</h1>
                 <form onSubmit={handleSubmit(addUser)}>
-                    <h1>Cadastro de Usuário</h1>
-                    <div className="form-grid">
-                        <div className="form-group">
+                    <div className="form-layout">
+                        <div className="form-field">
                             <label htmlFor="nome">Nome</label>
                             <input
                                 id="nome"
@@ -66,7 +66,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field half-width">
                             <label htmlFor="sexo">Sexo</label>
                             <select
                                 id="sexo"
@@ -78,7 +78,17 @@ export function CadastroPage() {
                             </select>
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field half-width">
+                            <label htmlFor="telefone">Telefone</label>
+                            <input
+                                id="telefone"
+                                type="text"
+                                placeholder="Digite o telefone"
+                                {...register('telefone')}
+                            />
+                        </div>
+
+                        <div className="form-field half-width">
                             <label htmlFor="cpf">CPF</label>
                             <input
                                 id="cpf"
@@ -88,7 +98,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field half-width">
                             <label htmlFor="data_nascimento">Data de Nascimento</label>
                             <input
                                 id="data_nascimento"
@@ -97,7 +107,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field full-width">
                             <label htmlFor="email">Email</label>
                             <input
                                 id="email"
@@ -107,7 +117,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field full-width">
                             <label htmlFor="senha">Senha</label>
                             <input
                                 id="senha"
@@ -117,7 +127,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field full-width">
                             <label htmlFor="cep">CEP</label>
                             <input
                                 id="cep"
@@ -128,7 +138,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field full-width">
                             <label htmlFor="rua">Rua</label>
                             <input
                                 id="rua"
@@ -138,7 +148,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field full-width">
                             <label htmlFor="bairro">Bairro</label>
                             <input
                                 id="bairro"
@@ -148,7 +158,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field full-width">
                             <label htmlFor="cidade">Cidade</label>
                             <input
                                 id="cidade"
@@ -158,7 +168,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-field full-width">
                             <label htmlFor="estado">Estado</label>
                             <input
                                 id="estado"
@@ -169,8 +179,8 @@ export function CadastroPage() {
                         </div>
                     </div>
                     <button className="btn-submit" type="submit">Cadastrar</button>
-                    <p>Já possui cadastro? <Link to="/">Efetuar login</Link></p>
                 </form>
+                <p className="login-link">Já possui cadastro? <Link to="/">Efetuar login</Link></p>
             </div>
         </main>
     );

@@ -36,7 +36,7 @@ export function Signin() {
             <div className='login-container'>
                 <img className='logo' src="./src/assets/imagens/logo.png" alt="logo" />
                 <div className='login-area'>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                    <form className='login-form' onSubmit={handleSubmit(onSubmit)}>
                         <h1>Efetuar login</h1>
                         <div>
                             <label htmlFor="floatingInput">Email</label>

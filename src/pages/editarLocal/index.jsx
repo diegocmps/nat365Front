@@ -159,7 +159,6 @@ export function PaginaEditarLocal() {
                     />
 
                     <button
-                        className="btn btn-primary w-100 py-2"
                         type="submit">Atualizar</button>
                 </form>
             </div>
