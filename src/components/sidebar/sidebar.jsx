@@ -24,7 +24,7 @@ function SideBar() {
             </button>
             <div className={`sidebar ${isOpen ? 'open' : ''}`}>
                 <div className="logo-container">
-                    <img className="logo" src="./src/assets/imagens/logo.png" alt="logo" />
+                    <img className="logo" src="/src/assets/imagens/logo.png" alt="logo" />
                 </div>
                 <Link to="/dashboard" onClick={handleLinkClick}>Home</Link>
                 <Link to="/dashboard/user/:id" onClick={handleLinkClick}>Dados Cadastrais</Link>
