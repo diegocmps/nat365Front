@@ -123,10 +123,11 @@ export function EditUserProfile() {
                         required
                     />
                 </label>
-                <label>
+                <label htmlFor="sexo">
                     Sexo:
                     <select
                         name="sexo"
+                        id='sexo'
                         value={formData?.sexo || ''}
                         onChange={handleChange}
                         required

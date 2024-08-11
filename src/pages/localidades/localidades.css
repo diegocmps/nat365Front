@@ -2,10 +2,8 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     position: relative;
+    box-sizing: border-box;
 }
 
 .btn-submit {
@@ -22,7 +20,7 @@
 }
 
 .btn-submit:hover {
-    background-color: #009879;
+    background-color: #007a61;
 }
 
 .formulario {
@@ -48,6 +46,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    box-sizing: border-box;
 }
 
 .form-row {
@@ -60,3 +59,33 @@
     flex: 1;
     min-width: 200px; 
 }
+
+@media (max-width: 768px) {
+    .btn-submit {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px; 
+        font-size: 14px; 
+    }
+
+    .formulario {
+        margin-top: 50px; 
+        gap: 15px; 
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 8px; 
+        font-size: 14px; 
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 10px; 
+    }
+
+    .form-row .form-group {
+        min-width: 100%;
+    }
+}
+

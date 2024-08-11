@@ -38,9 +38,10 @@
     max-width: 400px;
 }
 
-form {
+.login-form {
     display: flex;
     flex-direction: column;
+    gap: 5px
 }
 
 h1 {
@@ -50,6 +51,7 @@ h1 {
 
 label {
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 input {
@@ -67,6 +69,7 @@ button {
     padding: 10px;
     border-radius: 3px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {

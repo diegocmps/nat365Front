@@ -119,6 +119,22 @@
         "estado": "RS"
       },
       "id": "247a"
+    },
+    {
+      "id": "9c0f",
+      "nome": "Diego Campos",
+      "sexo": "masculino",
+      "cpf": "04396492936",
+      "data_nascimento": "1984-11-25",
+      "email": "diego@email.com",
+      "senha": "123456",
+      "endereco": {
+        "cep": "88137260",
+        "rua": "das Cegonhas",
+        "bairro": "Pedra Branca",
+        "cidade": "Palhoça",
+        "estado": "SC"
+      }
     }
   ],
   "localidade": [
@@ -135,7 +151,7 @@
         "latitude": "-27.57278",
         "longitude": "-48.4277"
       },
-      "usuario": "Ana Silva 2"
+      "usuario": "Ana Silva"
     },
     {
       "id": "e742",
@@ -150,7 +166,7 @@
         "latitude": "-27.198457068709416",
         "longitude": "-48.49836147647936"
       },
-      "usuario": "Ana Silva 2"
+      "usuario": "Carlos Pereira"
     },
     {
       "id": "798f",
@@ -165,7 +181,7 @@
         "latitude": "-27.42889",
         "longitude": "-48.46494"
       },
-      "usuario": "Ana Silva 2"
+      "usuario": "Maria Oliveira"
     },
     {
       "id": "3548",
@@ -180,7 +196,7 @@
         "latitude": "-27.74855",
         "longitude": "-48.56014"
       },
-      "usuario": "Mari"
+      "usuario": "Diego Campos"
     },
     {
       "id": "05f5",
@@ -195,7 +211,7 @@
         "latitude": "-27.77897",
         "longitude": "-48.50649"
       },
-      "usuario": "Ana Silva 2",
+      "usuario": "João Souza",
       "usuarioId": "3cc1"
     }
   ]
