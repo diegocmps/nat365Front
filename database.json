@@ -119,11 +119,27 @@
         "estado": "RS"
       },
       "id": "247a"
+    },
+    {
+      "id": "e35c",
+      "nome": "Diego Campos",
+      "sexo": "masculino",
+      "cpf": "00123498765",
+      "data_nascimento": "1984-11-25",
+      "email": "diego@email.com",
+      "senha": "123",
+      "endereco": {
+        "cep": "88137260",
+        "rua": "das Cegonhas",
+        "bairro": "Pedra Branca",
+        "cidade": "Palhoça",
+        "estado": "SC"
+      }
     }
   ],
   "localidade": [
     {
-      "id": "23a8",
+      "id": "8b10",
       "local": "Projeto Tamar",
       "descricao": "É um centro de conservação marinha que trabalha na proteção de tartarugas marinhas, oferecendo tanques de observação, exposições educativas e atividades interativas para visitantes.",
       "endereco": {
@@ -135,10 +151,11 @@
         "latitude": "-27.57278",
         "longitude": "-48.4277"
       },
-      "usuario": "Ana Silva"
+      "usuario": "Ana Silva",
+      "usuarioId": "3cc1"
     },
     {
-      "id": "e742",
+      "id": "ebe2",
       "local": "Parque Natural do Morro do Macaco",
       "descricao": "Oferece trilhas desafiadoras e vistas panorâmicas de 360°. Ideal para amantes da natureza e aventura, com um ponto alto de 191 metros.",
       "endereco": {
@@ -150,25 +167,11 @@
         "latitude": "-27.198457068709416",
         "longitude": "-48.49836147647936"
       },
-      "usuario": "Carlos Pereira"
+      "usuario": "Carlos Pereira",
+      "usuarioId": "2b41"
     },
     {
-      "id": "798f",
-      "local": "Caminho de Santiago de Compostela",
-      "descricao": "O Caminho de Santiago de Compostela em Florianópolis foi oficializado em 2022. Com 21 km de extensão, o percurso começa na Igreja Nossa Senhora da Guadalupe, em Canasvieiras, e termina no Santuário Sagrado Coração de Jesus, nos Ingleses. A rota passa por belas praias e áreas naturais, proporcionando uma experiência de peregrinação única e espiritual. Este trecho brasileiro se integra ao histórico Caminho de Santiago na Espanha, reconhecido pelo governo espanhol.",
-      "endereco": {
-        "cep": "88054001",
-        "rua": "Madre Maria Vilac",
-        "bairro": "Canasvieiras",
-        "cidade": "Florianópolis",
-        "estado": "SC",
-        "latitude": "-27.42889",
-        "longitude": "-48.46494"
-      },
-      "usuario": "João Souza"
-    },
-    {
-      "id": "3548",
+      "id": "f8a7",
       "local": "Trilha Caminho dos Naufragados",
       "descricao": "A Praia de Naufragados é a praia mais ao sul de Florianópolis, ficando a 43 km do centro da cidade.",
       "endereco": {
@@ -180,10 +183,11 @@
         "latitude": "-27.74855",
         "longitude": "-48.56014"
       },
-      "usuario": "Diego Campos"
+      "usuario": "Maria Oliveira",
+      "usuarioId": "5682"
     },
     {
-      "id": "05f5",
+      "id": "351e",
       "local": "Trilha Lagoinha do Leste - Pântano do Sul",
       "descricao": "A trilha da Lagoinha do Leste, em Florianópolis, é uma das mais famosas e deslumbrantes da cidade. Localizada no sul da Ilha de Santa Catarina, a praia da Lagoinha do Leste é conhecida por sua beleza natural e preservação. O acesso é feito apenas por trilha ou barco, o que ajuda a manter o local menos movimentado e mais tranquilo",
       "endereco": {
@@ -196,7 +200,23 @@
         "longitude": "-48.50649"
       },
       "usuario": "João Souza",
-      "usuarioId": "3cc1"
+      "usuarioId": "51d3"
+    },
+    {
+      "id": "cf6d",
+      "local": "Caminho Santiago de Compostela",
+      "descricao": "A rota atravessa diversas paisagens, incluindo praias, montanhas e áreas rurais, oferecendo uma experiência enriquecedora e espiritual para os caminhantes.",
+      "endereco": {
+        "cep": "88054001",
+        "rua": "Madre Maria Vilac",
+        "bairro": "Canasvieiras",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "latitude": "-27.42889",
+        "longitude": "-48.46494"
+      },
+      "usuario": "Diego Campos",
+      "usuarioId": "e35c"
     }
   ]
 }
