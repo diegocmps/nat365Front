@@ -217,6 +217,22 @@
       },
       "usuario": "Diego Campos",
       "usuarioId": "e35c"
+    },
+    {
+      "id": "858b",
+      "local": "Trilha Morro das Aranhas",
+      "descricao": "A trilha proporciona vistas deslumbrantes do oceano, caminhada por mata nativa, mirantes naturais e a chance de observar a fauna local. Ideal para quem busca contato com a natureza e um pouco de aventura.",
+      "endereco": {
+        "cep": "88058700",
+        "rua": "Vereador Onildo Lemos",
+        "bairro": "Ingleses do Rio Vermelho",
+        "cidade": "Florianópolis",
+        "estado": "SC",
+        "latitude": "-27.45622",
+        "longitude": "-48.38113"
+      },
+      "usuario": "João Souza",
+      "usuarioId": "51d3"
     }
   ]
 }
