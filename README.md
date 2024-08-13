@@ -1,5 +1,5 @@
 
-![Logo](../nat365Front/src/assets/imagens/logo.png)
+![Logo](/assets/imagens/logo.png)
 
 
 # Nature Finder
@@ -19,29 +19,29 @@ Através do Nature Finder é possível
 
 ## Login/Senha
 
-![App Screenshot](../nat365Front/src/assets/readme-images/login.png)
+![App Screenshot](/assets/readme-images/login.png)
 
 ## Cadastro
 
-![App Screenshot](../nat365Front/src/assets/readme-images/cadastro.jpeg)
+![App Screenshot](/assets/readme-images/cadastro.jpeg)
 
 ## Dashboard
 
-![App Screenshot](../nat365Front/src/assets/readme-images/dashboard.png)
+![App Screenshot](/assets/readme-images/dashboard.png)
 
 ## Imagem de Locais cadastrados
 
-![App Screenshot](../nat365Front/src/assets/readme-images/localidades.jpeg)
+![App Screenshot](/assets/readme-images/localidades.jpeg)
 
 ## Cadastro de Locais
 
-![App Screenshot](../nat365Front/src/assets/readme-images/CEP%20AUTOMÁTICO.gif)
+![App Screenshot](/assets/readme-images/CEP%20AUTOMÁTICO.gif)
 
-![App Screenshot](../nat365Front/src/assets/readme-images/local.jpeg)
+![App Screenshot](/assets/readme-images/local.jpeg)
 
 ## Zoom no minimapa
 
-![App Screenshot](../nat365Front/src/assets/readme-images/MINIMAPA.gif)
+![App Screenshot](/assets/readme-images/MINIMAPA.gif)
 
 
 ## Rodando localmente
