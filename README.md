@@ -14,36 +14,6 @@ Através do Nature Finder é possível
 * Registro dos locais em mapa, através de geolocalização, com busca por CEP;
 * Visualizar e interagir com o minimapa.
 
-
-# Demonstração
-
-## Login/Senha
-
-![App Screenshot](src/assets/readme-images/login.png)
-
-## Cadastro
-
-![App Screenshot](src/assets/readme-images/cadastro.jpeg)
-
-## Dashboard
-
-![App Screenshot](src/assets/readme-images/dashboard.png)
-
-## Imagem de Locais cadastrados
-
-![App Screenshot](src/assets/readme-images/localidades.jpeg)
-
-## Cadastro de Locais
-
-![App Screenshot](src/assets/readme-images/CEP%20AUTOMÁTICO.gif)
-
-![App Screenshot](src/assets/readme-images/local.jpeg)
-
-## Zoom no minimapa
-
-![App Screenshot](src/assets/readme-images/MINIMAPA.gif)
-
-
 ## Rodando localmente
 
 Clone o projeto
@@ -79,11 +49,45 @@ Também é possível acessar o projeto através do Vercel, através do link:
 https://natureza365.vercel.app/
 
 OBS: Como a plataforma depende do json-server em funcionamento, não é possível realizar os testes através do celular, podendo utilizar normalmente no computador, através de um navegador web.
+
+
+# Demonstração
+
+## Login/Senha
+
+![App Screenshot](src/assets/readme-images/login.png)
+
+## Cadastro
+
+![App Screenshot](src/assets/readme-images/cadastro.jpeg)
+
+## Dashboard
+
+![App Screenshot](src/assets/readme-images/dashboard.png)
+
+## Imagem de Locais cadastrados
+
+![App Screenshot](src/assets/readme-images/localidades.jpeg)
+
+## Cadastro de Locais
+
+![App Screenshot](src/assets/readme-images/CEP%20AUTOMÁTICO.gif)
+
+![App Screenshot](src/assets/readme-images/local.jpeg)
+
+## Zoom no minimapa
+
+![App Screenshot](src/assets/readme-images/MINIMAPA.gif)
+
+
+
 ## Modo Responsivo
 
 É possível utilizar a plataforma Nature Finder através de celulares, pois a plataforma possui modo responsivo.
 
-imagens
+![App Screenshot](src/assets/readme-images/dash-responsiva.jpeg)
+
+![App Screenshot](src/assets/readme-images/sidebar-responsivo.gif)
 
 ## Melhorias
 
