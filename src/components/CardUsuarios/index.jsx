@@ -16,6 +16,7 @@ export function CardUsuarios() {
                 console.error('Erro ao buscar a quantidade de usuários:', error);
             }
         }
+        
 
         fetchUserCount();
     }, []);

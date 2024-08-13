@@ -2,6 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './signin.css';
 import { useAuth } from '../../contexts/auth';
 import { useForm } from 'react-hook-form';
+import fundoImage from '../../assets/imagens/imagem.jpg'
+import logoImage from '../../assets/imagens/logo.png'
 
 export function Signin() {
     const { signIn } = useAuth();
@@ -31,10 +33,10 @@ export function Signin() {
     return (
         <div className='login-page'>
             <div className='image-container'>
-                <img src="./src/assets/imagens/imagem.jpg" alt="Imagem de fundo" />
+                <img src={fundoImage} alt="Imagem de fundo" />
             </div>
             <div className='login-container'>
-                <img className='logo' src="./src/assets/imagens/logo.png" alt="logo" />
+                <img className='logo' src={logoImage} alt="logo" />
                 <div className='login-area'>
                     <form className='login-form' onSubmit={handleSubmit(onSubmit)}>
                         <h1>Efetuar login</h1>
