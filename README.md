@@ -54,6 +54,13 @@ https://natureza365.vercel.app/
 
 OBS: Como a plataforma depende do json-server em funcionamento, não é possível realizar os testes através do celular, podendo utilizar normalmente no computador, através de um navegador web.
 
+# Vídeo
+
+Você pode assistir a apresentação do projeto através do link:
+
+https://youtu.be/TJ-eBIEYqJ0
+
+
 
 # Demonstração
 
