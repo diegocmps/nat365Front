@@ -1,0 +1,99 @@
+.local-detalhes-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+.voltar-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #009879; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.voltar-button a {
+    text-decoration: none;
+    color: #ffffff; 
+}
+
+.voltar-button:hover {
+    background-color: #007a63; 
+}
+
+.local-detalhes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px; 
+    width: 100%;
+    margin-top: 60px;
+}
+
+.local-detalhes-content {
+    flex: 1;
+    min-width: 300px; 
+}
+
+.map-local-detalhes {
+    flex: 1;
+    height: 400px; 
+    min-width: 300px; 
+}
+
+.local-detalhes {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.local-detalhes h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #009879;
+}
+
+.local-detalhes p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    .voltar-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .local-detalhes-container {
+        flex-direction: column;
+        margin-top: 80px;
+    }
+
+    .local-detalhes {
+        padding: 15px;
+    }
+
+    .local-detalhes h2 {
+        font-size: 20px;
+    }
+
+    .local-detalhes p {
+        font-size: 16px;
+    }
+
+    .map-local-detalhes {
+        height: 300px; 
+    }
+}
