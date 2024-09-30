@@ -93,7 +93,7 @@ export function EditUserProfile() {
                     localStorage.setItem('@natureza365:user', JSON.stringify(updatedUser));
                     signIn({ email: user.email, password: user.password });
                 }
-                navigate(`/dashboard/user/${userId}`);
+                navigate(`/user/${userId}`);
             } else {
                 setError('Erro ao atualizar dados do usuário');
             }

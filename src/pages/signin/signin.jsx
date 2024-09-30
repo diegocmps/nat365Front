@@ -20,7 +20,7 @@ export function Signin() {
             const isSuccess = await signIn(data);
 
             if (isSuccess) {
-                navigate('/dashboard');
+                navigate('/');
             } else {
                 alert('Email/senha inválidos');
             }
