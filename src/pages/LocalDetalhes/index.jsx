@@ -27,6 +27,11 @@ export function LocalDetalhes() {
         return <div>Carregando...</div>;
     }
 
+    const latitude = local.endereco.latitude;
+    const longitude = local.endereco.longitude;
+
+    const googleMapsLink = `https://www.google.com/maps/?q=${latitude},${longitude}`;
+
     return (
         <div className="local-detalhes-page">
             <button className="voltar-button">
@@ -42,9 +47,15 @@ export function LocalDetalhes() {
                         <p><strong>Bairro:</strong> {local.endereco.bairro}</p>
                         <p><strong>Cidade:</strong> {local.endereco.cidade}</p>
                         <p><strong>Estado:</strong> {local.endereco.estado}</p>
-                        <p><strong>Latitude:</strong> {local.endereco.latitude}</p>
-                        <p><strong>Longitude:</strong> {local.endereco.longitude}</p>
+                        <p><strong>Latitude:</strong> {latitude}</p>
+                        <p><strong>Longitude:</strong> {longitude}</p>
                         <p><strong>Cadastrado por:</strong> {local.usuario}</p>
+                        <p>
+                            <strong>Ver no Google Maps: </strong> 
+                            <a href={googleMapsLink} target="_blank" rel="noopener noreferrer">
+                                Clique aqui
+                            </a>
+                        </p>
                     </div>
                 </div>
 
