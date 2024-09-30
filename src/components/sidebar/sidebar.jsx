@@ -29,15 +29,12 @@ function SideBar() {
                 </div>
                 <Link to="/" onClick={handleLinkClick}>Home</Link>
 
-                {/* Exibir links de Login e Cadastro somente se o usuário não estiver logado */}
                 {!user && (
                     <>
-                        <Link to="/cadastro" onClick={handleLinkClick}>Cadastro</Link>
                         <Link to="/login" onClick={handleLinkClick}>Login</Link>
                     </>
                 )}
 
-                {/* Links dinâmicos para os dados cadastrais do usuário logado */}
                 {user && (
                     <>
                         <Link to={`/user/${user.id}`} onClick={handleLinkClick}>
@@ -47,7 +44,7 @@ function SideBar() {
                             Cadastro Locais
                         </Link>
                         <Link to="/list" onClick={handleLinkClick}>
-                            Lista de Locais
+                            Meus Locais
                         </Link>
                     </>
                 )}

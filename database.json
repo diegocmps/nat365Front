@@ -233,6 +233,22 @@
       },
       "usuario": "João Souza",
       "usuarioId": "51d3"
+    },
+    {
+      "id": "f4f4",
+      "local": "Trilha da Vigia",
+      "descricao": "Também conhecida como trilha do casqueiro, ela se inicia na praia da vigia e termina na praia do Silveira.\n\nLeva cerce de 1h 20min para chagar até a praia do Silveira, o trajeto é de dificuldade moderada mas vale muito a pena pelas paisagens no caminho!",
+      "endereco": {
+        "cep": "88495000",
+        "rua": "Praia da Vigia",
+        "bairro": "Garopaba",
+        "cidade": "Garopaba",
+        "estado": "SC",
+        "latitude": "-28.01992661849565",
+        "longitude": "-48.61012851829882"
+      },
+      "usuario": "Ana Silva",
+      "usuarioId": "3cc1"
     }
   ]
 }

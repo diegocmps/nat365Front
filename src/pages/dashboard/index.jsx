@@ -9,13 +9,15 @@ import { Link } from 'react-router-dom';
 import SideBar from '../../components/sidebar/sidebar';
 
 export function HomePage() {
-    const [localidadesLimitadas, setLocalidadesLimitadas] = useState([]);
+    const [localidades, setLocalidades] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 6;
 
     useEffect(() => {
         async function loadData() {
             try {
                 const data = await fetchLocalidades();
-                setLocalidadesLimitadas(data.slice(0, 6));
+                setLocalidades(data);
             } catch (error) {
                 console.error('Erro ao buscar localidades:', error);
             }
@@ -23,6 +25,22 @@ export function HomePage() {
 
         loadData();
     }, []);
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentLocalidades = localidades.slice(indexOfFirstItem, indexOfLastItem); // Itens da página atual
+
+    const nextPage = () => {
+        if (currentPage < Math.ceil(localidades.length / itemsPerPage)) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const prevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
 
     return (
         <div className="dashboard-layout">
@@ -48,7 +66,7 @@ export function HomePage() {
                             </thead>
                             <tbody>
                                 {
-                                    localidadesLimitadas.map((item) => (
+                                    currentLocalidades.map((item) => (
                                         <tr key={item.id}>
                                             <td data-label="Local"><Link to={`/localidade/detalhes/${item.id}`}>{item.local}</Link></td>
                                             <td data-label="Descrição">{item.descricao}</td>
@@ -58,10 +76,20 @@ export function HomePage() {
                                 }
                             </tbody>
                         </table>
+
+                        <div className="pagination">
+                            <button onClick={prevPage} disabled={currentPage === 1}>
+                                Anterior
+                            </button>
+                            <span>Página {currentPage}</span>
+                            <button onClick={nextPage} disabled={currentPage === Math.ceil(localidades.length / itemsPerPage)}>
+                                Próxima
+                            </button>
+                        </div>
                     </div>
 
                     <div className="map-dashboard">
-                        <Map localidades={localidadesLimitadas} />
+                        <Map localidades={currentLocalidades} />
                     </div>
                 </div>
             </div>

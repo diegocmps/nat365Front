@@ -14,7 +14,10 @@ export function List() {
             if (!resposta.ok) {
                 throw new Error('Falha ao carregar dados');
             }
-            setLista(await resposta.json());
+            const dados = await resposta.json();
+
+            const locaisDoUsuario = dados.filter(item => item.usuarioId === user.id);
+            setLista(locaisDoUsuario);
         } catch (error) {
             console.error('Erro ao carregar dados:', error);
         }
@@ -59,15 +62,17 @@ export function List() {
                     {
                         lista.map((item) => (
                             <tr key={item.id}>
-                                <td data-label="Local"><Link to={`/localidade/detalhes/${item.id}`}>
-                                    {item.local}
-                                </Link></td>
+                                <td data-label="Local">
+                                    <Link to={`/localidade/detalhes/${item.id}`}>
+                                        {item.local}
+                                    </Link>
+                                </td>
                                 <td data-label="Descrição">{item.descricao}</td>
-                                <td data-label="Usuário" >{item.usuario || 'Desconhecido'}</td>
+                                <td data-label="Usuário">{item.usuario || 'Desconhecido'}</td>
                                 <td data-label="Opções" className="campo-opcoes">
                                     <Link to={`/localidade/${item.id}`}>Editar</Link>
                                     <Trash2
-                                        onClick={() => excluirItem(item.id, item.usuarioId)}
+                                        onClick={() => excluirItem(item.id)}
                                         className="btn-delete"
                                     />
                                 </td>

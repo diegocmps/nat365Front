@@ -171,7 +171,7 @@ export function CadastroPage() {
                     </div>
                     <button className="btn-submit" type="submit">Cadastrar</button>
                 </form>
-                <p className="login-link">Já possui cadastro? <Link to="/">Efetuar login</Link></p>
+                <p className="login-link">Já possui cadastro? <Link to="/login">Efetuar login</Link></p>
             </div>
         </main>
     );
