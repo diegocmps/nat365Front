@@ -59,13 +59,13 @@ export function List() {
                     {
                         lista.map((item) => (
                             <tr key={item.id}>
-                                <td data-label="Local"><Link to={`/dashboard/localidade/detalhes/${item.id}`}>
+                                <td data-label="Local"><Link to={`/localidade/detalhes/${item.id}`}>
                                     {item.local}
                                 </Link></td>
                                 <td data-label="Descrição">{item.descricao}</td>
                                 <td data-label="Usuário" >{item.usuario || 'Desconhecido'}</td>
                                 <td data-label="Opções" className="campo-opcoes">
-                                    <Link to={`/dashboard/localidade/${item.id}`}>Editar</Link>
+                                    <Link to={`/localidade/${item.id}`}>Editar</Link>
                                     <Trash2
                                         onClick={() => excluirItem(item.id, item.usuarioId)}
                                         className="btn-delete"

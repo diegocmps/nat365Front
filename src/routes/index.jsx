@@ -10,24 +10,23 @@ import { LocalDetalhes } from "../pages/LocalDetalhes";
 import { UserProfile } from "../pages/UserProfile";
 import { EditUserProfile } from "../pages/EditUserProfile";
 
-
 export const routes = createBrowserRouter([
     {
         path: '/',
-        element: <Signin />
+        element: <HomePage />
     },
     {
         path: '/cadastro',
         element: <CadastroPage />
     },
     {
-        path: '/dashboard',
+        path: '/login',
+        element: <Signin />
+    },
+    {
+        path: '/',
         element: <TemplatePrivateRoute />,
         children: [
-            {
-                index: true,
-                element: <HomePage />
-            },
             {
                 path: 'localidade',
                 element: <CadastroLocais />

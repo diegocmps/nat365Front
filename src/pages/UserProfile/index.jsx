@@ -31,7 +31,7 @@ export function UserProfile() {
     }, [user]);
 
     const handleEdit = () => {
-        navigate(`/dashboard/user/editar/${user.id}`); 
+        navigate(`/user/editar/${user.id}`); 
     };
 
     const handleDelete = async () => {

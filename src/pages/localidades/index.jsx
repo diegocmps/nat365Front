@@ -35,7 +35,7 @@ export function CadastroLocais() {
                 alert('Houve um erro ao cadastrar o local');
             } else {
                 alert('Cadastrado com sucesso');
-                navigate('/dashboard');
+                navigate('/');
             }
         } catch (error) {
             alert('Houve um erro ao cadastrar o local');
