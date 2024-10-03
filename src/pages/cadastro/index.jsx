@@ -1,38 +1,44 @@
 import { Link, useNavigate } from "react-router-dom";
 import './styles.css';
 import { useForm } from "react-hook-form";
-import { api } from "../../utils/api";
 import { getCepData } from "../../services/CepService/CepService";
+import axios from "axios";
 
 export function CadastroPage() {
     const { register, handleSubmit, setValue } = useForm();
     const navigate = useNavigate();
 
-    async function addUser(values) {
+    const onSubmit = async (formData) => {
+        
+        const data = {
+            nome: formData.nome,
+            sexo: formData.sexo,
+            cpf: formData.cpf,
+            data_nascimento: formData.data_nascimento,
+            email: formData.email,
+            senha: formData.senha,
+            endereco: `${formData.endereco.rua}, ${formData.endereco.bairro}, ${formData.endereco.cidade}, ${formData.endereco.estado}, CEP: ${formData.endereco.cep}`
+        };
+    
         try {
-            const resposta = await api('/users', {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(values)
-            });
-
-            if (!resposta.ok) {
-                alert('Houve um erro ao cadastrar o usuário');
+            const response = await axios.post("http://localhost:3000/usuario", data);
+    
+            if (response.status === 201) { 
+                alert('Usuário cadastrado com sucesso!');
+                navigate('/login');
             } else {
-                alert('Cadastrado com sucesso');
-                navigate('/');
+                alert('Erro ao cadastrar usuário: ' + response.data.message);
             }
         } catch (error) {
-            alert('Houve um erro ao cadastrar o usuário');
-            console.error(error.message);
+            console.error('Erro ao cadastrar usuário:', error.response ? error.response.data : error.message);
+            alert('Houve um erro ao cadastrar o usuário. Tente novamente.');
         }
-    }
+    };
+    
 
     const checkCEP = async (e) => {
         const cep = e.target.value.replace(/\D/g, '');
-        
+
         if (cep.length !== 8) {
             alert('CEP inválido. Por favor, insira um CEP válido.');
             return;
@@ -54,7 +60,7 @@ export function CadastroPage() {
         <main>
             <div className="cadastro-container">
                 <h1>Cadastro de Usuário</h1>
-                <form onSubmit={handleSubmit(addUser)}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-layout">
                         <div className="form-field">
                             <label htmlFor="nome">Nome</label>
@@ -77,7 +83,6 @@ export function CadastroPage() {
                                 <option value="feminino">Feminino</option>
                             </select>
                         </div>
-
 
                         <div className="form-field half-width">
                             <label htmlFor="cpf">CPF</label>

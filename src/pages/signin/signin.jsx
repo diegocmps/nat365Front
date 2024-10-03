@@ -2,31 +2,25 @@ import { Link, useNavigate } from 'react-router-dom';
 import './signin.css';
 import { useAuth } from '../../contexts/auth';
 import { useForm } from 'react-hook-form';
-import fundoImage from '../../assets/imagens/imagem.jpg'
-import logoImage from '../../assets/imagens/logo.png'
+import fundoImage from '../../assets/imagens/imagem.jpg';
+import logoImage from '../../assets/imagens/logo.png';
 
 export function Signin() {
     const { signIn } = useAuth();
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
 
     async function onSubmit(data) {
-        try {
-            if (!data.email || !data.password) {
-                alert('Preencha todos os campos');
-                return;
-            }
+        const { email, senha } = data;
 
-            const isSuccess = await signIn(data);
+        const success = await signIn({ email, password: senha });
 
-            if (isSuccess) {
-                navigate('/');
-            } else {
-                alert('Email/senha inválidos');
-            }
-        } catch (error) {
-            alert('Ocorreu um erro ao efetuar o login');
-            console.error('Error during sign in process:', error);
+        if (success) {
+            navigate('/');
+            console.log('Token armazenado:', localStorage.getItem('token'));
+            
+        } else {
+            alert('Login falhou. Verifique suas credenciais e tente novamente.');
         }
     }
 
@@ -48,6 +42,7 @@ export function Signin() {
                                 placeholder="nome@exemplo.com"
                                 {...register('email', { required: true })}
                             />
+                            {errors.email && <p>Email é obrigatório</p>}
                         </div>
                         <div>
                             <label htmlFor="floatingPassword">Senha</label>
@@ -55,8 +50,9 @@ export function Signin() {
                                 type="password"
                                 id="floatingPassword"
                                 placeholder="Senha"
-                                {...register('password', { required: true })}
+                                {...register('senha', { required: true })}
                             />
+                            {errors.senha && <p>Senha é obrigatória</p>}
                         </div>
                         <button type="submit">Entrar</button>
                         <p>

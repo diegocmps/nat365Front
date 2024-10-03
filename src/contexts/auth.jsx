@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import PropTypes from 'prop-types';
-import { api } from "../utils/api";
+import axios from 'axios';
 
 export const AuthContext = createContext({
     user: null,
@@ -21,39 +21,37 @@ export function AuthProvider({ children }) {
                 return false;
             }
 
-            const response = await api(`/users?email=${encodeURIComponent(email)}`);
+            const response = await axios.post('http://localhost:3000/login', {
+                email,
+                senha: password
+            });
 
-            if (!response.ok) {
-                console.error('Erro na resposta da API:', response.statusText);
-                return false;
-            }
-
-            const data = await response.json();
-
-            if (data.length > 0) {
-                const user = data[0];
-                if (user.senha === password) { 
-                    setUser(user); 
-                    localStorage.setItem('@natureza365:user', JSON.stringify(user)); 
-
-                    return true;
-                } else {
-                    console.warn('Senha incorreta');
-                    return false;
-                }
+            if (response.status === 200) {
+                const { token, user: userData } = response.data;
+                setUser(userData);
+                localStorage.setItem('@natureza365:user', JSON.stringify(userData));
+                localStorage.setItem('token', token);
+                return true;
             } else {
-                console.warn('Nenhum usuário encontrado com esse e-mail');
+                console.warn('Falha ao autenticar:', response.statusText);
                 return false;
             }
         } catch (error) {
-            console.error('Erro ao autenticar usuário:', error);
-            return false;
+            if (error.response) {
+                console.error('Erro na resposta da API:', error.response.data);
+                alert(error.response.data.message || 'Erro ao logar');
+            } else {
+                console.error('Erro ao autenticar usuário:', error);
+                alert('Erro ao logar. Tente novamente mais tarde.');
+            }
+            return false; 
         }
     }
 
     function signOut() {
         setUser(null);
         localStorage.removeItem('@natureza365:user');
+        localStorage.removeItem('token');
     }
 
     return (

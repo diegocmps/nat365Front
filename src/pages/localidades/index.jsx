@@ -1,9 +1,9 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { api } from "../../utils/api";
 import { useAuth } from "../../contexts/auth";
 import './localidades.css';
 import { getCepData } from "../../services/CepService/CepService";
+import axios from "axios";
 
 export function CadastroLocais() {
     const { register, handleSubmit, setValue } = useForm();
@@ -11,35 +11,37 @@ export function CadastroLocais() {
     const { user } = useAuth();
 
     async function addLocal(dataLocais) {
-        if (!user) {
-            alert('Você precisa estar logado para cadastrar um local');
-            return;
-        }
+
+        let token = localStorage.getItem('token')
+        const userId = user.id
 
         const localData = {
-            ...dataLocais,
-            usuario: user.nome,
-            usuarioId: user.id
+            nome: dataLocais.local,
+            descricao: dataLocais.descricao,
+            cep: dataLocais.endereco.cep,
+            latitude: dataLocais.endereco.latitude,
+            longitude: dataLocais.endereco.longitude,
+            usuarioID: userId
         };
 
         try {
-            const resposta = await api('/localidade', {
-                method: 'POST',
-                body: JSON.stringify(localData),
+
+            const response = await axios.post('http://localhost:3000/local', localData, {
                 headers: {
+                    'Authorization': `${token}`,
                     'Content-Type': 'application/json'
                 }
             });
 
-            if (!resposta.ok) {
-                alert('Houve um erro ao cadastrar o local');
-            } else {
+            if (response.status == 201) {
                 alert('Cadastrado com sucesso');
                 navigate('/');
+            } else {
+                alert('Houve um erro ao cadastrar o local');
             }
         } catch (error) {
             alert('Houve um erro ao cadastrar o local');
-            console.log(error.message);
+            console.error("Erro ao cadastrar o local: ", error.response ? error.response.data : error.message);
         }
     }
 
@@ -71,7 +73,7 @@ export function CadastroLocais() {
             <div className="form-container">
                 <form className="formulario" onSubmit={handleSubmit(addLocal)}>
                     <h1>Cadastro de Local</h1>
-                    
+
                     <div className="form-group">
                         <label htmlFor="local">Nome do Local</label>
                         <input
