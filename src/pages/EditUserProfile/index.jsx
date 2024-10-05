@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { api } from '../../utils/api';
+import api from '../../utils/useAxios';
 import { getCepData } from '../../services/CepService/CepService';
 import { useAuth } from '../../contexts/auth';
 import './EditUserProfile.css';
@@ -16,10 +16,9 @@ export function EditUserProfile() {
     useEffect(() => {
         async function fetchUserData() {
             try {
-                const response = await api(`/users/${userId}`);
-                if (response.ok) {
-                    const data = await response.json();
-                    setFormData(data);
+                const response = await api.get(`/usuario/${userId}`); 
+                if (response.status === 200) { 
+                    setFormData(response.data);
                 } else {
                     setError('Erro ao buscar dados do usuário');
                 }
@@ -74,19 +73,12 @@ export function EditUserProfile() {
             }
         }
     };
-    
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await api(`/users/${userId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-            if (response.ok) {
+            const response = await api.put(`/usuario/${userId}`, formData);
+            if (response.status === 200) {
                 alert('Dados alterados com sucesso!');
                 if (user && user.id === userId) {
                     const updatedUser = { ...user, ...formData };
@@ -108,9 +100,6 @@ export function EditUserProfile() {
 
     return (
         <div className="edit-user-profile">
-            <button type="submit" className="save-button" onClick={handleSubmit}>
-                Salvar Alterações
-            </button>
             <h1>Editar Perfil</h1>
             <form onSubmit={handleSubmit}>
                 <label>
@@ -218,6 +207,7 @@ export function EditUserProfile() {
                         required
                     />
                 </label>
+                <button type="submit" className="save-button">Salvar Alterações</button>
             </form>
         </div>
     );

@@ -36,7 +36,7 @@ export const routes = createBrowserRouter([
                 element: <PaginaEditarLocal />
             },
             {
-                path: 'localidade/detalhes/:id',
+                path: 'localidade/detalhes/:localId',
                 element: <LocalDetalhes />
             },
             {

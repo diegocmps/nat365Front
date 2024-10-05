@@ -1,12 +1,12 @@
 // src/pages/HomePage.jsx
 import './dashboard.css';
 import { useState, useEffect } from 'react';
-import { fetchLocalidades } from '../../utils/api';
 import { CardUsuarios } from '../../components/CardUsuarios';
 import { Map } from '../../components/Mapa';
 import { CardLocais } from '../../components/CardLocais';
 import { Link } from 'react-router-dom';
 import SideBar from '../../components/sidebar/sidebar';
+import api from '../../utils/useAxios';
 
 export function HomePage() {
     const [localidades, setLocalidades] = useState([]);
@@ -15,11 +15,21 @@ export function HomePage() {
 
     useEffect(() => {
         async function loadData() {
+
             try {
-                const data = await fetchLocalidades();
-                setLocalidades(data);
+                
+                const response = await api.get('/local');
+                setLocalidades(response.data);
+                console.log('Resposta da API:', response.data); 
             } catch (error) {
                 console.error('Erro ao buscar localidades:', error);
+
+                if (error.response) {
+                    console.error('Status do erro:', error.response.status);
+                    console.error('Dados do erro:', error.response.data);
+                } else {
+                    console.error('Erro de rede ou outro:', error.message);
+                }
             }
         }
 
@@ -28,7 +38,7 @@ export function HomePage() {
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentLocalidades = localidades.slice(indexOfFirstItem, indexOfLastItem); // Itens da página atual
+    const currentLocalidades = localidades.slice(indexOfFirstItem, indexOfLastItem);
 
     const nextPage = () => {
         if (currentPage < Math.ceil(localidades.length / itemsPerPage)) {
@@ -44,7 +54,7 @@ export function HomePage() {
 
     return (
         <div className="dashboard-layout">
-            <SideBar /> 
+            <SideBar />
             <div className="dashboard">
                 <div className="dashboard-top">
                     <div className="cards-container">
@@ -68,7 +78,7 @@ export function HomePage() {
                                 {
                                     currentLocalidades.map((item) => (
                                         <tr key={item.id}>
-                                            <td data-label="Local"><Link to={`/localidade/detalhes/${item.id}`}>{item.local}</Link></td>
+                                            <td data-label="Local"><Link to={`/localidade/detalhes/${item.id}`}>{item.nome}</Link></td>
                                             <td data-label="Descrição">{item.descricao}</td>
                                             <td data-label="Usuário">{item.usuario}</td>
                                         </tr>

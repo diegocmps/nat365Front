@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './UserProfile.css';
 import { useAuth } from '../../contexts/auth';
-import { api, fetchLocationsByUser } from '../../utils/api';
-
-
+import api from '../../utils/useAxios'; 
 
 export function UserProfile() {
     const { user, signOut } = useAuth();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [hasLocations, setHasLocations] = useState(false); 
+    const [hasLocations, setHasLocations] = useState(false);
+    const [userDetails, setUserDetails] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -21,17 +20,24 @@ export function UserProfile() {
 
         setLoading(true);
 
-        fetchLocationsByUser(user.nome).then(locations => {
-            setHasLocations(locations.length > 0);
-            setLoading(false);
-        }).catch(() => {
-            setError('Erro ao verificar locais do usuário');
-            setLoading(false);
-        });
+        async function fetchUserDetails() {
+            try {
+                const response = await api.get(`/usuario/${user.id}`);
+                setUserDetails(response.data);
+                setHasLocations(response.data.localidades && response.data.localidades.length > 0);
+            } catch (err) {
+                setError('Erro ao buscar detalhes do usuário');
+                console.error(err);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        fetchUserDetails();
     }, [user]);
 
     const handleEdit = () => {
-        navigate(`/user/editar/${user.id}`); 
+        navigate(`/user/editar/${user.id}`);
     };
 
     const handleDelete = async () => {
@@ -43,8 +49,8 @@ export function UserProfile() {
         const confirmDelete = window.confirm('Tem certeza de que deseja excluir sua conta? Esta ação não pode ser desfeita.');
         if (confirmDelete) {
             try {
-                const response = await api(`/users/${user.id}`, { method: 'DELETE' });
-                if (response.ok) {
+                const response = await api.delete(`/usuario/${user.id}`);
+                if (response.status === 200) {
                     signOut();
                     navigate('/');
                 } else {
@@ -62,18 +68,18 @@ export function UserProfile() {
 
     return (
         <div className="user-profile">
-            {user ? (
+            {userDetails ? (
                 <div>
-                    <h1>{user.nome}</h1>
-                    <p><strong>Sexo:</strong> {user.sexo}</p>
-                    <p><strong>CPF:</strong> {user.cpf}</p>
-                    <p><strong>Data de Nascimento:</strong> {new Date(user.data_nascimento).toLocaleDateString()}</p>
-                    <p><strong>Email:</strong> {user.email}</p>
-                    <p><strong>CEP:</strong> {user.endereco.cep}</p>
-                    <p><strong>Rua:</strong> {user.endereco.rua}</p>
-                    <p><strong>Bairro:</strong> {user.endereco.bairro}</p>
-                    <p><strong>Cidade:</strong> {user.endereco.cidade}</p>
-                    <p><strong>Estado:</strong> {user.endereco.estado}</p>
+                    <h1>{userDetails.nome}</h1>
+                    <p><strong>Sexo:</strong> {userDetails.sexo}</p>
+                    <p><strong>CPF:</strong> {userDetails.cpf}</p>
+                    <p><strong>Data de Nascimento:</strong> {new Date(userDetails.data_nascimento).toLocaleDateString()}</p>
+                    <p><strong>Email:</strong> {userDetails.email}</p>
+                    <p><strong>CEP:</strong> {userDetails.endereco.cep}</p>
+                    <p><strong>Rua:</strong> {userDetails.endereco.rua}</p>
+                    <p><strong>Bairro:</strong> {userDetails.endereco.bairro}</p>
+                    <p><strong>Cidade:</strong> {userDetails.endereco.cidade}</p>
+                    <p><strong>Estado:</strong> {userDetails.endereco.estado}</p>
                     <div className="user-profile-actions">
                         <button onClick={handleEdit} className="edit-button">Editar</button>
                         <button onClick={handleDelete} className="delete-button">Excluir</button>
