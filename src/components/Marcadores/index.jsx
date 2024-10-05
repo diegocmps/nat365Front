@@ -9,7 +9,7 @@ export function Marcadores({ localidade }) {
             {localidade.map(local => (
                 <Marker
                     key={local.id}
-                    position={[parseFloat(local.endereco.latitude), parseFloat(local.endereco.longitude)]}>
+                    position={[parseFloat(local.latitude), parseFloat(local.longitude)]}>
 
                     <Popup>
                         <strong>{local.local}</strong>

@@ -1,34 +1,35 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { api } from "../../utils/api";
+import api from "../../utils/useAxios"; // Atualizado para importar o axios
 import { Map } from "../../components/Mapa";
 import './localDetalhes.css';
 
 export function LocalDetalhes() {
-    const { id } = useParams();
+    const { localId } = useParams(); // Atualizado para localId
     const [local, setLocal] = useState(null);
 
     useEffect(() => {
         async function fetchLocal() {
             try {
-                const resposta = await api(`/localidade/${id}`);
-                const data = await resposta.json();
-                console.log("Dados do local:", data);
-                setLocal(data);
+                
+                const resposta = await api.get(`/local/${localId}`); 
+                console.log("Resposta da API:", resposta);
+                console.log("Dados do local:", resposta.data);
+                setLocal(resposta.data);
             } catch (error) {
                 console.error("Erro ao buscar o local:", error);
             }
         }
 
         fetchLocal();
-    }, [id]);
+    }, [localId]);
 
     if (!local) {
         return <div>Carregando...</div>;
     }
 
-    const latitude = local.endereco.latitude;
-    const longitude = local.endereco.longitude;
+    const latitude = local.latitude;
+    const longitude = local.longitude;
 
     const googleMapsLink = `https://www.google.com/maps/?q=${latitude},${longitude}`;
 
@@ -40,16 +41,12 @@ export function LocalDetalhes() {
             <div className="local-detalhes-container">
                 <div className="local-detalhes-content">
                     <div className="local-detalhes">
-                        <h2>{local.local}</h2>
+                        <h2>{local.nome}</h2>
                         <p><strong>Descrição:</strong> {local.descricao}</p>
-                        <p><strong>CEP:</strong> {local.endereco.cep}</p>
-                        <p><strong>Rua:</strong> {local.endereco.rua}</p>
-                        <p><strong>Bairro:</strong> {local.endereco.bairro}</p>
-                        <p><strong>Cidade:</strong> {local.endereco.cidade}</p>
-                        <p><strong>Estado:</strong> {local.endereco.estado}</p>
+                        <p><strong>CEP:</strong> {local.cep}</p>
                         <p><strong>Latitude:</strong> {latitude}</p>
                         <p><strong>Longitude:</strong> {longitude}</p>
-                        <p><strong>Cadastrado por:</strong> {local.usuario}</p>
+                        <p><strong>Cadastrado por:</strong> {local.usuarioId}</p>
                         <p>
                             <strong>Ver no Google Maps: </strong> 
                             <a href={googleMapsLink} target="_blank" rel="noopener noreferrer">

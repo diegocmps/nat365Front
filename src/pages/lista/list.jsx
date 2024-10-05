@@ -3,6 +3,7 @@ import { useAuth } from "../../contexts/auth";
 import { Link, Navigate } from "react-router-dom";
 import './list.css';
 import { Trash2 } from 'lucide-react';
+import api from '../../utils/useAxios';
 
 export function List() {
     const { user } = useAuth();
@@ -10,11 +11,8 @@ export function List() {
 
     async function carregarDados() {
         try {
-            const resposta = await fetch('http://localhost:3000/localidade?_expand=user');
-            if (!resposta.ok) {
-                throw new Error('Falha ao carregar dados');
-            }
-            const dados = await resposta.json();
+            const resposta = await api.get('/local?_expand=user');
+            const dados = resposta.data;
 
             const locaisDoUsuario = dados.filter(item => item.usuarioId === user.id);
             setLista(locaisDoUsuario);
@@ -26,16 +24,9 @@ export function List() {
     async function excluirItem(id) {
         if (window.confirm('Tem certeza de que deseja excluir este item?')) {
             try {
-                const resposta = await fetch(`http://localhost:3000/localidade/${id}`, {
-                    method: 'DELETE'
-                });
-
-                if (resposta.ok) {
-                    setLista(lista.filter(item => item.id !== id));
-                    alert('Item excluído com sucesso');
-                } else {
-                    throw new Error('Falha ao excluir item');
-                }
+                await api.delete(`/local/${id}`);
+                setLista(lista.filter(item => item.id !== id));
+                alert('Item excluído com sucesso');
             } catch (error) {
                 console.error('Erro ao excluir item:', error);
                 alert('Erro ao excluir item. Tente novamente mais tarde.');
@@ -64,7 +55,7 @@ export function List() {
                             <tr key={item.id}>
                                 <td data-label="Local">
                                     <Link to={`/localidade/detalhes/${item.id}`}>
-                                        {item.local}
+                                        {item.nome}
                                     </Link>
                                 </td>
                                 <td data-label="Descrição">{item.descricao}</td>
