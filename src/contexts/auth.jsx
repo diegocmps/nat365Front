@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import api from "../utils/useAxios";
 
 export const AuthContext = createContext({
     user: null,
@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
                 return false;
             }
 
-            const response = await axios.post('http://localhost:3000/login', {
+            const response = await api.post('/login', {
                 email,
                 senha: password
             });

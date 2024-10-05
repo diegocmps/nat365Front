@@ -2,13 +2,15 @@ import { Link, useNavigate } from "react-router-dom";
 import './styles.css';
 import { useForm } from "react-hook-form";
 import { getCepData } from "../../services/CepService/CepService";
-import axios from "axios";
+import useAxios from '../../utils/useAxios'
+
 
 export function CadastroPage() {
     const { register, handleSubmit, setValue } = useForm();
     const navigate = useNavigate();
 
     const onSubmit = async (formData) => {
+
         
         const data = {
             nome: formData.nome,
@@ -21,7 +23,7 @@ export function CadastroPage() {
         };
     
         try {
-            const response = await axios.post("http://localhost:3000/usuario", data);
+            const response = await useAxios.post('/usuario', data);
     
             if (response.status === 201) { 
                 alert('Usuário cadastrado com sucesso!');
