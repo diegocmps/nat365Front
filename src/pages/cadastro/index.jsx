@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import './styles.css';
 import { useForm } from "react-hook-form";
 import { getCepData } from "../../services/CepService/CepService";
-import useAxios from '../../utils/useAxios'
+import useAxios from '../../utils/useAxios';
 
 
 export function CadastroPage() {
@@ -10,8 +10,6 @@ export function CadastroPage() {
     const navigate = useNavigate();
 
     const onSubmit = async (formData) => {
-
-        
         const data = {
             nome: formData.nome,
             sexo: formData.sexo,
@@ -19,12 +17,18 @@ export function CadastroPage() {
             data_nascimento: formData.data_nascimento,
             email: formData.email,
             senha: formData.senha,
-            endereco: `${formData.endereco.rua}, ${formData.endereco.bairro}, ${formData.endereco.cidade}, ${formData.endereco.estado}, CEP: ${formData.endereco.cep}`
+            rua: formData.rua,
+            bairro: formData.bairro,
+            cidade: formData.cidade,
+            estado: formData.estado,
+            cep: formData.cep,
+            numero: formData.numero,
+            complemento: formData.complemento
         };
-    
+
         try {
             const response = await useAxios.post('/usuario', data);
-    
+
             if (response.status === 201) { 
                 alert('Usuário cadastrado com sucesso!');
                 navigate('/login');
@@ -36,7 +40,6 @@ export function CadastroPage() {
             alert('Houve um erro ao cadastrar o usuário. Tente novamente.');
         }
     };
-    
 
     const checkCEP = async (e) => {
         const cep = e.target.value.replace(/\D/g, '');
@@ -48,10 +51,10 @@ export function CadastroPage() {
 
         try {
             const cepData = await getCepData(cep);
-            setValue('endereco.rua', cepData.address_name);
-            setValue('endereco.bairro', cepData.district);
-            setValue('endereco.cidade', cepData.city);
-            setValue('endereco.estado', cepData.state);
+            setValue('rua', cepData.address_name);
+            setValue('bairro', cepData.district);
+            setValue('cidade', cepData.city);
+            setValue('estado', cepData.state);
         } catch (error) {
             console.error('Erro ao buscar dados do CEP:', error);
             alert('Houve um erro ao buscar o CEP. Tente novamente mais tarde.');
@@ -131,7 +134,7 @@ export function CadastroPage() {
                                 id="cep"
                                 type="text"
                                 placeholder="Digite o CEP"
-                                {...register('endereco.cep', { required: 'O CEP é obrigatório' })}
+                                {...register('cep', { required: 'O CEP é obrigatório' })}
                                 onBlur={checkCEP}
                             />
                         </div>
@@ -142,7 +145,27 @@ export function CadastroPage() {
                                 id="rua"
                                 type="text"
                                 placeholder="Digite a rua"
-                                {...register('endereco.rua')}
+                                {...register('rua')}
+                            />
+                        </div>
+
+                        <div className="form-field full-width">
+                            <label htmlFor="numero">Número</label>
+                            <input
+                                id="numero"
+                                type="text"
+                                placeholder="Digite o número"
+                                {...register('numero')}
+                            />
+                        </div>
+
+                        <div className="form-field full-width">
+                            <label htmlFor="complemento">Complemento</label>
+                            <input
+                                id="complemento"
+                                type="text"
+                                placeholder="Digite o complemento"
+                                {...register('complemento')}
                             />
                         </div>
 
@@ -152,7 +175,7 @@ export function CadastroPage() {
                                 id="bairro"
                                 type="text"
                                 placeholder="Digite o bairro"
-                                {...register('endereco.bairro')}
+                                {...register('bairro')}
                             />
                         </div>
 
@@ -162,7 +185,7 @@ export function CadastroPage() {
                                 id="cidade"
                                 type="text"
                                 placeholder="Digite a cidade"
-                                {...register('endereco.cidade')}
+                                {...register('cidade')}
                             />
                         </div>
 
@@ -172,7 +195,7 @@ export function CadastroPage() {
                                 id="estado"
                                 type="text"
                                 placeholder="Digite o estado"
-                                {...register('endereco.estado')}
+                                {...register('estado')}
                             />
                         </div>
                     </div>
