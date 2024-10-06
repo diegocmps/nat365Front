@@ -75,11 +75,13 @@ export function UserProfile() {
                     <p><strong>CPF:</strong> {userDetails.cpf}</p>
                     <p><strong>Data de Nascimento:</strong> {new Date(userDetails.data_nascimento).toLocaleDateString()}</p>
                     <p><strong>Email:</strong> {userDetails.email}</p>
-                    <p><strong>CEP:</strong> {userDetails.endereco.cep}</p>
-                    <p><strong>Rua:</strong> {userDetails.endereco.rua}</p>
-                    <p><strong>Bairro:</strong> {userDetails.endereco.bairro}</p>
-                    <p><strong>Cidade:</strong> {userDetails.endereco.cidade}</p>
-                    <p><strong>Estado:</strong> {userDetails.endereco.estado}</p>
+                    <p><strong>CEP:</strong> {userDetails.cep}</p>
+                    <p><strong>Rua:</strong> {userDetails.rua}</p>
+                    <p><strong>Número:</strong> {userDetails.numero}</p>
+                    <p><strong>Complemento:</strong> {userDetails.complemento ? userDetails.complemento : 'Não informado'}</p>
+                    <p><strong>Bairro:</strong> {userDetails.bairro}</p>
+                    <p><strong>Cidade:</strong> {userDetails.cidade}</p>
+                    <p><strong>Estado:</strong> {userDetails.estado}</p>
                     <div className="user-profile-actions">
                         <button onClick={handleEdit} className="edit-button">Editar</button>
                         <button onClick={handleDelete} className="delete-button">Excluir</button>

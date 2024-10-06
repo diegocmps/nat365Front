@@ -16,8 +16,8 @@ export function EditUserProfile() {
     useEffect(() => {
         async function fetchUserData() {
             try {
-                const response = await api.get(`/usuario/${userId}`); 
-                if (response.status === 200) { 
+                const response = await api.get(`/usuario/${userId}`);
+                if (response.status === 200) {
                     setFormData(response.data);
                 } else {
                     setError('Erro ao buscar dados do usuário');
@@ -35,38 +35,22 @@ export function EditUserProfile() {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
-
-        if (name.startsWith('endereco.')) {
-            const key = name.split('.')[1];
-            setFormData(prevData => ({
-                ...prevData,
-                endereco: {
-                    ...prevData.endereco,
-                    [key]: value
-                }
-            }));
-        } else {
-            setFormData(prevData => ({
-                ...prevData,
-                [name]: value
-            }));
-        }
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value
+        }));
     };
 
     const handleCepBlur = async () => {
-        if (formData.endereco?.cep) {
+        if (formData?.cep) {
             try {
-                const data = await getCepData(formData.endereco.cep);
-                console.log("Dados do CEP recebidos:", data);
+                const data = await getCepData(formData.cep);
                 setFormData(prevData => ({
                     ...prevData,
-                    endereco: {
-                        ...prevData.endereco,
-                        rua: data.address,
-                        bairro: data.district || '',
-                        cidade: data.city,
-                        estado: data.state
-                    }
+                    rua: data.address,
+                    bairro: data.district || '',
+                    cidade: data.city,
+                    estado: data.state
                 }));
             } catch (err) {
                 alert('Erro ao buscar dados do CEP');
@@ -141,11 +125,12 @@ export function EditUserProfile() {
                     <input
                         type="date"
                         name="data_nascimento"
-                        value={formData?.data_nascimento || ''}
+                        value={formData?.data_nascimento ? new Date(formData.data_nascimento).toISOString().split('T')[0] : ''}
                         onChange={handleChange}
                         required
                     />
                 </label>
+
                 <label>
                     Email:
                     <input
@@ -160,8 +145,8 @@ export function EditUserProfile() {
                     CEP:
                     <input
                         type="text"
-                        name="endereco.cep"
-                        value={formData?.endereco?.cep || ''}
+                        name="cep"
+                        value={formData?.cep || ''}
                         onChange={handleChange}
                         onBlur={handleCepBlur}
                         required
@@ -171,18 +156,37 @@ export function EditUserProfile() {
                     Rua:
                     <input
                         type="text"
-                        name="endereco.rua"
-                        value={formData?.endereco?.rua || ''}
+                        name="rua"
+                        value={formData?.rua || ''}
                         onChange={handleChange}
                         required
+                    />
+                </label>
+                <label>
+                    Número:
+                    <input
+                        type="text"
+                        name="numero"
+                        value={formData?.numero || ''}
+                        onChange={handleChange}
+                        required
+                    />
+                </label>
+                <label>
+                    Complemento:
+                    <input
+                        type="text"
+                        name="complemento"
+                        value={formData?.complemento || ''}
+                        onChange={handleChange}
                     />
                 </label>
                 <label>
                     Bairro:
                     <input
                         type="text"
-                        name="endereco.bairro"
-                        value={formData?.endereco?.bairro || ''}
+                        name="bairro"
+                        value={formData?.bairro || ''}
                         onChange={handleChange}
                         required
                     />
@@ -191,8 +195,8 @@ export function EditUserProfile() {
                     Cidade:
                     <input
                         type="text"
-                        name="endereco.cidade"
-                        value={formData?.endereco?.cidade || ''}
+                        name="cidade"
+                        value={formData?.cidade || ''}
                         onChange={handleChange}
                         required
                     />
@@ -201,8 +205,8 @@ export function EditUserProfile() {
                     Estado:
                     <input
                         type="text"
-                        name="endereco.estado"
-                        value={formData?.endereco?.estado || ''}
+                        name="estado"
+                        value={formData?.estado || ''}
                         onChange={handleChange}
                         required
                     />
