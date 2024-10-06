@@ -1,4 +1,3 @@
-// src/pages/HomePage.jsx
 import './dashboard.css';
 import { useState, useEffect } from 'react';
 import { CardUsuarios } from '../../components/CardUsuarios';
