@@ -45,7 +45,7 @@ export function List() {
                     <tr>
                         <td>Local</td>
                         <td>Descrição</td>
-                        <td>Usuário</td>
+                        <td>Localização</td> 
                         <td>Opções</td>
                     </tr>
                 </thead>
@@ -59,7 +59,11 @@ export function List() {
                                     </Link>
                                 </td>
                                 <td data-label="Descrição">{item.descricao}</td>
-                                <td data-label="Usuário">{item.usuario || 'Desconhecido'}</td>
+                                <td data-label="Localização">
+                                    <a href={`https://www.google.com/maps/?q=${item.latitude},${item.longitude}`} target="_blank" rel="noopener noreferrer">
+                                        {item.cep}
+                                    </a>
+                                </td>
                                 <td data-label="Opções" className="campo-opcoes">
                                     <Link to={`/localidade/${item.id}`}>Editar</Link>
                                     <Trash2

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../../contexts/auth";
 import './localidades.css';
 import { getCepData } from "../../services/CepService/CepService";
-import axios from "axios";
+import api from "../../utils/useAxios";
 
 export function CadastroLocais() {
     const { register, handleSubmit, setValue } = useForm();
@@ -11,29 +11,16 @@ export function CadastroLocais() {
     const { user } = useAuth();
 
     async function addLocal(dataLocais) {
-
-        let token = localStorage.getItem('token')
-        const userId = user.id
-
         const localData = {
             nome: dataLocais.local,
             descricao: dataLocais.descricao,
-            cep: dataLocais.endereco.cep,
-            latitude: dataLocais.endereco.latitude,
-            longitude: dataLocais.endereco.longitude,
-            usuarioID: userId
+            cep: dataLocais.endereco.cep
         };
 
         try {
+            const response = await api.post('/local', localData);
 
-            const response = await axios.post('http://localhost:3000/local', localData, {
-                headers: {
-                    'Authorization': `${token}`,
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (response.status == 201) {
+            if (response.status === 201) {
                 alert('Cadastrado com sucesso');
                 navigate('/');
             } else {
@@ -109,8 +96,9 @@ export function CadastroLocais() {
                         <input
                             id="rua"
                             type="text"
-                            placeholder="Digite a rua"
+                            placeholder="Rua será preenchida automaticamente"
                             {...register('endereco.rua')}
+                            readOnly
                         />
                     </div>
 
@@ -120,8 +108,9 @@ export function CadastroLocais() {
                             <input
                                 id="bairro"
                                 type="text"
-                                placeholder="Digite o bairro"
+                                placeholder="Bairro será preenchido automaticamente"
                                 {...register('endereco.bairro')}
+                                readOnly
                             />
                         </div>
 
@@ -130,8 +119,9 @@ export function CadastroLocais() {
                             <input
                                 id="cidade"
                                 type="text"
-                                placeholder="Digite a cidade"
+                                placeholder="Cidade será preenchida automaticamente"
                                 {...register('endereco.cidade')}
+                                readOnly
                             />
                         </div>
 
@@ -140,8 +130,9 @@ export function CadastroLocais() {
                             <input
                                 id="estado"
                                 type="text"
-                                placeholder="Digite o estado"
+                                placeholder="Estado será preenchido automaticamente"
                                 {...register('endereco.estado')}
+                                readOnly
                             />
                         </div>
                     </div>
@@ -152,8 +143,9 @@ export function CadastroLocais() {
                             <input
                                 id="latitude"
                                 type="text"
-                                placeholder="Digite a latitude"
+                                placeholder="Latitude será preenchida automaticamente"
                                 {...register('endereco.latitude')}
+                                readOnly
                             />
                         </div>
 
@@ -162,8 +154,9 @@ export function CadastroLocais() {
                             <input
                                 id="longitude"
                                 type="text"
-                                placeholder="Digite a longitude"
+                                placeholder="Longitude será preenchida automaticamente"
                                 {...register('endereco.longitude')}
+                                readOnly
                             />
                         </div>
                     </div>
