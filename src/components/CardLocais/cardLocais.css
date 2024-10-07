@@ -1,40 +1,43 @@
 .card-locais {
-    background-color: #009879;
+    background-color: #017e65; 
     color: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: medium;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    height: 150px;
-    width: 300px;
+    height: 140px;
+    width: 200px;
     position: relative;
 }
 
-.card-locais span {
+.card-locais-text {
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.card-locais p {
-    font-size: 48px;
-    margin: 0 auto;
-    text-align: center;
+.card-locais-count {
+    font-size: 48px; 
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100%; 
+    justify-content: flex-start;
+    height: auto;
+    margin-top: 10px; 
 }
 
-.card-locais svg {
-    color: rgb(251, 255, 23);
-    font-size: 48px;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+.card-locais-icon {
+    color: rgb(243, 244, 223);
+    font-size: 62px; 
+    opacity: 0.75;
+    margin-right: 15px; 
+}
+
+.card-locais-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
