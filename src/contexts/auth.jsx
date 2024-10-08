@@ -11,7 +11,7 @@ export const AuthContext = createContext({
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(() => {
         const userLogged = localStorage.getItem('@natureza365:user');
-        return userLogged ? JSON.parse(userLogged) : null; 
+        return userLogged ? JSON.parse(userLogged) : null;
     });
 
     async function signIn({ email, password }) {
@@ -44,14 +44,17 @@ export function AuthProvider({ children }) {
                 console.error('Erro ao autenticar usuário:', error);
                 alert('Erro ao logar. Tente novamente mais tarde.');
             }
-            return false; 
+            return false;
         }
     }
 
-    function signOut() {
+    async function signOut() {
         setUser(null);
+        const logout = await api.post('/login/logout')
+
         localStorage.removeItem('@natureza365:user');
         localStorage.removeItem('token');
+        console.log(logout)
     }
 
     return (
