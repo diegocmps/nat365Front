@@ -10,16 +10,20 @@ import api from '../../utils/useAxios';
 export function HomePage() {
     const [localidades, setLocalidades] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 6;
+    const [userCount, setUsercount] = useState(0);
+    const [localCount, setLocalCount] = useState(0)
+    const [itemsPerPage, setItemsPerPage] = useState(2);
 
     useEffect(() => {
         async function loadData() {
 
             try {
-                
-                const response = await api.get('/local');
-                setLocalidades(response.data);
-                console.log('Resposta da API:', response.data); 
+
+                const response = await api.get(`/dashboard?page=${currentPage}&limit=${itemsPerPage}`);
+                setLocalidades(response.data.dados.locais);
+                setUsercount(response.data.dados.usuariosOnline)
+                setLocalCount(response.data.dados.locaisTotal)
+                console.log('Resposta da API:', response.data);
             } catch (error) {
                 console.error('Erro ao buscar localidades:', error);
 
@@ -31,17 +35,16 @@ export function HomePage() {
                 }
             }
         }
-
+        console.log(currentPage)
         loadData();
-    }, []);
-
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentLocalidades = localidades.slice(indexOfFirstItem, indexOfLastItem);
+    }, [currentPage, itemsPerPage]);
+    // paginação feita no backend
+    const currentLocalidades = localidades
 
     const nextPage = () => {
-        if (currentPage < Math.ceil(localidades.length / itemsPerPage)) {
+        if (currentPage < Math.ceil(localCount / itemsPerPage)) {
             setCurrentPage(currentPage + 1);
+
         }
     };
 
@@ -57,8 +60,8 @@ export function HomePage() {
             <div className="dashboard">
                 <div className="dashboard-top">
                     <div className="cards-container">
-                        <CardUsuarios />
-                        <CardLocais />
+                        <CardUsuarios userCount={userCount} />
+                        <CardLocais localCount={localCount} />
                     </div>
                 </div>
 
@@ -79,7 +82,7 @@ export function HomePage() {
                                         <tr key={item.id}>
                                             <td data-label="Local"><Link to={`/localidade/detalhes/${item.id}`}>{item.nome}</Link></td>
                                             <td data-label="Descrição">{item.descricao}</td>
-                                            <td data-label="Usuário">{item.usuario}</td>
+                                            <td data-label="Usuário">{item.usuario.nome}</td>
                                         </tr>
                                     ))
                                 }
@@ -91,7 +94,7 @@ export function HomePage() {
                                 Anterior
                             </button>
                             <span>Página {currentPage}</span>
-                            <button onClick={nextPage} disabled={currentPage === Math.ceil(localidades.length / itemsPerPage)}>
+                            <button onClick={() => nextPage()} disabled={currentPage === Math.ceil(localCount / itemsPerPage)}>
                                 Próxima
                             </button>
                         </div>
