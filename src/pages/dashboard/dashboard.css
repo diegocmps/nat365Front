@@ -41,7 +41,7 @@
 }
 
 .local-list .styled-table thead tr {
-    background-color: #009879;
+    background-color: #0a282293;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
@@ -86,20 +86,20 @@
   
   .pagination button {
     padding: 10px 15px;
-    background-color: #007bff;
+    background-color: #0b3c3293;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
   }
   
   .pagination button:disabled {
-    background-color: #ccc;
+    background-color: #c4c4c4;
     cursor: not-allowed;
   }
   
   .pagination span {
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: medium;
   }
   

@@ -6,20 +6,20 @@
     box-sizing: border-box;
 }
 
-.btn-submit {
+.btn-submit-loc {
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: #009879;
+    background-color: #285347;
     color: #fff;
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
     padding: 8px 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.btn-submit:hover {
+.btn-submit-loc:hover {
     background-color: #007a61;
 }
 
@@ -61,7 +61,7 @@
 }
 
 @media (max-width: 768px) {
-    .btn-submit {
+    .btn-submit-loc {
         top: 10px;
         right: 10px;
         padding: 6px 12px; 
