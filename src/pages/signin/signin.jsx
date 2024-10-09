@@ -49,7 +49,7 @@ export function Signin() {
                             <input
                                 type="password"
                                 id="floatingPassword"
-                                placeholder="Senha"
+                                placeholder="Digite sua senha"
                                 {...register('senha', { required: true })}
                             />
                             {errors.senha && <p>Senha é obrigatória</p>}
