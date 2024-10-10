@@ -34,7 +34,7 @@ export function LocalDetalhes() {
     return (
         <div className="local-detalhes-page">
             <button className="voltar-button">
-                <Link to={-1}>Voltar</Link>
+                <Link to={'/'}>Voltar</Link>
             </button>
             <div className="local-detalhes-container">
                 <div className="local-detalhes-content">
