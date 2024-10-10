@@ -2,9 +2,10 @@
 import { Link } from "react-router-dom";
 import './sidebar.css';
 import { useAuth } from "../../contexts/auth";
-import { LogOut, Menu } from 'lucide-react';
+import { LogOut, Menu, UserCog, MapPinPlusInside, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import logoImage from '../../assets/imagens/logo.png';
+
 
 function SideBar() {
     const { user, signOut } = useAuth();
@@ -38,13 +39,13 @@ function SideBar() {
                 {user && (
                     <>
                         <Link to={`/user/${user.id}`} onClick={handleLinkClick}>
-                            Dados Cadastrais
+                        <UserCog size={20} />     Dados Cadastrais
                         </Link>
                         <Link to="/localidade" onClick={handleLinkClick}>
-                            Cadastro Locais
+                        <MapPinPlusInside size={20} />     Cadastrar Locais
                         </Link>
                         <Link to="/list" onClick={handleLinkClick}>
-                            Meus Locais
+                        <MapPin size={20} />     Meus Locais
                         </Link>
                     </>
                 )}

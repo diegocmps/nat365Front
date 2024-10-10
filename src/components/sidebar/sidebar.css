@@ -11,7 +11,7 @@
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: right;
     position: fixed;
     left: 0;
     top: 0;
@@ -45,6 +45,19 @@
     padding: 20px;
     transition: margin-left 0.3s ease;
 }
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 90%; /* Ajusta o logo para ser 10% menor */
+    height: auto;   /* Mantém a proporção do logo */
+    display: block;
+}
+
 
 @media (max-width: 768px) {
     .sidebar {

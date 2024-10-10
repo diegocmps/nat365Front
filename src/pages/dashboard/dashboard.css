@@ -44,7 +44,7 @@
     background-color: #0a282293;
     color: #ffffff;
     text-align: left;
-    font-weight: bold;
+    font-weight: medium;
 }
 
 .local-list .styled-table th, 
@@ -66,7 +66,7 @@
 }
 
 .local-list .styled-table tbody tr.active-row {
-    font-weight: bold;
+    font-weight: medium;
     color: #009879;
 }
 

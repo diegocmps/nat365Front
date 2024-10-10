@@ -3,6 +3,7 @@ import { api } from "../../utils/api";
 import './cardLocais.css';
 import { MapPin } from 'lucide-react';
 
+
 export function CardLocais() {
     const [localCount, setLocalCount] = useState(0);
 

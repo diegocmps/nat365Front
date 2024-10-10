@@ -106,7 +106,7 @@
 
   .styled-table td::before {
     content: attr(data-label);
-    font-weight: bold;
+    font-weight: medium;
     margin-right: 10px;
   }
 
