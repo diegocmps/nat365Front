@@ -8,7 +8,7 @@
 .btn-delete {
   cursor: pointer;
   font-size: 1.2em;
-  color: #ff0000;
+  color: #c70404;
   transition: color 0.3s;
 }
 
@@ -106,7 +106,7 @@
 
   .styled-table td::before {
     content: attr(data-label);
-    font-weight: bold;
+    font-weight: medium;
     margin-right: 10px;
   }
 

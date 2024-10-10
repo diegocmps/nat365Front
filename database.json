@@ -135,6 +135,22 @@
         "cidade": "Palhoça",
         "estado": "SC"
       }
+    },
+    {
+      "id": "2414",
+      "nome": "teste",
+      "sexo": "masculino",
+      "cpf": "0000000",
+      "data_nascimento": "1989-05-12",
+      "email": "josekunz@gmail.com",
+      "senha": "teste",
+      "endereco": {
+        "cep": "80110160",
+        "rua": "88066-366",
+        "bairro": "Armação",
+        "cidade": "Florianópolis",
+        "estado": "Santa Catarina"
+      }
     }
   ],
   "localidade": [

@@ -3,7 +3,7 @@ import './signin.css';
 import { useAuth } from '../../contexts/auth';
 import { useForm } from 'react-hook-form';
 import fundoImage from '../../assets/imagens/imagem.jpg';
-import logoImage from '../../assets/imagens/logo.png';
+import logoImage from '../../assets/imagens/logo2.png';
 
 export function Signin() {
     const { signIn } = useAuth();
@@ -49,7 +49,7 @@ export function Signin() {
                             <input
                                 type="password"
                                 id="floatingPassword"
-                                placeholder="Senha"
+                                placeholder="Digite sua senha"
                                 {...register('senha', { required: true })}
                             />
                             {errors.senha && <p>Senha é obrigatória</p>}

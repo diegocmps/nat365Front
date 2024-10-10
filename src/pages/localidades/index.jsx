@@ -162,7 +162,7 @@ export function CadastroLocais() {
                         </div>
                     </div>
 
-                    <button className="btn-submit" type="submit">Cadastrar</button>
+                    <button className="btn-submit-loc" type="submit">Cadastrar</button>
                 </form>
             </div>
         </main>

@@ -3,6 +3,7 @@ import './styles.css';
 import { useForm } from "react-hook-form";
 import { getCepData } from "../../services/CepService/CepService";
 import useAxios from '../../utils/useAxios';
+import { UserRoundPlus } from 'lucide-react';
 
 
 export function CadastroPage() {
@@ -64,10 +65,13 @@ export function CadastroPage() {
     return (
         <main>
             <div className="cadastro-container">
-                <h1>Cadastro de Usuário</h1>
+            <div className="icon-container">
+            <UserRoundPlus size={36} />
+            </div>
+             <h1> Cadastro de Usuário</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-layout">
-                        <div className="form-field">
+                        <div className="form-field half-width">
                             <label htmlFor="nome">Nome</label>
                             <input
                                 id="nome"
@@ -128,7 +132,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-field full-width">
+                        <div className="form-field half-width">
                             <label htmlFor="cep">CEP</label>
                             <input
                                 id="cep"
@@ -139,7 +143,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-field full-width">
+                        <div className="form-field half-width">
                             <label htmlFor="rua">Rua</label>
                             <input
                                 id="rua"
@@ -149,7 +153,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-field full-width">
+                        <div className="form-field half-width">
                             <label htmlFor="numero">Número</label>
                             <input
                                 id="numero"
@@ -159,7 +163,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-field full-width">
+                        <div className="form-field half-width">
                             <label htmlFor="complemento">Complemento</label>
                             <input
                                 id="complemento"
@@ -169,7 +173,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-field full-width">
+                        <div className="form-field half-width">
                             <label htmlFor="bairro">Bairro</label>
                             <input
                                 id="bairro"
@@ -179,7 +183,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-field full-width">
+                        <div className="form-field half-width">
                             <label htmlFor="cidade">Cidade</label>
                             <input
                                 id="cidade"
@@ -189,7 +193,7 @@ export function CadastroPage() {
                             />
                         </div>
 
-                        <div className="form-field full-width">
+                        <div className="form-field half-width">
                             <label htmlFor="estado">Estado</label>
                             <input
                                 id="estado"
@@ -200,7 +204,7 @@ export function CadastroPage() {
                         </div>
                     </div>
                     <button className="btn-submit" type="submit">Cadastrar</button>
-                </form>
+                    </form>
                 <p className="login-link">Já possui cadastro? <Link to="/login">Efetuar login</Link></p>
             </div>
         </main>

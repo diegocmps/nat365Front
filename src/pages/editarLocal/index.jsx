@@ -113,6 +113,7 @@ export function PaginaEditarLocal() {
         <main>
             <div>
                 <form className="formulario" onSubmit={handleSubmit(onUpdate)}>
+                <h1>Atualização do Local</h1>
                     <label htmlFor="local">Local</label>
                     <input
                         id="local"
