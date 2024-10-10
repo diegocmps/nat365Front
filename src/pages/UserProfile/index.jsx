@@ -10,6 +10,7 @@ export function UserProfile() {
     const [error, setError] = useState(null);
     const [hasLocations, setHasLocations] = useState(false);
     const [userDetails, setUserDetails] = useState(null);
+    const [deleting, setDeleting] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,7 +25,7 @@ export function UserProfile() {
             try {
                 const response = await api.get(`/usuario/${user.id}`);
                 setUserDetails(response.data);
-                setHasLocations(response.data.localidades && response.data.localidades.length > 0);
+                setHasLocations(response.data.locais && response.data.locais.length > 0);
             } catch (err) {
                 setError('Erro ao buscar detalhes do usuário');
                 console.error(err);
@@ -45,26 +46,45 @@ export function UserProfile() {
             alert('Não é possível excluir o usuário porque ele possui locais cadastrados.');
             return;
         }
-
+    
         const confirmDelete = window.confirm('Tem certeza de que deseja excluir sua conta? Esta ação não pode ser desfeita.');
         if (confirmDelete) {
+            setDeleting(true);
             try {
                 const response = await api.delete(`/usuario/${user.id}`);
-                if (response.status === 200) {
-                    signOut();
-                    navigate('/');
+                if (response.status === 204) {
+                    
+                    console.log('Antes de remover:', localStorage.getItem('@natureza365:user'));
+    
+                    
+                    localStorage.removeItem('@natureza365:user');
+                    localStorage.removeItem('token');
+    
+                    // Log após remoção
+                    console.log('Depois de remover:', localStorage.getItem('user'));
+    
+                    signOut(); 
+                    navigate('/'); 
+                    
                 } else {
                     setError('Erro ao excluir o usuário');
                 }
             } catch (err) {
-                setError('Erro ao excluir o usuário');
+                
+                if (err.response && err.response.data && err.response.data.message) {
+                    setError(err.response.data.message);
+                } else {
+                    setError('Erro ao excluir o usuário');
+                }
                 console.error(err);
+            } finally {
+                setDeleting(false);
             }
         }
     };
 
     if (loading) return <p>Carregando...</p>;
-    if (error) return <p>{error}</p>;
+    if (error) return <p className="error-message">{error}</p>; 
 
     return (
         <div className="user-profile">
@@ -84,7 +104,9 @@ export function UserProfile() {
                     <p><strong>Estado:</strong> {userDetails.estado}</p>
                     <div className="user-profile-actions">
                         <button onClick={handleEdit} className="edit-button">Editar</button>
-                        <button onClick={handleDelete} className="delete-button">Excluir</button>
+                        <button onClick={handleDelete} className="delete-button" disabled={deleting}>
+                            {deleting ? 'Excluindo...' : 'Excluir'}
+                        </button>
                     </div>
                 </div>
             ) : (

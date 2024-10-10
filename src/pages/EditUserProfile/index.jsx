@@ -110,13 +110,14 @@ export function EditUserProfile() {
                         <option value="Outro">Outro</option>
                     </select>
                 </label>
-                <label>
+                <label className="disabled-field">
                     CPF:
                     <input
                         type="text"
                         name="cpf"
                         value={formData?.cpf || ''}
                         onChange={handleChange}
+                        readOnly
                         required
                     />
                 </label>
@@ -131,13 +132,14 @@ export function EditUserProfile() {
                     />
                 </label>
 
-                <label>
+                <label className="disabled-field">
                     Email:
                     <input
                         type="email"
                         name="email"
                         value={formData?.email || ''}
                         onChange={handleChange}
+                        readOnly
                         required
                     />
                 </label>

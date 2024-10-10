@@ -1,25 +1,7 @@
-import { useEffect, useState } from "react";
-import { api } from "../../utils/api";
 import './cardUsuarios.css';
 import { Users } from 'lucide-react';
 
-export function CardUsuarios() {
-    const [userCount, setUserCount] = useState(0);
-
-    useEffect(() => {
-        async function fetchUserCount() {
-            try {
-                const response = await api('/users');
-                const data = await response.json();
-                setUserCount(data.length);
-            } catch (error) {
-                console.error('Erro ao buscar a quantidade de usuários:', error);
-            }
-        }
-        
-
-        fetchUserCount();
-    }, []);
+export function CardUsuarios({ userCount }) {
 
     return (
 <div className="card-usuarios">

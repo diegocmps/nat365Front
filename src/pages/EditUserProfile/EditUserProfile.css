@@ -63,6 +63,14 @@ h1 {
     color: #333;
 }
 
+.disabled-field input {
+    background-color: #f0f0f0;
+    color: #888888;
+    cursor: not-allowed;
+    border: 1px solid #cccccc;
+}
+
+
 @media (min-width: 769px) {
     form {
         flex-direction: row;

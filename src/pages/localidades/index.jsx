@@ -21,8 +21,9 @@ export function CadastroLocais() {
             const response = await api.post('/local', localData);
 
             if (response.status === 201) {
+                const localId = response.data.id;
                 alert('Cadastrado com sucesso');
-                navigate('/');
+                navigate(`/localidade/detalhes/${localId}`);                 
             } else {
                 alert('Houve um erro ao cadastrar o local');
             }
