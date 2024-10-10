@@ -12,7 +12,7 @@ export function HomePage() {
     const [currentPage, setCurrentPage] = useState(1);
     const [userCount, setUsercount] = useState(0);
     const [localCount, setLocalCount] = useState(0)
-    const [itemsPerPage, setItemsPerPage] = useState(2);
+    const [itemsPerPage] = useState(5);
 
     useEffect(() => {
         async function loadData() {
@@ -38,7 +38,7 @@ export function HomePage() {
         console.log(currentPage)
         loadData();
     }, [currentPage, itemsPerPage]);
-    // paginação feita no backend
+    
     const currentLocalidades = localidades
 
     const nextPage = () => {
