@@ -4,6 +4,9 @@ import { useAuth } from "../../contexts/auth";
 import './localidades.css';
 import { getCepData } from "../../services/CepService/CepService";
 import api from "../../utils/useAxios";
+import boneco2 from '../../assets/imagens/boneco2.png';
+import { AlignCenter } from "lucide-react";
+
 
 export function CadastroLocais() {
     const { register, handleSubmit, setValue } = useForm();
@@ -60,8 +63,8 @@ export function CadastroLocais() {
         <main>
             <div className="form-container">
                 <form className="formulario" onSubmit={handleSubmit(addLocal)}>
-                    <h1>Cadastro de Local</h1>
-
+                <img className="boneco2" src={boneco2} alt="logo"/> 
+                    <h1> Cadastro de Local</h1>  
                     <div className="form-group">
                         <label htmlFor="local">Nome do Local</label>
                         <input
