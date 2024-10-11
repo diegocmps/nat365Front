@@ -6,6 +6,7 @@ import { CardLocais } from '../../components/CardLocais';
 import { Link } from 'react-router-dom';
 import SideBar from '../../components/sidebar/sidebar';
 import api from '../../utils/useAxios';
+import boneco1 from '../../assets/imagens/boneco1.png';
 
 export function HomePage() {
     const [localidades, setLocalidades] = useState([]);
@@ -60,6 +61,7 @@ export function HomePage() {
             <div className="dashboard">
                 <div className="dashboard-top">
                     <div className="cards-container">
+                        <img className="boneco" src={boneco1} alt="logo" />
                         <CardUsuarios userCount={userCount} />
                         <CardLocais localCount={localCount} />
                     </div>

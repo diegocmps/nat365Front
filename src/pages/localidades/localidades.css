@@ -44,8 +44,8 @@
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+    border: 1px solid #8f8f8f;
+    border-radius: 8px;
     box-sizing: border-box;
 }
 
@@ -53,6 +53,12 @@
     display: flex;
     gap: 15px; 
     flex-wrap: wrap; 
+}
+
+.boneco2 {
+        width: 120px;
+        margin-bottom: -15px;
+        display:flex;
 }
 
 .form-row .form-group {

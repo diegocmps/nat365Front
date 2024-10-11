@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import './list.css';
 import { Trash2 } from 'lucide-react';
 import api from '../../utils/useAxios';
+import boneco3 from '../../assets/imagens/boneco3.png';
 
 export function List() {
     const { user } = useAuth();
@@ -40,8 +41,10 @@ export function List() {
 
     return user ? (
         <div className="local-list">
+                <img className="boneco3" src={boneco3} alt="logo"/> 
             <table className="styled-table">
                 <thead>
+            
                     <tr>
                         <td>Local</td>
                         <td>Descrição</td>

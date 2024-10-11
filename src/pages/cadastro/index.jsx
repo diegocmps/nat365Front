@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { getCepData } from "../../services/CepService/CepService";
 import useAxios from '../../utils/useAxios';
 import { UserRoundPlus } from 'lucide-react';
-
+import boneco2 from '../../assets/imagens/boneco2.png';
 
 export function CadastroPage() {
     const { register, handleSubmit, setValue } = useForm();
@@ -64,6 +64,8 @@ export function CadastroPage() {
 
     return (
         <main>
+                        <img className="logo" src={boneco2} alt="logo" />
+
             <div className="cadastro-container">
             <div className="icon-container">
             <UserRoundPlus size={36} />
