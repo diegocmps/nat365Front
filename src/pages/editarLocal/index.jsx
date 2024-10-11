@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { getCepData } from "../../services/CepService/CepService";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import api from "../../utils/useAxios";
 import { useAuth } from "../../contexts/auth";
 import './editarLocal.css';
@@ -11,6 +11,7 @@ export function PaginaEditarLocal() {
     const { id } = useParams();
     const { user } = useAuth();
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     async function onUpdate(data) {
         if (!user) {
@@ -39,7 +40,7 @@ export function PaginaEditarLocal() {
             }
 
             alert('Atualizado com sucesso');
-            console.log(response.data);
+            navigate('/');
         } catch (error) {
             console.error('Erro ao atualizar localidade:', error);
             alert('Houve um erro ao atualizar o local. Tente novamente mais tarde.');

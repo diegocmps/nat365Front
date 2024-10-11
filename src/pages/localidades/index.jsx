@@ -5,7 +5,6 @@ import './localidades.css';
 import { getCepData } from "../../services/CepService/CepService";
 import api from "../../utils/useAxios";
 import boneco2 from '../../assets/imagens/boneco2.png';
-import { AlignCenter } from "lucide-react";
 
 
 export function CadastroLocais() {
