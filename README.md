@@ -13,14 +13,16 @@ Através do Nature Finder é possível
 * Registro dos locais em mapa, através de geolocalização, com busca por CEP;
 * Visualizar e interagir com o minimapa.
 
-# Rodando na Web
+# Rodando a aplicação
+
+## Rodando na Web
 
 Acesse o link abaixo:
 
-https://......vercel.app/
+https://natuclone.vercel.app/
 
 
-# Rodando localmente
+## Rodando localmente
 
 Para realizar os testes da plataforma, será necessário o uso de uma plataforma de edição de códigos (recomendado VS Code).
 
