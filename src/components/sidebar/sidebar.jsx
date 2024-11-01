@@ -1,15 +1,14 @@
-// src/components/SideBar.jsx
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; 
 import './sidebar.css';
 import { useAuth } from "../../contexts/auth";
 import { LogOut, Menu, UserCog, MapPinPlusInside, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import logoImage from '../../assets/imagens/logo.png';
 
-
 function SideBar() {
     const { user, signOut } = useAuth();
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate(); 
 
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
@@ -17,6 +16,16 @@ function SideBar() {
 
     const handleLinkClick = () => {
         setIsOpen(false);
+    };
+
+    const handleClick = (path) => {
+        navigate(path);
+        window.location.reload();
+    };
+
+    const handleLogout = async () => {
+        await signOut();
+        handleClick('/');
     };
 
     return (
@@ -28,7 +37,9 @@ function SideBar() {
                 <div className="logo-container">
                     <img className="logo" src={logoImage} alt="logo" />
                 </div>
-                <Link to="/" onClick={handleLinkClick}>Home</Link>
+                <Link to="/" onClick={() => handleClick('/')} className="sidebar-link"> {}
+                    Home
+                </Link>
 
                 {!user && (
                     <>
@@ -39,20 +50,20 @@ function SideBar() {
                 {user && (
                     <>
                         <Link to={`/user/${user.id}`} onClick={handleLinkClick}>
-                        <UserCog size={20} />     Dados Cadastrais
+                            <UserCog size={20} /> Dados Cadastrais
                         </Link>
                         <Link to="/localidade" onClick={handleLinkClick}>
-                        <MapPinPlusInside size={20} />     Cadastrar Locais
+                            <MapPinPlusInside size={20} /> Cadastrar Locais
                         </Link>
                         <Link to="/list" onClick={handleLinkClick}>
-                        <MapPin size={20} />     Meus Locais
+                            <MapPin size={20} /> Meus Locais
                         </Link>
                     </>
                 )}
 
                 <div className="logout-container">
                     {user ? (
-                        <button className="btn btn-dark" onClick={signOut}>
+                        <button className="btn btn-dark" onClick={handleLogout}>
                             <LogOut size={16} />
                             <span className="logout-text">Sair</span>
                         </button>

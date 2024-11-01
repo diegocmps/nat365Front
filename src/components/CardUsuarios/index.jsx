@@ -1,6 +1,7 @@
 import './cardUsuarios.css';
 import { Users } from 'lucide-react';
 
+// eslint-disable-next-line react/prop-types
 export function CardUsuarios({ userCount }) {
 
     return (
