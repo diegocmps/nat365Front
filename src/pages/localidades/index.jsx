@@ -1,18 +1,11 @@
 import { Navigate, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-<<<<<<< HEAD
 import { useAuth } from "../../contexts/auth";
 import './localidades.css';
 import { getCepData } from "../../services/CepService/CepService";
 import api from "../../utils/useAxios";
 import boneco2 from '../../assets/imagens/boneco2.png';
 
-=======
-import { api } from "../../utils/api";
-import { useAuth } from "../../contexts/auth";
-import './localidades.css';
-import { getCepData } from "../../services/CepService/CepService";
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 
 export function CadastroLocais() {
     const { register, handleSubmit, setValue } = useForm();
@@ -20,7 +13,6 @@ export function CadastroLocais() {
     const { user } = useAuth();
 
     async function addLocal(dataLocais) {
-<<<<<<< HEAD
         const localData = {
             nome: dataLocais.local,
             descricao: dataLocais.descricao,
@@ -40,37 +32,6 @@ export function CadastroLocais() {
         } catch (error) {
             alert('Houve um erro ao cadastrar o local');
             console.error("Erro ao cadastrar o local: ", error.response ? error.response.data : error.message);
-=======
-        if (!user) {
-            alert('Você precisa estar logado para cadastrar um local');
-            return;
-        }
-
-        const localData = {
-            ...dataLocais,
-            usuario: user.nome,
-            usuarioId: user.id
-        };
-
-        try {
-            const resposta = await api('/localidade', {
-                method: 'POST',
-                body: JSON.stringify(localData),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (!resposta.ok) {
-                alert('Houve um erro ao cadastrar o local');
-            } else {
-                alert('Cadastrado com sucesso');
-                navigate('/dashboard');
-            }
-        } catch (error) {
-            alert('Houve um erro ao cadastrar o local');
-            console.log(error.message);
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
         }
     }
 
@@ -101,13 +62,8 @@ export function CadastroLocais() {
         <main>
             <div className="form-container">
                 <form className="formulario" onSubmit={handleSubmit(addLocal)}>
-<<<<<<< HEAD
                 <img className="boneco2" src={boneco2} alt="logo"/> 
                     <h1> Cadastro de Local</h1>  
-=======
-                    <h1>Cadastro de Local</h1>
-                    
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                     <div className="form-group">
                         <label htmlFor="local">Nome do Local</label>
                         <input
@@ -143,14 +99,9 @@ export function CadastroLocais() {
                         <input
                             id="rua"
                             type="text"
-<<<<<<< HEAD
                             placeholder="Rua será preenchida automaticamente"
                             {...register('endereco.rua')}
                             readOnly
-=======
-                            placeholder="Digite a rua"
-                            {...register('endereco.rua')}
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                         />
                     </div>
 
@@ -160,14 +111,9 @@ export function CadastroLocais() {
                             <input
                                 id="bairro"
                                 type="text"
-<<<<<<< HEAD
                                 placeholder="Bairro será preenchido automaticamente"
                                 {...register('endereco.bairro')}
                                 readOnly
-=======
-                                placeholder="Digite o bairro"
-                                {...register('endereco.bairro')}
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                             />
                         </div>
 
@@ -176,14 +122,9 @@ export function CadastroLocais() {
                             <input
                                 id="cidade"
                                 type="text"
-<<<<<<< HEAD
                                 placeholder="Cidade será preenchida automaticamente"
                                 {...register('endereco.cidade')}
                                 readOnly
-=======
-                                placeholder="Digite a cidade"
-                                {...register('endereco.cidade')}
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                             />
                         </div>
 
@@ -192,14 +133,9 @@ export function CadastroLocais() {
                             <input
                                 id="estado"
                                 type="text"
-<<<<<<< HEAD
                                 placeholder="Estado será preenchido automaticamente"
                                 {...register('endereco.estado')}
                                 readOnly
-=======
-                                placeholder="Digite o estado"
-                                {...register('endereco.estado')}
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                             />
                         </div>
                     </div>
@@ -210,14 +146,9 @@ export function CadastroLocais() {
                             <input
                                 id="latitude"
                                 type="text"
-<<<<<<< HEAD
                                 placeholder="Latitude será preenchida automaticamente"
                                 {...register('endereco.latitude')}
                                 readOnly
-=======
-                                placeholder="Digite a latitude"
-                                {...register('endereco.latitude')}
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                             />
                         </div>
 
@@ -226,23 +157,14 @@ export function CadastroLocais() {
                             <input
                                 id="longitude"
                                 type="text"
-<<<<<<< HEAD
                                 placeholder="Longitude será preenchida automaticamente"
                                 {...register('endereco.longitude')}
                                 readOnly
-=======
-                                placeholder="Digite a longitude"
-                                {...register('endereco.longitude')}
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                             />
                         </div>
                     </div>
 
-<<<<<<< HEAD
                     <button className="btn-submit-loc" type="submit">Cadastrar</button>
-=======
-                    <button className="btn-submit" type="submit">Cadastrar</button>
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                 </form>
             </div>
         </main>

@@ -1,17 +1,10 @@
 import { createContext, useContext, useState } from "react";
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
 import api from "../utils/useAxios";
 
 export const AuthContext = createContext({
     user: null,
     isLogged: false,
-=======
-import { api } from "../utils/api";
-
-export const AuthContext = createContext({
-    user: null,
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     signIn: async () => { },
     signOut: async () => { },
 });
@@ -19,17 +12,11 @@ export const AuthContext = createContext({
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(() => {
         const userLogged = localStorage.getItem('@natureza365:user');
-<<<<<<< HEAD
         return userLogged ? JSON.parse(userLogged) : null;
     });
 
     const [isLogged, setIsLogged] = useState(!!user); 
 
-=======
-        return userLogged ? JSON.parse(userLogged) : null; 
-    });
-
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     async function signIn({ email, password }) {
         try {
             if (!email || !password) {
@@ -37,7 +24,6 @@ export function AuthProvider({ children }) {
                 return false;
             }
 
-<<<<<<< HEAD
             const response = await api.post('/login', {
                 email,
                 senha: password
@@ -62,39 +48,10 @@ export function AuthProvider({ children }) {
                 console.error('Erro ao autenticar usuário:', error);
                 alert('Erro ao logar. Tente novamente mais tarde.');
             }
-=======
-            const response = await api(`/users?email=${encodeURIComponent(email)}`);
-
-            if (!response.ok) {
-                console.error('Erro na resposta da API:', response.statusText);
-                return false;
-            }
-
-            const data = await response.json();
-
-            if (data.length > 0) {
-                const user = data[0];
-                if (user.senha === password) { 
-                    setUser(user); 
-                    localStorage.setItem('@natureza365:user', JSON.stringify(user)); 
-
-                    return true;
-                } else {
-                    console.warn('Senha incorreta');
-                    return false;
-                }
-            } else {
-                console.warn('Nenhum usuário encontrado com esse e-mail');
-                return false;
-            }
-        } catch (error) {
-            console.error('Erro ao autenticar usuário:', error);
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
             return false;
         }
     }
 
-<<<<<<< HEAD
     async function signOut() {
         setUser(null);
         setIsLogged(false); 
@@ -122,15 +79,6 @@ export function AuthProvider({ children }) {
         
     return (
         <AuthContext.Provider value={{ user, isLogged, signIn, signOut }}>
-=======
-    function signOut() {
-        setUser(null);
-        localStorage.removeItem('@natureza365:user');
-    }
-
-    return (
-        <AuthContext.Provider value={{ user, signIn, signOut }}>
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
             {children}
         </AuthContext.Provider>
     );

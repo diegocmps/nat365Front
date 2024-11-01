@@ -3,13 +3,8 @@
     margin: 0 auto;
     padding: 20px;
     padding-top: 60px;
-<<<<<<< HEAD
     background-color: #eaeaeac0;
     border-radius: 32px;
-=======
-    background-color: #f9f9f9;
-    border-radius: 8px;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     position: relative;
@@ -19,20 +14,12 @@
     background-color: #009879;
     color: #fff;
     border: none;
-<<<<<<< HEAD
     border-radius: 16px;
-=======
-    border-radius: 4px;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     padding: 8px 16px;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
-<<<<<<< HEAD
     position: relative;
-=======
-    position: absolute;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     top: 20px;
     right: 20px;
     width: 120px;

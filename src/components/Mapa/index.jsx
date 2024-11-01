@@ -11,18 +11,10 @@ function ZoomToLocation({ local }) {
     const map = useMap();
 
     useEffect(() => {
-<<<<<<< HEAD
         if (local) {
             map.flyTo(
                 // eslint-disable-next-line react/prop-types
                 [parseFloat(local.latitude), parseFloat(local.longitude)],
-=======
-        // eslint-disable-next-line react/prop-types
-        if (local && local.endereco) {
-            map.flyTo(
-                // eslint-disable-next-line react/prop-types
-                [parseFloat(local.endereco.latitude), parseFloat(local.endereco.longitude)],
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                 12,
                 { animate: true }
             );
@@ -38,11 +30,7 @@ export function Map({ localidades, localDetalhe }) {
         <div>
             <MapContainer
                 // eslint-disable-next-line react/prop-types
-<<<<<<< HEAD
                 center={localDetalhe ? [parseFloat(localDetalhe.latitude), parseFloat(localDetalhe.longitude)] : coordInicial}
-=======
-                center={localDetalhe ? [parseFloat(localDetalhe.endereco.latitude), parseFloat(localDetalhe.endereco.longitude)] : coordInicial}
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
                 zoom={6}
                 className='mapContainer'
             >

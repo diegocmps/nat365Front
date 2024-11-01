@@ -1,19 +1,11 @@
 .edit-user-profile {
     padding: 20px;
-<<<<<<< HEAD
     max-width:780px;
-=======
-    max-width: 1000px;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     margin: 0 auto;
     position: relative;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
-<<<<<<< HEAD
     border-radius: 16px;
-=======
-    border-radius: 8px;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -24,20 +16,12 @@
     padding: 10px 20px;
     margin-bottom: 20px;
     cursor: pointer;
-<<<<<<< HEAD
     border-radius: 16px;
-=======
-    border-radius: 5px;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     font-size: 14px;
     transition: background-color 0.3s ease;
     display: block;
     width: max-content;
-<<<<<<< HEAD
     position: relative;
-=======
-    position: absolute;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     top: 20px;
     right: 20px;
 }
@@ -59,11 +43,7 @@ form {
 }
 
 label {
-<<<<<<< HEAD
     font-weight: medium;
-=======
-    font-weight: bold;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 }
 
 input, select {
@@ -83,7 +63,6 @@ h1 {
     color: #333;
 }
 
-<<<<<<< HEAD
 .disabled-field input {
     background-color: #f0f0f0;
     color: #888888;
@@ -92,13 +71,10 @@ h1 {
 }
 
 
-=======
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 @media (min-width: 769px) {
     form {
         flex-direction: row;
         flex-wrap: wrap;
-<<<<<<< HEAD
         gap: 15px;
         justify-content: left;
     }
@@ -114,21 +90,6 @@ h1 {
         right: 20px;
         left: 10px;
 
-=======
-        gap: 20px;
-        justify-content: space-between;
-    }
-
-    .form-group {
-        flex: 1 1 calc(50% - 20px);
-        min-width: 280px;
-    }
-
-    .save-button {
-        position: absolute;
-        top: 20px;
-        right: 20px;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     }
 }
 
@@ -141,10 +102,7 @@ h1 {
         padding: 8px 16px;
         font-size: 12px;
         top: 10px;
-<<<<<<< HEAD
         left: 10px;
-=======
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
         right: 10px;
     }
 

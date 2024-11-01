@@ -6,7 +6,6 @@
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 .btn-submit-loc {
     position: absolute;
     top: 20px;
@@ -15,26 +14,12 @@
     color: #fff;
     border: none;
     border-radius: 8px;
-=======
-.btn-submit {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #009879;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     padding: 8px 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-<<<<<<< HEAD
 .btn-submit-loc:hover {
-=======
-.btn-submit:hover {
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     background-color: #007a61;
 }
 
@@ -51,11 +36,7 @@
 }
 
 .form-group label {
-<<<<<<< HEAD
     font-weight: medium;
-=======
-    font-weight: bold;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     margin-bottom: 5px;
 }
 
@@ -63,13 +44,8 @@
 .form-group textarea {
     width: 100%;
     padding: 10px;
-<<<<<<< HEAD
     border: 1px solid #8f8f8f;
     border-radius: 8px;
-=======
-    border: 1px solid #ccc;
-    border-radius: 3px;
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     box-sizing: border-box;
 }
 
@@ -79,26 +55,19 @@
     flex-wrap: wrap; 
 }
 
-<<<<<<< HEAD
 .boneco2 {
         width: 120px;
         margin-bottom: -15px;
         display:flex;
 }
 
-=======
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 .form-row .form-group {
     flex: 1;
     min-width: 200px; 
 }
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
     .btn-submit-loc {
-=======
-    .btn-submit {
->>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
         top: 10px;
         right: 10px;
         padding: 6px 12px; 
@@ -125,4 +94,3 @@
         min-width: 100%;
     }
 }
-
