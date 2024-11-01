@@ -4,6 +4,7 @@ import api from "../utils/useAxios";
 
 export const AuthContext = createContext({
     user: null,
+    isLogged: false,
     signIn: async () => { },
     signOut: async () => { },
 });
@@ -13,6 +14,8 @@ export function AuthProvider({ children }) {
         const userLogged = localStorage.getItem('@natureza365:user');
         return userLogged ? JSON.parse(userLogged) : null;
     });
+
+    const [isLogged, setIsLogged] = useState(!!user); 
 
     async function signIn({ email, password }) {
         try {
@@ -29,6 +32,7 @@ export function AuthProvider({ children }) {
             if (response.status === 200) {
                 const { token, user: userData } = response.data;
                 setUser(userData);
+                setIsLogged(true); 
                 localStorage.setItem('@natureza365:user', JSON.stringify(userData));
                 localStorage.setItem('token', token);
                 return true;
@@ -50,15 +54,31 @@ export function AuthProvider({ children }) {
 
     async function signOut() {
         setUser(null);
-        const logout = await api.post('/login/logout')
+        setIsLogged(false); 
+        const token = localStorage.getItem('token');
+        console.log("Token:", token); 
+        
+        try {
+            const response = await api.post('/login/logout', {}, {  
+                headers: {
+                    Authorization: `${token}`
+                }
+            });
 
-        localStorage.removeItem('@natureza365:user');
-        localStorage.removeItem('token');
-        console.log(logout)
+            if (response.status === 200) {
+                console.log(response.data.message); 
+            }
+
+            localStorage.removeItem('@natureza365:user');
+            localStorage.removeItem('token');
+            
+        } catch (error) {
+            console.error('Erro ao deslogar da API:', error);
+        }
     }
-
+        
     return (
-        <AuthContext.Provider value={{ user, signIn, signOut }}>
+        <AuthContext.Provider value={{ user, isLogged, signIn, signOut }}>
             {children}
         </AuthContext.Provider>
     );
