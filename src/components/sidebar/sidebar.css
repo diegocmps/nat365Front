@@ -11,14 +11,21 @@
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     align-items: right;
+=======
+    align-items: center;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     position: fixed;
     left: 0;
     top: 0;
     transition: transform 0.3s ease;
     z-index: 1000;
+<<<<<<< HEAD
     
     
+=======
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 }
 
 .sidebar.open {
@@ -30,7 +37,11 @@
     position: fixed;
     top: 20px;
     left: 20px;
+<<<<<<< HEAD
     background-color: #bad2cd;
+=======
+    background-color: #009879;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     border: none;
     color: #fff;
     padding: 10px;
@@ -46,6 +57,7 @@
     transition: margin-left 0.3s ease;
 }
 
+<<<<<<< HEAD
 .logo-container {
     display: flex;
     justify-content: center;
@@ -59,6 +71,8 @@
 }
 
 
+=======
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 @media (max-width: 768px) {
     .sidebar {
         width: 250px;
@@ -90,7 +104,11 @@
 }
 
 .sidebar a:hover {
+<<<<<<< HEAD
     background-color: #016652;
+=======
+    background-color: #007a62;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     color: #ffffff;
 }
 

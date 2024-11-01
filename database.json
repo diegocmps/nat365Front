@@ -135,6 +135,7 @@
         "cidade": "Palhoça",
         "estado": "SC"
       }
+<<<<<<< HEAD
     },
     {
       "id": "2414",
@@ -151,6 +152,8 @@
         "cidade": "Florianópolis",
         "estado": "Santa Catarina"
       }
+=======
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     }
   ],
   "localidade": [
@@ -249,6 +252,7 @@
       },
       "usuario": "João Souza",
       "usuarioId": "51d3"
+<<<<<<< HEAD
     },
     {
       "id": "f4f4",
@@ -265,6 +269,8 @@
       },
       "usuario": "Ana Silva",
       "usuarioId": "3cc1"
+=======
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     }
   ]
 }

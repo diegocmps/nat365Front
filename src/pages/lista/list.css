@@ -5,6 +5,7 @@
   gap: 10px;
 }
 
+<<<<<<< HEAD
 .boneco3 {
   width: 120px;
   margin-bottom: 10px;
@@ -17,11 +18,21 @@
   cursor: pointer;
   font-size: 1.0em;
   color: #7f2320;
+=======
+.btn-delete {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #ff0000;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
   transition: color 0.3s;
 }
 
 .btn-delete:hover {
+<<<<<<< HEAD
   color: #5d0e0b;
+=======
+  color: #d00000;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 }
 
 .styled-table a {
@@ -43,13 +54,22 @@
 
 .btn-delete {
   cursor: pointer;
+<<<<<<< HEAD
   font-size: 1.0em;
   color: #7f1414;
+=======
+  font-size: 1.2em;
+  color: #ff0000;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
   transition: color 0.3s;
 }
 
 .btn-delete:hover {
+<<<<<<< HEAD
   color: #4e0a0a;
+=======
+  color: #d00000;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 }
 
 .styled-table a {
@@ -114,7 +134,11 @@
 
   .styled-table td::before {
     content: attr(data-label);
+<<<<<<< HEAD
     font-weight: medium;
+=======
+    font-weight: bold;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     margin-right: 10px;
   }
 

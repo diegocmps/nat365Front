@@ -1,5 +1,6 @@
 
 .mapContainer {
+<<<<<<< HEAD
     padding-top: 15px;
     border-radius: 16px;
     height: 450px;
@@ -27,4 +28,9 @@
 
 .leaflet-marker-icon {
     filter: hue-rotate(-1200deg);
+=======
+    border-radius: 5px;
+    height: 450px;
+    width: 500px;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 }

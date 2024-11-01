@@ -1,21 +1,35 @@
 .card-usuarios {
+<<<<<<< HEAD
     background-color: #017e65; 
+=======
+    background-color: #009879; 
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     color: white;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-size: 18px;
+<<<<<<< HEAD
     font-weight: medium;
+=======
+    font-weight: bold;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+<<<<<<< HEAD
     height: 100px;
     width: 200px;
+=======
+    height: 150px;
+    width: 300px;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     position: relative;
 }
 
 .card-usuarios-text {
+<<<<<<< HEAD
     font-size: 16px;
     margin-bottom: 2px;
 }
@@ -40,4 +54,27 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+=======
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-usuarios-count {
+    font-size: 48px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.card-usuarios-icon {
+    color: rgb(251, 255, 23);
+    font-size: 48px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 }

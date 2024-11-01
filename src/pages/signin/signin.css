@@ -17,7 +17,11 @@
 }
 
 .login-container {
+<<<<<<< HEAD
     width: 40%;
+=======
+    width: 30%;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +35,10 @@
 .logo {
     width: 250px;
     margin-bottom: 20px;
+<<<<<<< HEAD
     margin-top: 20px;
+=======
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 }
 
 .login-area {
@@ -51,8 +58,13 @@ h1 {
 }
 
 label {
+<<<<<<< HEAD
     font-weight: medium;
     margin-bottom: 8px;
+=======
+    font-weight: bold;
+    margin-bottom: 5px;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 }
 
 input {
@@ -64,17 +76,29 @@ input {
 }
 
 button {
+<<<<<<< HEAD
     background-color: #1d3732;
     color: #fff;
     border: none;
     padding: 10px;
     border-radius: 8px;
+=======
+    background-color: #009879;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
     cursor: pointer;
     margin-top: 10px;
 }
 
 button:hover {
+<<<<<<< HEAD
     background-color: #155e4f;
+=======
+    background-color: #31cdad;
+>>>>>>> 87c86f39a0c63ac7f31210525db6de0a42f48139
 }
 
 p {
