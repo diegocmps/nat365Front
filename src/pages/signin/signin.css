@@ -17,7 +17,7 @@
 }
 
 .login-container {
-    width: 30%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,6 +31,7 @@
 .logo {
     width: 250px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .login-area {
@@ -50,8 +51,8 @@ h1 {
 }
 
 label {
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-weight: medium;
+    margin-bottom: 8px;
 }
 
 input {
@@ -63,17 +64,17 @@ input {
 }
 
 button {
-    background-color: #009879;
+    background-color: #1d3732;
     color: #fff;
     border: none;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 8px;
     cursor: pointer;
     margin-top: 10px;
 }
 
 button:hover {
-    background-color: #31cdad;
+    background-color: #155e4f;
 }
 
 p {

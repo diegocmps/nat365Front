@@ -1,18 +1,29 @@
 import PropTypes from 'prop-types';
-import { Marker, Popup} from 'react-leaflet';
+import { Marker, Popup } from 'react-leaflet';
+import L from 'leaflet'
+import markerIcon from '../../assets/imagens/leaf-green.png';
+import shadowIcon from '../../assets/imagens/leaf-shadow.png';
 
+const customMarkerIcon = new L.Icon({
+    iconUrl: markerIcon,
+    shadowUrl: shadowIcon,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+});
+
+// eslint-disable-next-line react/prop-types
 export function Marcadores({ localidade }) {
-
-
     return (
         <>
             {localidade.map(local => (
                 <Marker
                     key={local.id}
-                    position={[parseFloat(local.endereco.latitude), parseFloat(local.endereco.longitude)]}>
-
+                    position={[parseFloat(local.latitude), parseFloat(local.longitude)]}
+                    icon={customMarkerIcon}
+                >
                     <Popup>
-                        <strong>{local.local}</strong>
+                        <strong>{local.nome}</strong>
                         <p>{local.descricao}</p>
                     </Popup>
                 </Marker>

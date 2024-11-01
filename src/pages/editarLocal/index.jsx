@@ -1,15 +1,17 @@
 import { useForm } from "react-hook-form";
 import { getCepData } from "../../services/CepService/CepService";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { api } from "../../utils/api";
+import { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import api from "../../utils/useAxios";
 import { useAuth } from "../../contexts/auth";
-import './editarLocal.css'
+import './editarLocal.css';
 
 export function PaginaEditarLocal() {
     const { register, handleSubmit, reset, setValue } = useForm();
     const { id } = useParams();
-    const { user } = useAuth(); 
+    const { user } = useAuth();
+    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
 
     async function onUpdate(data) {
         if (!user) {
@@ -18,26 +20,27 @@ export function PaginaEditarLocal() {
         }
 
         const localData = {
-            ...data,
-            usuario: user.nome 
+            nome: data.local,
+            descricao: data.descricao,
+            cep: data.cep,
+            rua: data.rua,
+            bairro: data.bairro,
+            cidade: data.cidade,
+            estado: data.estado,
+            latitude: data.latitude,
+            longitude: data.longitude,
+            usuarioId: user.id
         };
 
         try {
-            const response = await api(`/localidade/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(localData)
-            });
+            const response = await api.put(`/local/${id}`, localData);
 
-            if (!response.ok) {
+            if (response.status !== 200) {
                 throw new Error('Erro ao atualizar localidade');
             }
 
-            const update = await response.json();
             alert('Atualizado com sucesso');
-            console.log(update);
+            navigate('/');
         } catch (error) {
             console.error('Erro ao atualizar localidade:', error);
             alert('Houve um erro ao atualizar o local. Tente novamente mais tarde.');
@@ -45,16 +48,31 @@ export function PaginaEditarLocal() {
     }
 
     async function buscarLocal() {
+        setLoading(true);
         try {
-            const response = await api(`/localidade?id=${id}`);
-            const data = await response.json();
+            const response = await api.get(`/local/${id}`);
+            const local = response.data;
 
-            if (data.length > 0) {
-                const local = data[0];
-                reset(local);
+            if (local) {
+                reset({
+                    local: local.nome,
+                    descricao: local.descricao,
+                    cep: local.cep,
+                    rua: local.rua,
+                    bairro: local.bairro,
+                    cidade: local.cidade,
+                    estado: local.estado,
+                    latitude: local.latitude,
+                    longitude: local.longitude,
+                });
+            } else {
+                alert('Local não encontrado.');
             }
         } catch (error) {
             console.error('Erro ao buscar localidade:', error);
+            alert('Houve um erro ao buscar os dados do local. Tente novamente mais tarde.');
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -62,7 +80,7 @@ export function PaginaEditarLocal() {
         if (id) {
             buscarLocal();
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id]);
 
     const checkCEP = async (e) => {
@@ -76,22 +94,27 @@ export function PaginaEditarLocal() {
         try {
             const cepData = await getCepData(cep);
 
-            setValue('endereco.rua', cepData.address_name);
-            setValue('endereco.bairro', cepData.district);
-            setValue('endereco.cidade', cepData.city);
-            setValue('endereco.estado', cepData.state);
-            setValue('endereco.latitude', cepData.lat);
-            setValue('endereco.longitude', cepData.lng);
+            setValue('rua', cepData.address_name);
+            setValue('bairro', cepData.district);
+            setValue('cidade', cepData.city);
+            setValue('estado', cepData.state);
+            setValue('latitude', cepData.lat);
+            setValue('longitude', cepData.lng);
         } catch (error) {
             console.error('Erro ao buscar dados do CEP:', error);
             alert('Houve um erro ao buscar o CEP. Tente novamente mais tarde.');
         }
     };
 
+    if (loading) {
+        return <div>Carregando...</div>;
+    }
+
     return (
         <main>
             <div>
                 <form className="formulario" onSubmit={handleSubmit(onUpdate)}>
+                <h1>Atualização do Local</h1>
                     <label htmlFor="local">Local</label>
                     <input
                         id="local"
@@ -107,12 +130,11 @@ export function PaginaEditarLocal() {
                         {...register('descricao')}
                     />
 
-                    <label htmlFor="endereco">Endereço</label>
                     <label htmlFor="cep">CEP</label>
                     <input
                         id="cep"
                         type="text"
-                        {...register('endereco.cep', { required: 'O CEP é obrigatório' })}
+                        {...register('cep', { required: 'O CEP é obrigatório' })}
                         onBlur={checkCEP}
                     />
 
@@ -120,46 +142,45 @@ export function PaginaEditarLocal() {
                     <input
                         id="rua"
                         type="text"
-                        {...register('endereco.rua')}
+                        {...register('rua')}
                     />
 
                     <label htmlFor="bairro">Bairro</label>
                     <input
                         type="text"
                         id="bairro"
-                        {...register('endereco.bairro')}
+                        {...register('bairro')}
                     />
 
                     <label htmlFor="cidade">Cidade</label>
                     <input
                         id="cidade"
                         type="text"
-                        {...register('endereco.cidade')}
+                        {...register('cidade')}
                     />
 
                     <label htmlFor="estado">Estado</label>
                     <input
                         id="estado"
                         type="text"
-                        {...register('endereco.estado')}
+                        {...register('estado')}
                     />
 
                     <label htmlFor="latitude">Latitude</label>
                     <input
                         id="latitude"
                         type="text"
-                        {...register('endereco.latitude')}
+                        {...register('latitude')}
                     />
 
                     <label htmlFor="longitude">Longitude</label>
                     <input
                         id="longitude"
                         type="text"
-                        {...register('endereco.longitude')}
+                        {...register('longitude')}
                     />
 
-                    <button
-                        type="submit">Atualizar</button>
+                    <button type="submit">Atualizar</button>
                 </form>
             </div>
         </main>

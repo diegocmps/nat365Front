@@ -13,11 +13,17 @@
     align-items: flex-start;
 }
 
+.boneco {
+    width: 240px;
+    margin-bottom: -20px;
+    display:flex;
+}
+
 .cards-container {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: right;
     margin: auto;
 }
 
@@ -33,18 +39,18 @@
 }
 
 .local-list .styled-table {
-    width: 100%;
+    width: 95%;
     border-collapse: collapse;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
 .local-list .styled-table thead tr {
-    background-color: #009879;
+    background-color: #0a282293;
     color: #ffffff;
     text-align: left;
-    font-weight: bold;
+    font-weight: medium;
 }
 
 .local-list .styled-table th, 
@@ -62,11 +68,11 @@
 }
 
 .local-list .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+    border-bottom: 2px solid #0a282293;
 }
 
 .local-list .styled-table tbody tr.active-row {
-    font-weight: bold;
+    font-weight: medium;
     color: #009879;
 }
 
@@ -76,3 +82,30 @@
     width: 100%;
     margin-top: 15px;
 }
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 10px 15px;
+    background-color: #0b3c3293;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    background-color: #c4c4c4;
+    cursor: not-allowed;
+  }
+  
+  .pagination span {
+    font-size: 12px;
+    font-weight: medium;
+  }
+  
