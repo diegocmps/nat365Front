@@ -22,14 +22,14 @@ export function CadastroPage() {
             bairro: formData.bairro,
             cidade: formData.cidade,
             estado: formData.estado,
-            cep: formData.cep,
+            cep: formData.cep.replace(/-/g, ''),
             numero: formData.numero,
             complemento: formData.complemento
         };
-
+    
         try {
             const response = await useAxios.post('/usuario', data);
-
+    
             if (response.status === 201) { 
                 alert('Usuário cadastrado com sucesso!');
                 navigate('/login');
@@ -41,6 +41,8 @@ export function CadastroPage() {
             alert('Houve um erro ao cadastrar o usuário. Tente novamente.');
         }
     };
+    
+    
 
     const checkCEP = async (e) => {
         const cep = e.target.value.replace(/\D/g, '');
@@ -64,13 +66,13 @@ export function CadastroPage() {
 
     return (
         <main>
-                        <img className="logo" src={boneco2} alt="logo" />
+            <img className="logo" src={boneco2} alt="logo" />
 
             <div className="cadastro-container">
-            <div className="icon-container">
-            <UserRoundPlus size={36} />
-            </div>
-             <h1> Cadastro de Usuário</h1>
+                <div className="icon-container">
+                    <UserRoundPlus size={36} />
+                </div>
+                <h1> Cadastro de Usuário</h1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-layout">
                         <div className="form-field half-width">
@@ -206,7 +208,7 @@ export function CadastroPage() {
                         </div>
                     </div>
                     <button className="btn-submit" type="submit">Cadastrar</button>
-                    </form>
+                </form>
                 <p className="login-link">Já possui cadastro? <Link to="/login">Efetuar login</Link></p>
             </div>
         </main>
