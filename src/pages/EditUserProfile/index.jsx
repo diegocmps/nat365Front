@@ -10,6 +10,7 @@ export function EditUserProfile() {
     const [formData, setFormData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [validationErrors, setValidationErrors] = useState({}); 
     const navigate = useNavigate();
     const { user, signIn } = useAuth();
 
@@ -39,6 +40,8 @@ export function EditUserProfile() {
             ...prevData,
             [name]: value
         }));
+
+        setValidationErrors(prevErrors => ({ ...prevErrors, [name]: undefined }));
     };
 
     const handleCepBlur = async () => {
@@ -60,12 +63,15 @@ export function EditUserProfile() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        
+        const updatedFormData = { ...formData, cep: formData.cep.replace(/-/g, '') };
+    
         try {
-            const response = await api.put(`/usuario/${userId}`, formData);
+            const response = await api.put(`/usuario/${userId}`, updatedFormData);
             if (response.status === 200) {
                 alert('Dados alterados com sucesso!');
                 if (user && user.id === userId) {
-                    const updatedUser = { ...user, ...formData };
+                    const updatedUser = { ...user, ...updatedFormData };
                     localStorage.setItem('@natureza365:user', JSON.stringify(updatedUser));
                     signIn({ email: user.email, password: user.password });
                 }
@@ -74,10 +80,24 @@ export function EditUserProfile() {
                 setError('Erro ao atualizar dados do usuário');
             }
         } catch (err) {
-            setError('Erro ao atualizar dados do usuário');
+            if (err.response && err.response.data.errors) {
+
+                const newValidationErrors = {};
+                const errorMessages = [];
+                err.response.data.errors.forEach(error => {
+                    newValidationErrors[error.field] = error.message;
+                    errorMessages.push(error.message);
+                });
+                setValidationErrors(newValidationErrors);
+                alert(errorMessages.join('\n'));
+            } else {
+                setError('Erro ao atualizar dados do usuário');
+                alert('Erro ao atualizar dados do usuário');
+            }
             console.error(err);
         }
     };
+        
 
     if (loading) return <p>Carregando...</p>;
     if (error) return <p>{error}</p>;
@@ -95,6 +115,7 @@ export function EditUserProfile() {
                         onChange={handleChange}
                         required
                     />
+                    {validationErrors.nome && <span className="error">{validationErrors.nome}</span>} {}
                 </label>
                 <label htmlFor="sexo">
                     Sexo:
@@ -105,10 +126,11 @@ export function EditUserProfile() {
                         onChange={handleChange}
                         required
                     >
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
+                        <option value="">Selecione</option> {}
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
                     </select>
+                    {validationErrors.sexo && <span className="error">{validationErrors.sexo}</span>} {}
                 </label>
                 <label className="disabled-field">
                     CPF:
@@ -130,6 +152,7 @@ export function EditUserProfile() {
                         onChange={handleChange}
                         required
                     />
+                    {validationErrors.data_nascimento && <span className="error">{validationErrors.data_nascimento}</span>} {}
                 </label>
 
                 <label className="disabled-field">
@@ -153,6 +176,7 @@ export function EditUserProfile() {
                         onBlur={handleCepBlur}
                         required
                     />
+                    {validationErrors.cep && <span className="error">{validationErrors.cep}</span>} {}
                 </label>
                 <label>
                     Rua:
@@ -192,6 +216,7 @@ export function EditUserProfile() {
                         onChange={handleChange}
                         required
                     />
+                    {validationErrors.bairro && <span className="error">{validationErrors.bairro}</span>} {}
                 </label>
                 <label>
                     Cidade:
@@ -202,6 +227,7 @@ export function EditUserProfile() {
                         onChange={handleChange}
                         required
                     />
+                    {validationErrors.cidade && <span className="error">{validationErrors.cidade}</span>} {}
                 </label>
                 <label>
                     Estado:
@@ -212,6 +238,7 @@ export function EditUserProfile() {
                         onChange={handleChange}
                         required
                     />
+                    {validationErrors.estado && <span className="error">{validationErrors.estado}</span>} {}
                 </label>
                 <button type="submit" className="save-button">Salvar Alterações</button>
             </form>
