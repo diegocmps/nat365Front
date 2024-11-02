@@ -16,12 +16,18 @@ export function CadastroLocais() {
         const localData = {
             nome: dataLocais.local,
             descricao: dataLocais.descricao,
-            cep: dataLocais.endereco.cep
+            cep: dataLocais.endereco.cep,
+            rua: dataLocais.endereco.rua,
+            bairro: dataLocais.endereco.bairro,
+            cidade: dataLocais.endereco.cidade,
+            estado: dataLocais.endereco.estado,
+            latitude: dataLocais.endereco.latitude,
+            longitude: dataLocais.endereco.longitude
         };
-
+    
         try {
             const response = await api.post('/local', localData);
-
+    
             if (response.status === 201) {
                 const localId = response.data.id;
                 alert('Cadastrado com sucesso');
@@ -34,7 +40,7 @@ export function CadastroLocais() {
             console.error("Erro ao cadastrar o local: ", error.response ? error.response.data : error.message);
         }
     }
-
+    
     const checkCEP = async (e) => {
         const cep = e.target.value.replace(/\D/g, '');
 
