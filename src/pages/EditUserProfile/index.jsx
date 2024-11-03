@@ -72,7 +72,7 @@ export function EditUserProfile() {
                 alert('Dados alterados com sucesso!');
                 if (user && user.id === userId) {
                     const updatedUser = { ...user, ...updatedFormData };
-                    localStorage.setItem('@natureza365:user', JSON.stringify(updatedUser));
+                    sessionStorage.setItem('@natureza365:user', JSON.stringify(updatedUser));
                     signIn({ email: user.email, password: user.password });
                 }
                 navigate(`/user/${userId}`);
