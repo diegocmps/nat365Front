@@ -17,7 +17,7 @@ export function Signin() {
 
         if (success) {
             navigate('/');
-            console.log('Token armazenado:', localStorage.getItem('token'));
+            console.log('Token armazenado:', sessionStorage.getItem('token'));
             
         } else {
             alert('Login falhou. Verifique suas credenciais e tente novamente.');

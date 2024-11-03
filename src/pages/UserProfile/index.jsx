@@ -54,14 +54,14 @@ export function UserProfile() {
                 const response = await api.delete(`/usuario/${user.id}`);
                 if (response.status === 204) {
                     
-                    console.log('Antes de remover:', localStorage.getItem('@natureza365:user'));
+                    console.log('Antes de remover:', sessionStorage.getItem('@natureza365:user'));
     
                     
-                    localStorage.removeItem('@natureza365:user');
-                    localStorage.removeItem('token');
+                    sessionStorage.removeItem('@natureza365:user');
+                    sessionStorage.removeItem('token');
     
                     // Log após remoção
-                    console.log('Depois de remover:', localStorage.getItem('user'));
+                    console.log('Depois de remover:', sessionStorage.getItem('user'));
     
                     signOut(); 
                     navigate('/'); 

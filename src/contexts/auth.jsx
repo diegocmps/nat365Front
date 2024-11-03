@@ -11,7 +11,7 @@ export const AuthContext = createContext({
 
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(() => {
-        const userLogged = localStorage.getItem('@natureza365:user');
+        const userLogged = sessionStorage.getItem('@natureza365:user');
         return userLogged ? JSON.parse(userLogged) : null;
     });
 
@@ -33,8 +33,8 @@ export function AuthProvider({ children }) {
                 const { token, user: userData } = response.data;
                 setUser(userData);
                 setIsLogged(true); 
-                localStorage.setItem('@natureza365:user', JSON.stringify(userData));
-                localStorage.setItem('token', token);
+                sessionStorage.setItem('@natureza365:user', JSON.stringify(userData));
+                sessionStorage.setItem('token', token);
                 return true;
             } else {
                 console.warn('Falha ao autenticar:', response.statusText);
@@ -55,7 +55,7 @@ export function AuthProvider({ children }) {
     async function signOut() {
         setUser(null);
         setIsLogged(false); 
-        const token = localStorage.getItem('token');
+        const token = sessionStorage.getItem('token');
         console.log("Token:", token); 
         
         try {
@@ -69,8 +69,8 @@ export function AuthProvider({ children }) {
                 console.log(response.data.message); 
             }
 
-            localStorage.removeItem('@natureza365:user');
-            localStorage.removeItem('token');
+            sessionStorage.removeItem('@natureza365:user');
+            sessionStorage.removeItem('token');
             
         } catch (error) {
             console.error('Erro ao deslogar da API:', error);
